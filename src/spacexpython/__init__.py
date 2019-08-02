@@ -3,3 +3,5 @@
 
 import launches
 import rockets
+import capsules
+import info
