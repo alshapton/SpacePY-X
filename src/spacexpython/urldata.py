@@ -3,7 +3,7 @@
 
 class Domain:
 # general url to make request
-    main = "https://api.spacexdata.com/v2/"
+    main = "https://api.spacexdata.com/v3/"
 
     # declaration of the endpoints
     # launches
@@ -11,6 +11,10 @@ class Domain:
     latest_launches = main_launches + "/latest"
     next_launches =  main_launches + "/next"
     upcoming_launches = main_launches + "/upcoming"
+
+    # Company information
+    main_info = "info"
+    main_api = ""
 
     # rockets
     main_rockets = "rockets"
