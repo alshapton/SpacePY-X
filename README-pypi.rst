@@ -28,4 +28,4 @@ initialisation. Just import and start coding:
 
 .. _r-spacex/SpaceX-API: https://github.com/r-spacex/SpaceX-API
 .. _SpaceX-API: https://github.com/r-spacex/SpaceX-API
-.. _Wiki: https://github.com/phadnisvinay30/SpaceX-Python/wiki
+.. _Wiki: https://github.com/alshapton/SpaceX-Python/wiki
