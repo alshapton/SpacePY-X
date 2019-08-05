@@ -25,4 +25,7 @@ class Domain:
 
     # capsules
     main_capsules = "capsules"
+    one=main_capsules
+    upcoming_capsules = main_capsules+"/upcoming"
+    past_capsules = main_capsules+"/past"
     
