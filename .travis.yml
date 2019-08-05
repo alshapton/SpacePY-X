@@ -4,6 +4,7 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt --upgrade-strategy=eager
+  - pip install codecov
 # command to run tests
 script:
   - cd src/test; pytest
