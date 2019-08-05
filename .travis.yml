@@ -9,4 +9,5 @@ install:
 # command to run tests
 script:
   - cd src/test; pytest
+  - py.test --cov-report file  --cov=./
   - codecov --token=007bcce9-e4a7-4f29-ba4c-e4c7223799cd
