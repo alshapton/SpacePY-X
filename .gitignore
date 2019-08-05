@@ -10,6 +10,5 @@ tmp
 build
 dist
 
-src/spacexpython/test/coverage.xml
-src/spacexpython/test/.coverage
-
+coverage.xml
+.coverage
