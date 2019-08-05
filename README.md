@@ -1,6 +1,8 @@
 # SpaceX API wrapper in Python
 <div align="center">
 
+<a href="https://snyk.io//test/github/alshapton/SpaceX-Python?targetFile=requirements.txt"><img src="https://snyk.io//test/github/alshapton/SpaceX-Python/badge.svg?targetFile=requirements.txt" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io//test/github/alshapton/SpaceX-Python?targetFile=requirements.txt" style="max-width:100%;"></a>
+
 [![GitHub release](https://img.shields.io/github/release/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpaceX-Python/releases)
 [![GitHub issues](https://img.shields.io/github/issues/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpaceX-Python/issues)
 [![GitHub stars](https://img.shields.io/github/stars/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpaceX-Python/stargazers)
