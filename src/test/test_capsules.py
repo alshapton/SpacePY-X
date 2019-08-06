@@ -22,3 +22,9 @@ def test_past():
     past_data = spacexpython.capsules.past()
     print ("Failure on past capsules")
     assert past_data == past_result
+
+def test_one():
+    one_result={u'status': u'unknown', u'landings': 1, u'missions': [{u'flight': 14, u'name': u'CRS-3'}], u'original_launch_unix': 1397849100, u'original_launch': u'2014-04-18T19:25:00.000Z', u'reuse_count': 0, u'capsule_serial': u'C105', u'capsule_id': u'dragon1', u'type': u'Dragon 1.1', u'details': u'First Dragon v1.1 capsule'}
+    one_data = spacexpython.capsules.one('C105')
+    print ("Failure on one capsule (C105)")
+    assert one_data == one_result
