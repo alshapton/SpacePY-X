@@ -2,8 +2,6 @@ import requests
 import urldata
 import utils
 
-
-
 def launches():
     requestUrl = urldata.Domain.main + urldata.Domain.main_launches
     return utils.makeRequest(requestUrl)

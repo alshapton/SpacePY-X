@@ -1,8 +1,31 @@
+"""Utilities module
+
+This is a utilities module with common functionality which is used by many
+other modules.
+
+This file is imported as a module and contains the following
+functions:
+
+    * jsonParameters - converts a JSON document into a URL parameter string
+    * makeRequest - function to call a REST api
+"""
 import urldata
 import requests
 import json
 
 def jsonParameters(parameters):
+    """converts a JSON document into a URL parameter string
+
+    Parameters
+    ----------
+    parameters : JSON document (str)
+        JSON document containing the list of parameters to add to the `API call`
+
+    Returns
+    -------
+    parms
+        a string which can be appended to the URL
+    """
     jsonObject=json.loads(parameters)
     for key in jsonObject:
         value=jsonObject[key]
@@ -10,8 +33,20 @@ def jsonParameters(parameters):
     return parms[:-1]
 
 
+
 def makeRequest(requestUrl):
+    """ sends a request to the API
+
+    Parameters
+    ----------
+    requestURL : str
+        string to pass into the REST API`
+
+    Returns
+    -------
+    response
+        a string which is a JSON document returned from the API
+    """
     url_response = requests.get(url=str(requestUrl), timeout=1)
     response = url_response.json()
     return response
-

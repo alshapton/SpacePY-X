@@ -12,7 +12,7 @@ install_requires = [
     # List your project dependencies here.
     # For more details, see:
     # http://packages.python.org/distribute/setuptools.html#declaring-dependencies
-    'requests'	
+    'requests'
 ]
 
 
@@ -24,9 +24,9 @@ setup(name='spacexPython',
       # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     ],
     keywords='wrapper api spacex',
-    author='Vinay Phadnis',
-    author_email='phadnisvinay30@gmail.com',
-    url='https://github.com/phadnisvinay30/SpaceX-Python',
+    author='Andrew Shapton',
+    author_email='alshapton@gmail.com',
+    url='https://github.com/alshapton/SpaceX-Python',
     license='MIT',
     packages=find_packages('src'),
     package_dir = {'': 'src'},include_package_data=True,

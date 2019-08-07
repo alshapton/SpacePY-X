@@ -2,8 +2,7 @@ import requests
 import urldata
 import utils
 
-
-def rockets():
+def all():
     requestUrl = urldata.Domain.main + urldata.Domain.main_rockets
     return utils.makeRequest(requestUrl)
 
