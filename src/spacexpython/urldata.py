@@ -1,7 +1,9 @@
-# Declare URL Variables to be used to make requests
+"""
+    Declare URL Variables to be used to make requests
+"""
 
 class Domain:
-# Base to make request
+    # Base to make request
     main = "https://api.spacexdata.com/v3/"
 
     # Declaration of the endpoints
@@ -17,10 +19,10 @@ class Domain:
 
     # Rocket information
     main_rockets = "rockets"
-    falcon_1 = main_rockets + "/falcon1"
-    falcon_9 = main_rockets + "/falcon9"
-    falcon_heavy = main_rockets + "/falconheavy"
-    big_falcon_rocket = main_rockets + "/bfr"
+    falcon1 = main_rockets + "/falcon1"
+    falcon9 = main_rockets + "/falcon9"
+    falconheavy = main_rockets + "/falconheavy"
+    bigfalconrocket = main_rockets + "/bfr"
 
     # Capsule Information
     main_capsules = "capsules"

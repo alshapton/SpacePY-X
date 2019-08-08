@@ -2,8 +2,8 @@ import urldata
 import json
 import utils
 
-def capsules():
-    requestUrl = urldata.Domain.main + urldata.Domain.main_capsules
+def capsules(parameters=''):
+    requestUrl = urldata.Domain.main + urldata.Domain.main_capsules + '?' + utils.jsonParameters(parameters)
     return utils.makeRequest(requestUrl)
 
 def upcoming():
@@ -17,9 +17,3 @@ def past():
 def one(capsule_id):
     requestUrl = urldata.Domain.main + urldata.Domain.main_capsules + "/" + str(capsule_id)
     return utils.makeRequest(requestUrl)
-
-def capsulesP(parameters):
-    parms=utils.jsonParameters(parameters)
-    requestUrl = urldata.Domain.main + urldata.Domain.main_capsules +  "?" + parms
-    return utils.makeRequest(requestUrl)
-

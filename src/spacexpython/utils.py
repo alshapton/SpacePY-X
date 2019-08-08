@@ -26,13 +26,15 @@ def jsonParameters(parameters):
     parms
         a string which can be appended to the URL
     """
-    jsonObject=json.loads(parameters)
-    for key in jsonObject:
-        value=jsonObject[key]
-        parms=key+'='+value+'&'
-    return parms[:-1]
-
-
+    if (parameters == ''):
+        return ''
+    else:
+        jsonObject=json.loads(parameters)
+        parms='?'
+        for key in jsonObject:
+            value=jsonObject[key]
+            parms=parms+key+'='+value+'&'
+        return parms[:-1]
 
 def makeRequest(requestUrl):
     """ sends a request to the API
