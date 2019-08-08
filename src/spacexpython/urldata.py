@@ -4,7 +4,10 @@
 
 class Domain:
     # Base to make request
-    main = "https://api.spacexdata.com/v3/"
+    base = "https://api.spacexdata.com"
+
+    version = "v3"
+    main = base + "/" + version + "/"
 
     # Declaration of the endpoints
     # Launches

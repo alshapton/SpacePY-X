@@ -9,47 +9,52 @@ functions:
 
     * all - returns all rockets
     * rocket - returns information about one rocket rocket type
+
+    # CONSIDER REMOVING THESE FUNCTIONS
     * falcon1 - returns information about the Falcon 1
     * falcon9 - returns information about the Falcon 9
     * bfr - returns information about the Big Falcon Rocket
     * falconHeavy - returns information about the Falcon Heavy
 """
-import requests
 import urldata
 import utils
 
-def all():
+def all(parameters='',timeOut=1):
     """ Return a JSON document containing ALL rockets
 
     Parameters
     ----------
-    None
+    parameters
+        optional - a JSON document containing valid query modifiers
+    timeOut
+        optional - an integer stating the timeout in seconds of the REST api call
 
     Returns
     -------
     string
         a JSON document containing a list of rockets
     """
-    requestUrl = urldata.Domain.main + urldata.Domain.main_rockets
-    return utils.makeRequest(requestUrl)
+    requestUrl = urldata.Domain.main + urldata.Domain.main_rockets + utils.jsonParameters(parameters)
+    print(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut)
 
-def rocket(rocket):
-    # do a case statement here to call other functions, but have those available too.
+def rocket(rocket,parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.main_rockets + "/" + rocket
-    return utils.makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut)
 
-def falcon1():
+# Consider removing these
+def falcon1(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.falcon1
-    return utils.makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut)
 
-def falcon9():
+def falcon9(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.falcon9
-    return utils.makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut)
 
-def falconHeavy():
+def falconHeavy(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.falconheavy
-    return utils.makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut)
 
-def bfr():
+def bfr(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.bigfalconrocket
-    return utils.makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut)

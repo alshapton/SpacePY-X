@@ -36,19 +36,20 @@ def jsonParameters(parameters):
             parms=parms+key+'='+value+'&'
         return parms[:-1]
 
-def makeRequest(requestUrl):
+def makeRequest(requestUrl,timeOut=1):
     """ sends a request to the API
 
     Parameters
     ----------
     requestURL : str
-        string to pass into the REST API`
-
+        string to pass into the REST API
+    timeOut : int
+        optional - API call timeout
     Returns
     -------
     response
         a string which is a JSON document returned from the API
     """
-    url_response = requests.get(url=str(requestUrl), timeout=1)
+    url_response = requests.get(url=str(requestUrl), timeout=timeOut)
     response = url_response.json()
     return response
