@@ -16,8 +16,8 @@ functions:
     * bfr - returns information about the Big Falcon Rocket
     * falconHeavy - returns information about the Falcon Heavy
 """
-import urldata
-import utils
+from . import urldata
+from . import utils
 
 def all(parameters='',timeOut=1):
     """ Return a JSON document containing ALL rockets

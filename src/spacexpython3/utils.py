@@ -9,8 +9,8 @@ functions:
     * jsonParameters - converts a JSON document into a URL parameter string
     * makeRequest - function to call a REST api
 """
+from . import urldata
 import requests
-import urldata
 import json
 
 def jsonParameters(parameters):

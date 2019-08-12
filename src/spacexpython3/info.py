@@ -1,5 +1,6 @@
-import urldata
-import utils
+import requests
+from . import urldata
+from . import utils
 
 def company(timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.main_info

@@ -1,5 +1,6 @@
-import urldata
-import utils
+
+from . import urldata
+from . import utils
 
 def all(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.main_launches
@@ -9,7 +10,7 @@ def latest(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.latest_launches
     return utils.makeRequest(requestUrl,timeOut)
 
-def nextlaunch(parameters='',timeOut=1):
+def next(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.next_launches
     return utils.makeRequest(requestUrl,timeOut)
 
