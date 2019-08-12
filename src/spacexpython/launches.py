@@ -1,5 +1,6 @@
-import urldata
-import utils
+from __future__ import absolute_import
+from . import urldata
+from . import utils
 
 def all(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.main_launches

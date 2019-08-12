@@ -2,7 +2,8 @@
     Declare URL Variables to be used to make requests
 """
 
-class Domain:
+from builtins import object
+class Domain(object):
     # Base to make request
     base = "https://api.spacexdata.com"
 

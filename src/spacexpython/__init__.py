@@ -1,8 +1,9 @@
+from __future__ import absolute_import
 # Console entry point
 
-import launches
-import rockets
-import capsules
-import info
-import utils
-import urldata 
+from . import launches
+from . import rockets
+from . import capsules
+from . import info
+from . import utils
+from . import urldata 
