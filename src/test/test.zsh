@@ -1,2 +1,1 @@
-PYTHON_VERSION=$1
-python$PYTHON_VERSION -m pytest
+python$1 -m pytest
