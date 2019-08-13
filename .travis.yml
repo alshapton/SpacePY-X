@@ -8,7 +8,6 @@ install:
   - pip install -r requirements.txt --upgrade-strategy=eager
   - pip install pytest pytest-cov
   - pip install codecov
-  - pip install future
 # Command to run tests
 script:
   - cd src/test
