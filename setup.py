@@ -13,7 +13,7 @@ install_requires = [
     # For more details, see:
     # http://packages.python.org/distribute/setuptools.html#declaring-dependencies
     'requests',
-    'futures; python_version == "2.7"'
+    'future; python_version == "2.7"'
     }
 ]
 
