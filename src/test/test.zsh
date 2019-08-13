@@ -1,0 +1,2 @@
+PYTHON_VERSION=$1
+python$PYTHON_VERSION -m pytest
