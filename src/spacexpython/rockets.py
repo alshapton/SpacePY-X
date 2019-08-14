@@ -16,7 +16,6 @@ functions:
     * bfr - returns information about the Big Falcon Rocket
     * falconHeavy - returns information about the Falcon Heavy
 """
-from __future__ import absolute_import
 from . import urldata
 from . import utils
 
@@ -59,16 +58,16 @@ def rocket(rocket,parameters='',timeOut=1):
 # Consider removing these
 def falcon1(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.falcon1
-    return utils.makeRequest(requestUrl,timeOut)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
 def falcon9(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.falcon9
-    return utils.makeRequest(requestUrl,timeOut)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
 def falconHeavy(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.falconheavy
-    return utils.makeRequest(requestUrl,timeOut)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
 def bfr(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.bigfalconrocket
-    return utils.makeRequest(requestUrl,timeOut)
+    return utils.makeRequest(requestUrl,timeOut,parameters)

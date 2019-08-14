@@ -1,7 +1,6 @@
 dist: xenial
 language: python
 python:
-  - "2.7"
   - "3.7"
 # Command to install dependencies
 install:
@@ -11,7 +10,6 @@ install:
 # Command to run tests
 script:
   - cd src/test
-#  - pytest
   - ./test.zsh $TRAVIS_PYTHON_VERSION
   - py.test --cov-report term  --cov=./
   - codecov --token=007bcce9-e4a7-4f29-ba4c-e4c7223799cd

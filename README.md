@@ -22,6 +22,8 @@ See the [Wiki](https://github.com/alshapton/SpaceX-Python/wiki) for full wrapper
 
 ## Installation
 
+Note that this supports Python 3 *ONLY*
+
 To install via `pip` use:
 `pip install spacexPython`
 

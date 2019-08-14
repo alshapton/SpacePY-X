@@ -1,20 +1,18 @@
-from __future__ import absolute_import
-from builtins import str
 from . import urldata
 from . import utils
 
 def capsules(parameters='',timeOut=1):
-    requestUrl = urldata.Domain.main + urldata.Domain.main_capsules + '?' + utils.jsonParameters(parameters)
-    return utils.makeRequest(requestUrl,timeOut)
+    requestUrl = urldata.Domain.main + urldata.Domain.main_capsules
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
 def upcoming(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.upcoming_capsules
-    return utils.makeRequest(requestUrl,timeOut)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
 def past(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.past_capsules
-    return utils.makeRequest(requestUrl,timeOut)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
 def one(capsule_id,parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.main_capsules + "/" + str(capsule_id)
-    return utils.makeRequest(requestUrl,timeOut)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
