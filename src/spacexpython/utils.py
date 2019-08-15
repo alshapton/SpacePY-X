@@ -51,6 +51,6 @@ def makeRequest(requestUrl,timeOut=1,parameters=''):
     response
         a string which is a JSON document returned from the API
     """
-    url_response = requests.get(url=str(requestUrl), timeout=timeOut, params=parameters)
+    url_response = requests.get(url=str(requestUrl)+jsonParameters(parameters), timeout=timeOut)
     response = url_response.json()
     return response
