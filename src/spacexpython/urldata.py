@@ -1,31 +1,38 @@
-# Declare URL Variables over here to be used to make requests
 
+"""urldata module
 
-class Domain:
-# general url to make request
-    main = "https://api.spacexdata.com/v3/"
+This is a module defines the endpoints for the REST SpaceX API
+"""
+#from builtins import object
+class Domain(object):
+    """ Base URL from which to assemble request URLs """
+    base = "https://api.spacexdata.com"
 
-    # declaration of the endpoints
-    # launches
+    """ API Version """
+    version = "v3"
+    main = base + "/" + version + "/"
+
+    """ Declaration of the endpoints """
+
+    """ Launches """
     main_launches = "launches"
     latest_launches = main_launches + "/latest"
     next_launches =  main_launches + "/next"
     upcoming_launches = main_launches + "/upcoming"
 
-    # Company information
+    """ Company information """
     main_info = "info"
     main_api = ""
 
-    # rockets
+    """ Rocket information """
     main_rockets = "rockets"
-    falcon_1 = main_rockets + "/falcon1"
-    falcon_9 = main_rockets + "/falcon9"
-    falcon_heavy = main_rockets + "/falconheavy"
-    big_falcon_rocket = main_rockets + "/bfr"
+    falcon1 = main_rockets + "/falcon1"
+    falcon9 = main_rockets + "/falcon9"
+    falconheavy = main_rockets + "/falconheavy"
+    bigfalconrocket = main_rockets + "/bfr"
 
-    # capsules
+    """ Capsule Information """
     main_capsules = "capsules"
     one=main_capsules
     upcoming_capsules = main_capsules+"/upcoming"
     past_capsules = main_capsules+"/past"
-    

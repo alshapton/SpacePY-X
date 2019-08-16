@@ -1,25 +1,22 @@
-import requests
-import urldata
+from . import urldata
+from . import utils
 
+def all(parameters='',timeOut=1):
+    try:
+        requestUrl = urldata.Domain.main + urldata.Domain.main_launches
+    except utils.SpaceXReadTimeOut as e:
+        raise e
+    else:
+        return utils.makeRequest(requestUrl,timeOut,parameters)
 
-
-def launches():
-    requestUrl = urldata.Domain.main + urldata.Domain.main_launches
-    return makeRequest(requestUrl)
-
-def latest():
+def latest(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.latest_launches
-    return makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
-def next():
+def nextlaunch(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.next_launches
-    return makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
-def upcoming():
+def upcoming(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.upcoming_launches
-    return makeRequest(requestUrl)
-
-def makeRequest(requestUrl):
-    url_response = requests.get(url=str(requestUrl), timeout=1)
-    response = url_response.json()
-    return response
+    return utils.makeRequest(requestUrl,timeOut,parameters)

@@ -1,13 +1,15 @@
+dist: xenial
 language: python
 python:
-  - "2.7"
-# command to install dependencies
+  - "3.7"
+# Command to install dependencies
 install:
   - pip install -r requirements.txt --upgrade-strategy=eager
   - pip install pytest pytest-cov
   - pip install codecov
-# command to run tests
+# Command to run tests
 script:
-  - cd src/test; pytest
+  - cd src/test
+  - ./test.zsh $TRAVIS_PYTHON_VERSION
   - py.test --cov-report term  --cov=./
   - codecov --token=007bcce9-e4a7-4f29-ba4c-e4c7223799cd

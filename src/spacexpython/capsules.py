@@ -1,26 +1,18 @@
-import requests
-import urldata
+from . import urldata
+from . import utils
 
-
-def capsules():
+def capsules(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.main_capsules
-    return makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
-def upcoming():
+def upcoming(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.upcoming_capsules
-    return makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
-def past():
+def past(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.past_capsules
-    return makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
-def one(capsule_id):
+def one(capsule_id,parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.main_capsules + "/" + str(capsule_id)
-    return makeRequest(requestUrl)
-
-
-def makeRequest(requestUrl):
-    url_response = requests.get(url=str(requestUrl), timeout=1)
-    response = url_response.json()
-    return response
-
+    return utils.makeRequest(requestUrl,timeOut,parameters)

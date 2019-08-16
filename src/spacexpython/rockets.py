@@ -1,28 +1,73 @@
-import requests
-import urldata
 
+"""Rockets module
 
-def rockets():
+This is a module which allows wrapper access to the functions within the SpaceX
+API to return information about the rockets
+
+This file is imported as a module and contains the following
+functions:
+
+    * all - returns all rockets
+    * rocket - returns information about one rocket rocket type
+
+    # CONSIDER REMOVING THESE FUNCTIONS
+    * falcon1 - returns information about the Falcon 1
+    * falcon9 - returns information about the Falcon 9
+    * bfr - returns information about the Big Falcon Rocket
+    * falconHeavy - returns information about the Falcon Heavy
+"""
+from . import urldata
+from . import utils
+
+def all(parameters='',timeOut=1):
+    """ Return a JSON document containing ALL rockets
+
+    Parameters
+    ----------
+    parameters
+        optional - a JSON document containing valid query modifiers
+    timeOut
+        optional - an integer stating the timeout in seconds of the REST api call
+
+    Returns
+    -------
+    string
+        a JSON document containing a list of rockets
+    """
     requestUrl = urldata.Domain.main + urldata.Domain.main_rockets
-    return makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
-def falcon1():
-    requestUrl = urldata.Domain.main + urldata.Domain.falcon_1
-    return makeRequest(requestUrl)
+def rocket(rocket,parameters='',timeOut=1):
+    """ Return a JSON document containing details of a specific rocket
 
-def falcon9():
-    requestUrl = urldata.Domain.main + urldata.Domain.falcon_9
-    return makeRequest(requestUrl)
+    Parameters
+    ----------
+    parameters
+        optional - a JSON document containing valid query modifiers
+    timeOut
+        optional - an integer stating the timeout in seconds of the REST api call
 
-def falconHeavy():
-    requestUrl = urldata.Domain.main + urldata.Domain.falcon_heavy
-    return makeRequest(requestUrl)
+    Returns
+    -------
+    string
+        a JSON document containing a list of rockets
+    """
+    requestUrl = urldata.Domain.main + urldata.Domain.main_rockets + "/" + rocket
+    return utils.makeRequest(requestUrl,timeOut)
 
-def bfr():
-    requestUrl = urldata.Domain.main + urldata.Domain.big_falcon_rocket
-    return makeRequest(requestUrl)
+# Consider removing these
+def falcon1(parameters='',timeOut=1):
+    requestUrl = urldata.Domain.main + urldata.Domain.falcon1
+    return utils.makeRequest(requestUrl,timeOut,parameters)
 
-def makeRequest(requestUrl):
-    url_response = requests.get(url=str(requestUrl), timeout=1)
-    response = url_response.json()
-    return response
+def falcon9(parameters='',timeOut=1):
+    requestUrl = urldata.Domain.main + urldata.Domain.falcon9
+    return utils.makeRequest(requestUrl,timeOut,parameters)
+
+def falconHeavy(parameters='',timeOut=1):
+    requestUrl = urldata.Domain.main + urldata.Domain.falconheavy
+    return utils.makeRequest(requestUrl,timeOut,parameters)
+
+def bfr(parameters='',timeOut=1):
+    requestUrl = urldata.Domain.main + urldata.Domain.bigfalconrocket
+    return utils.makeRequest(requestUrl,timeOut,parameters)

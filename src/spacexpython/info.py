@@ -1,17 +1,10 @@
-import requests
-import urldata
+from . import urldata
+from . import utils
 
-
-def company():
+def company(timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.main_info
-    return makeRequest(requestUrl)
+    return utils.makeRequest(requestUrl,timeOut)
 
-def api():
+def api(timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.main_api
-    return makeRequest(requestUrl)
-
-def makeRequest(requestUrl):
-    url_response = requests.get(url=str(requestUrl), timeout=1)
-    response = url_response.json()
-    return response
-
+    return utils.makeRequest(requestUrl,timeOut)
