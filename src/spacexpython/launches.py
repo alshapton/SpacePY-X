@@ -2,8 +2,12 @@ from . import urldata
 from . import utils
 
 def all(parameters='',timeOut=1):
-    requestUrl = urldata.Domain.main + urldata.Domain.main_launches
-    return utils.makeRequest(requestUrl,timeOut,parameters)
+    try:
+        requestUrl = urldata.Domain.main + urldata.Domain.main_launches
+    except utils.SpaceXReadTimeOut as e:
+        raise e
+    else:
+        return utils.makeRequest(requestUrl,timeOut,parameters)
 
 def latest(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.latest_launches

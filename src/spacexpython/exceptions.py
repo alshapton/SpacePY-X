@@ -1,0 +1,2 @@
+class SpaceXReadTimeOut(Exception):
+    pass

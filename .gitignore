@@ -12,3 +12,5 @@ dist
 
 coverage.xml
 .coverage
+
+.idea/*

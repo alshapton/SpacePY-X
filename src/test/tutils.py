@@ -84,3 +84,23 @@ def writeJSONFile(filename,JSONDocument):
     with open(filename, 'w') as outfile:
         json.dump(JSONDocument, outfile)
     return True
+
+def writeFile(filename,data):
+    """ Writes/appends data to a file
+
+    Parameters
+    ----------
+    filename : str
+        name of the file
+    data : str
+        text to write to the file
+
+    Returns
+    -------
+    True
+    """
+
+    filename='/tmp/'+filename
+    with open(filename, 'a+') as outfile:
+        outfile.write(data)
+    return True

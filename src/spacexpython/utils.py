@@ -13,6 +13,10 @@ functions:
 from . import urldata
 import json
 import requests
+import sys
+sys.path.append('../')
+
+from .exceptions import *
 
 def jsonParameters(parameters):
     """converts a JSON document into a URL parameter string
@@ -50,7 +54,16 @@ def makeRequest(requestUrl,timeOut=1,parameters=''):
     -------
     response
         a string which is a JSON document returned from the API
+
+    Exceptions
+    ----------
+        SpaceXReadTimeOut
+            an exception raised when the API call breaches the timeout limit
     """
-    url_response = requests.get(url=str(requestUrl)+jsonParameters(parameters), timeout=timeOut)
-    response = url_response.json()
+    try:
+        url_response = requests.get(url=str(requestUrl)+jsonParameters(parameters), timeout=timeOut)
+    except requests.exceptions.ReadTimeout:
+        raise SpaceXReadTimeOut('Space/X Timeout Error')
+    else:
+        response = url_response.json()
     return response
