@@ -2,12 +2,12 @@
 <div align="center">
 
 
-[![Known Vulnerabilities](https://snyk.io//test/github/alshapton/SpaceX-Python/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/alshapton/SpaceX-Python?targetFile=requirements.txt)
-[![Build Status](https://travis-ci.com/alshapton/SpaceX-Python.svg?branch=master)](https://travis-ci.com/alshapton/SpaceX-Python)
-[![GitHub release](https://img.shields.io/github/release/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpaceX-Python/releases)
-[![GitHub issues](https://img.shields.io/github/issues/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpaceX-Python/issues)
-[![GitHub stars](https://img.shields.io/github/stars/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpaceX-Python/stargazers)
-[![GitHub license](https://img.shields.io/github/license/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpaceX-Python)
+[![Known Vulnerabilities](https://snyk.io//test/github/alshapton/SpacePY-X/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/alshapton/SpacePY-X?targetFile=requirements.txt)
+[![Build Status](https://travis-ci.com/alshapton/SpacePY-X.svg?branch=master)](https://travis-ci.com/alshapton/SpacePY-X)
+[![GitHub release](https://img.shields.io/github/release/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpacePY-X/releases)
+[![GitHub issues](https://img.shields.io/github/issues/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpacePY-X/issues)
+[![GitHub stars](https://img.shields.io/github/stars/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpacePY-X/stargazers)
+[![GitHub license](https://img.shields.io/github/license/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpacePY-X)
 
 ### Simple and Easy API Wrapper for [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API)!
 
