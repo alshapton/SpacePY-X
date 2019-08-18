@@ -3,6 +3,8 @@
 <img src="https://github.com/alshapton/SpacePY-X/blob/master/pyrocket.png">
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c8b036f596d2471a9ce4c4e78bf9a3f3)](https://app.codacy.com/app/alshapton/SpacePY-X?utm_source=github.com&utm_medium=referral&utm_content=alshapton/SpacePY-X&utm_campaign=Badge_Grade_Settings)
+[![Updates](https://pyup.io/repos/github/alshapton/SpacePY-X/shield.svg)](https://pyup.io/repos/github/alshapton/SpacePY-X/)
+[![Python 3](https://pyup.io/repos/github/alshapton/SpacePY-X/python-3-shield.svg)](https://pyup.io/repos/github/alshapton/SpacePY-X/)
 [![Known Vulnerabilities](https://snyk.io//test/github/alshapton/SpacePY-X/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/alshapton/SpacePY-X?targetFile=requirements.txt)
 [![Build Status](https://travis-ci.com/alshapton/SpacePY-X.svg?branch=master)](https://travis-ci.com/alshapton/SpacePY-X)
 [![GitHub release](https://img.shields.io/github/release/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpacePY-X/releases)
