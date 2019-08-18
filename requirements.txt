@@ -1,2 +1,2 @@
 requests==2.22.0
-setuptools==18.5
+setuptools==41.1.0
