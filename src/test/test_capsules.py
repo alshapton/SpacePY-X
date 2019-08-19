@@ -10,9 +10,9 @@ from .tutils import *
 
 def test_capsules():
     capsules_data=''
-    capsules_result=keyOrder(alphaOrder(readJSONFile('capsules/capsules.json')),'capsule_id')
+    capsules_result=keyOrder(alphaOrder(readJSONFile('capsules/capsules.json')),'capsule_serial')
     try:
-        capsules_data = keyOrder(alphaOrder(spacexpython.capsules.capsules('',1)),'capsule_id')
+        capsules_data = keyOrder(alphaOrder(spacexpython.capsules.capsules('',1)),'capsule_serial')
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print("Failure on Capsules")
@@ -20,9 +20,9 @@ def test_capsules():
 
 def test_upcoming():
     upcoming_data=''
-    upcoming_result=keyOrder(alphaOrder(readJSONFile('capsules/upcoming.json')),'capsule_id')
+    upcoming_result=keyOrder(alphaOrder(readJSONFile('capsules/upcoming.json')),'capsule_serial')
     try:
-        upcoming_data = keyOrder(alphaOrder(spacexpython.capsules.upcoming()),'capsule_id')
+        upcoming_data = keyOrder(alphaOrder(spacexpython.capsules.upcoming()),'capsule_serial')
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print ("Failure on upcoming capsules")
@@ -31,10 +31,10 @@ def test_upcoming():
 
 def test_past():
     past_data=''
-    past_result=keyOrder(alphaOrder(readJSONFile('capsules/past.json')),'capsule_id')
+    past_result=keyOrder(alphaOrder(readJSONFile('capsules/past.json')),'capsule_serial')
 
     try:
-        past_data = keyOrder(alphaOrder(spacexpython.capsules.past()),'capsule_id')
+        past_data = keyOrder(alphaOrder(spacexpython.capsules.past()),'capsule_serial')
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print ("Failure on past capsules")

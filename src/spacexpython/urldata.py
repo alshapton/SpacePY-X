@@ -3,7 +3,6 @@
 
 This is a module defines the endpoints for the REST SpaceX API
 """
-#from builtins import object
 class Domain(object):
     """ Base URL from which to assemble request URLs """
     base = "https://api.spacexdata.com"
@@ -36,3 +35,9 @@ class Domain(object):
     one=main_capsules
     upcoming_capsules = main_capsules+"/upcoming"
     past_capsules = main_capsules+"/past"
+
+    """ Coree Information """
+    main_cores = "cores"
+    one=main_cores
+    upcoming_cores = main_cores+"/upcoming"
+    past_cores = main_cores+"/past"
