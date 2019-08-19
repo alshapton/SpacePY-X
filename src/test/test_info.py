@@ -1,7 +1,6 @@
 
 import sys
 sys.path.append('../')
-import spacexpython
 import pytest
 import spacexpython
 from spacexpython.exceptions import *

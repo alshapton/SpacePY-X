@@ -10,10 +10,11 @@ functions:
     * makeRequest - function to call a REST api
 """
 
-from . import urldata
 import json
-import requests
 import sys
+
+import requests
+
 sys.path.append('../')
 
 from .exceptions import *

@@ -1,9 +1,9 @@
 # Console entry point
 
+from . import capsules
+from . import cores
+from . import info
 from . import launches
 from . import rockets
-from . import capsules
-from . import info
-from . import utils
 from . import urldata
-from . import cores
+from . import utils
