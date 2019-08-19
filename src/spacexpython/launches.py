@@ -1,7 +1,7 @@
 from . import urldata
 from . import utils
 
-def all(parameters='',timeOut=1):
+def alllaunches(parameters='',timeOut=1):
     try:
         requestUrl = urldata.Domain.main + urldata.Domain.main_launches
     except utils.SpaceXReadTimeOut as e:
