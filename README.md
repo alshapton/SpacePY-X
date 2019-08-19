@@ -11,6 +11,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpacePY-X/issues)
 [![GitHub stars](https://img.shields.io/github/stars/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpacePY-X/stargazers)
 [![GitHub license](https://img.shields.io/github/license/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpacePY-X)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falshapton%2FSpacePY-X.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falshapton%2FSpacePY-X?ref=badge_shield)
 
 ### Simple and Easy API Wrapper for [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API)!
 
@@ -45,3 +46,7 @@ print(rocket_data)
 Jake Meyer's [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API)
 
 Based on work by [vinayphadnis](https://github.com/vinayphadnis/SpaceX-Python.git)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falshapton%2FSpacePY-X.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falshapton%2FSpacePY-X?ref=badge_large)
