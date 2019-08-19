@@ -99,8 +99,7 @@ def writeFile(filename,data):
     -------
     True
     """
-
-    filename='/tmp/'+filename
+      
     with open(filename, 'a+') as outfile:
         outfile.write(data)
     return True
