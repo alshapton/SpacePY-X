@@ -42,7 +42,7 @@ def test_past():
 
 
 def test_one():
-    once_data=''
+    one_data=''
     one_result=alphaOrder(readJSONFile('capsules/one_C105.json'))
     try:
         one_data = alphaOrder(spacexpython.capsules.one('C105'))
