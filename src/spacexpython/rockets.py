@@ -19,7 +19,7 @@ functions:
 from . import urldata
 from . import utils
 
-def all(parameters='',timeOut=1):
+def allrockets(parameters='',timeOut=1):
     """ Return a JSON document containing ALL rockets
 
     Parameters

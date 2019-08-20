@@ -12,7 +12,7 @@ def test_rockets():
     rockets_data=''
     rockets_result=keyOrder(alphaOrder(readJSONFile('rockets/all.json')),'rocket_id')
     try:
-        rockets_data = keyOrder(alphaOrder(spacexpython.rockets.all('',1)),'rocket_id')
+        rockets_data = keyOrder(alphaOrder(spacexpython.rockets.allrockets('',1)),'rocket_id')
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print ("Failure on all rockets")
@@ -22,7 +22,7 @@ def test_rocketsP():
     rockets_data=''
     rockets_result=keyOrder(alphaOrder(readJSONFile('rockets/all_limit1.json')),'rocket_id')
     try:
-        rockets_data = keyOrder(alphaOrder(spacexpython.rockets.all('{"limit":"1"}',1)),'rocket_id')
+        rockets_data = keyOrder(alphaOrder(spacexpython.rockets.allrockets('{"limit":"1"}',1)),'rocket_id')
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print ("Failure on all rockets")

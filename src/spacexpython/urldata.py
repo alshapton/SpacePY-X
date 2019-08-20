@@ -13,7 +13,7 @@ class Domain(object):
 
     """ Declaration of the endpoints """
 
-    """ Launches """
+    """ Launches Information """
     main_launches = "launches"
     latest_launches = main_launches + "/latest"
     next_launches =  main_launches + "/next"
@@ -36,8 +36,12 @@ class Domain(object):
     upcoming_capsules = main_capsules+"/upcoming"
     past_capsules = main_capsules+"/past"
 
-    """ Coree Information """
+    """ Cores Information """
     main_cores = "cores"
     one=main_cores
     upcoming_cores = main_cores+"/upcoming"
     past_cores = main_cores+"/past"
+
+    """ Dragons Information """
+    main_dragons = "dragons"
+    one=main_dragons
