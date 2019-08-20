@@ -24,10 +24,10 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Environment (please complete the following information):**
- - Platform: [e.g. Macintosh]
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Software release [e.g. 3.2.0a]
+ - Platform: e.g. Macintosh
+ - OS: e.g. iOS
+ - Browser e.g. chrome, safari
+ - Software release e.g. 3.2.0a
 -  Python Environment
 
 **Additional context**
