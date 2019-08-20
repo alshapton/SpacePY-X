@@ -1,11 +1,11 @@
 ---
 name: Clean up
 about: Template for request to clean up the code
-title: "[CLEANUP] - "
+title: ''
 labels: ''
 assignees: alshapton
 
----
+--- 
 
 *Describe the request*
 <br>
