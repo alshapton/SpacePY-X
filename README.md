@@ -13,25 +13,25 @@
 [![GitHub license](https://img.shields.io/github/license/alshapton/SpaceX-Python.svg)](https://github.com/alshapton/SpacePY-X)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falshapton%2FSpacePY-X.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falshapton%2FSpacePY-X?ref=badge_shield)
 
-### Simple and Easy API Wrapper for [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API)!
+## Simple and Easy API Wrapper for [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API)
 
 <br><br>
 
 </div>
 
-## Documentation
+### Documentation
 This API Wrapper aims to provide a simple and easy way to use the [SpaceX-API](https://github.com/r-spacex/SpaceX-API) in Python projects.
 <br>
 See the [Wiki](https://github.com/alshapton/SpacePY-X/wiki) for full wrapper documentation.
 
-## Installation
+### Installation
 
 Note that this supports Python 3 *ONLY*
 
 To install via `pip` use:
 `pip install spacexPython`
 
-## Basic Usage
+### Basic Usage
 
 The usage of the wrapper is very easy. It does not require any initialisation. Just import and start coding:
 ```python
@@ -41,12 +41,12 @@ rocket_data = spacexpython.rockets.falconHeavy()
 print(rocket_data)
 ```
 
-## Credits
+### Credits
 
 Jake Meyer's [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API)
 
 Based on work by [vinayphadnis](https://github.com/vinayphadnis/SpaceX-Python.git)
 
 
-## License
+### License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falshapton%2FSpacePY-X.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falshapton%2FSpacePY-X?ref=badge_large)
