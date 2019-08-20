@@ -7,13 +7,13 @@ assignees: alshapton
 
 ---
 
-**Describe the request**
-
+*Describe the request*
+<br>
 The reason for the cleanup request
 
-**Sections of code to be removed/enhanced or cleaned**
+*Sections of code to be removed/enhanced or cleaned:*
 
-
-
-**Additional context**
+<br>
+*Additional context:*
+<br>
 Add any other context .
