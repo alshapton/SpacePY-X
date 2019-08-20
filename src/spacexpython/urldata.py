@@ -45,3 +45,7 @@ class Domain(object):
     """ Dragons Information """
     main_dragons = "dragons"
     one=main_dragons
+
+    """ Landing Pads Information """
+    main_landingpads = "landpads"
+    one=main_landingpads
