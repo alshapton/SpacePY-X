@@ -32,20 +32,19 @@ class Domain(object):
 
     """ Capsule Information """
     main_capsules = "capsules"
-    one=main_capsules
     upcoming_capsules = main_capsules+"/upcoming"
     past_capsules = main_capsules+"/past"
 
     """ Cores Information """
     main_cores = "cores"
-    one=main_cores
     upcoming_cores = main_cores+"/upcoming"
     past_cores = main_cores+"/past"
 
     """ Dragons Information """
     main_dragons = "dragons"
-    one=main_dragons
 
     """ Landing Pads Information """
     main_landingpads = "landpads"
-    one=main_landingpads
+
+    """ History Information"""
+    main_history = "history"

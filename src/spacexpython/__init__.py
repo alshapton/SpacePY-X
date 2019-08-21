@@ -3,6 +3,7 @@
 from . import capsules
 from . import cores
 from . import dragons
+from . import history
 from . import info
 from . import landingpads
 from . import launches
