@@ -20,10 +20,11 @@ def test_dragons():
 
 def test_one_dragon():
     one_data=''
-    one_result=keyOrder(alphaOrder(readJSONFile('dragons/all.json')),'id')
+    one_result=alphaOrder(readJSONFile('dragons/onedragon1.json'))
     try:
-        one_data = keyOrder(alphaOrder(spacexpython.dragons.dragons('',1)),'id')
+        one_data = alphaOrder(spacexpython.dragons.one('dragon1','',1))
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print("Failure on dragons.one('dragon1")
     assert one_data == one_result
+
