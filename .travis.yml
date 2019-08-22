@@ -1,16 +1,13 @@
 # Configuration of Virtual Machine
-
 dist: xenial
 language: python
 python:
   - "3.7"
-
 # Installation of dependencies
 install:
   - pip install -r requirements.txt --upgrade-strategy=eager
   - pip install pytest pytest-cov
   - pip install codecov
-
 # Run Test Suite
 script:
   - cd src/test
