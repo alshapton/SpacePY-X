@@ -6,7 +6,7 @@ README = open(os.path.join(here, 'README-pypi.rst')).read()
 NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 
 
-version = '1.0.3'
+version = 'v1.1.0.a3'
 
 install_requires = [{
     # List your project dependencies here.
@@ -26,7 +26,7 @@ setup(name='SpacePY-X',
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    keywords='wrapper api spacex',
+    keywords='wrapper api spacex python',
     author='Andrew Shapton',
     author_email='alshapton@gmail.com',
     url='https://github.com/alshapton/SpacePY-X',
