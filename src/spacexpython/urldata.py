@@ -51,3 +51,6 @@ class Domain(object):
 
     """ Launch Pads Information """
     main_launchpads = "launchpads"
+
+    """ Mission Information """
+    main_missions = "missions"

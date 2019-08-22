@@ -8,6 +8,7 @@ from . import info
 from . import landingpads
 from . import launches
 from . import launchpads
+from . import missions
 from . import rockets
 from . import urldata
 from . import utils
