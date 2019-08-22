@@ -1,15 +1,19 @@
+# Configuration of Virtual Machine
+
 dist: xenial
 language: python
 python:
   - "3.7"
-# Command to install dependencies
+
+# Installation of dependencies
 install:
   - pip install -r requirements.txt --upgrade-strategy=eager
   - pip install pytest pytest-cov
   - pip install codecov
-# Command to run tests
+
+# Run Test Suite
 script:
   - cd src/test
-  - ./test.zsh $TRAVIS_PYTHON_VERSION
+  - ./test.zsh 
   - py.test --cov-report term  --cov=./
   - codecov --token=007bcce9-e4a7-4f29-ba4c-e4c7223799cd

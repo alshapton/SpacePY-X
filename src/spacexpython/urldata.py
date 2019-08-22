@@ -48,3 +48,6 @@ class Domain(object):
 
     """ History Information"""
     main_history = "history"
+
+    """ Launch Pads Information """
+    main_launchpads = "launchpads"
