@@ -54,3 +54,6 @@ class Domain(object):
 
     """ Mission Information """
     main_missions = "missions"
+
+    """ Payload Information """
+    main_payloads = "payloads"
