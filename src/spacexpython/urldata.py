@@ -11,9 +11,9 @@ class Domain(object):
     version = "v3"
     main = base + "/" + version + "/"
 
-    """ Declaration of the endpoints """
+    """ Declaration of the endpoints
 
-    """ Launches Information """
+        Launches Information """
     main_launches = "launches"
     latest_launches = main_launches + "/latest"
     next_launches =  main_launches + "/next"
