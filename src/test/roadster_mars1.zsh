@@ -1,1 +1,1 @@
-cat roadster.output  | awk '/SOE/,/EOE/'  | awk 'NR==2 {print $5}'
+cat roadster.output  | awk '/SOE/,/EOE/' | head -2  | tail -1 | awk '{print $5}'
