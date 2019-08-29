@@ -15,13 +15,16 @@ from time import gmtime, strftime
 from datetime import timedelta,datetime
 
 
-# Conversion factor - km to miles
+# Conversion factors:
+# Kilometers to Miles
+# Astronomical Units to Kilometres
 KM_TO_MILES = 0.621371
+AU_TO_KM = 149598073.0
 
 NOW=strftime("%Y-%m-%d %H:%M:%S", gmtime())
 END=datetime.now()+ timedelta(days=1)
 TOMORROW=END.strftime('%Y-%m-%d %H:%M:%S')
-#strftime("%Y-%m-%d %H:%M:%S",datetime.now() + timedelta(days=1))
+
 
 def test_roadster(tmpdir):
     roadster_data=''
@@ -34,23 +37,25 @@ def test_roadster(tmpdir):
     "&CAL_FORMAT= 'CAL'&TIME_DIGITS= 'MINUTES'&ANG_FORMAT= 'HMS'&OUT_UNITS= 'KM-S'&RANGE_UNITS= 'AU'"  + \
     "&APPARENT= 'AIRLESS'&SUPPRESS_RANGE_RATE= 'NO'&SKIP_DAYLT= 'NO'&EXTRA_PREC= 'NO'&R_T_S_ONLY= 'NO'" + \
     "&REF_SYSTEM= 'J2000'&CSV_FORMAT= 'NO'&OBJ_DATA= 'YES'&QUANTITIES= '19,20,22'"
-    fg=makeHTTP(mars, 1)
 
+    fg=makeHTTP(mars, 1)
 
     writeFile('roadster.output',fg)
 
     # Distance from Mars
     sb="('roadster_mars1.zsh')"
     g=subprocess.run(sb,stdin=subprocess.PIPE, stdout=subprocess.PIPE,shell=True,universal_newlines=True)
-    distanceFromMarskm=float(g.stdout.strip() ) * 149598073.0
-    distanceFromMarsmi = float(distanceFromMarskm) * KM_TO_MILES
+    print (g.stdout)
+    distanceFromMarskm=float(g.stdout.strip() ) * float(149598073.0)
+    distanceFromMarsmi = float(distanceFromMarskm) * float(KM_TO_MILES)
 
     # Orbital Speed
     sb="('roadster_mars2.zsh')"
     g=subprocess.run(sb,stdin=subprocess.PIPE, stdout=subprocess.PIPE,shell=True,universal_newlines=True)
-    OrbitalSpeedkm=float(g.stdout.strip() ) * 60.0 * 60.0
-    OrbitalSpeedmi = float(OrbitalSpeedkm) * KM_TO_MILES
+    OrbitalSpeedkm=float(g.stdout.strip() ) * float(60.0) * float(60.0)
+    OrbitalSpeedmi = float(OrbitalSpeedkm) * float(KM_TO_MILES)
 
+    print(distanceFromMarskm)
 
 
     roadster_result=alphaOrder(readJSONFile('roadster/roadster.json'))
