@@ -11,6 +11,8 @@ script:
 - "./test.zsh"
 - py.test --cov-report term  --cov=./
 - codecov --token=007bcce9-e4a7-4f29-ba4c-e4c7223799cd
+before_deploy:
+- cd ../..
 deploy:
   provider: pypi
   user: alshapton
