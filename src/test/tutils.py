@@ -87,7 +87,7 @@ def writeJSONFile(filename,JSONDocument):
         json.dump(JSONDocument, outfile)
     return True
 
-def writeFile(filename,data):
+def writeFile(filename,data,mode):
     """ Writes/appends data to a file
 
     Parameters
@@ -102,7 +102,7 @@ def writeFile(filename,data):
     True
     """
 
-    with open(filename, 'a+') as outfile:
+    with open(filename, mode) as outfile:
         outfile.write(data)
     return True
 

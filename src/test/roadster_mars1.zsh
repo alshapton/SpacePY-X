@@ -1,1 +1,1 @@
-cat roadster.output  | awk '/SOE/,/EOE/' | head -2  | tail -1 | awk '{print $5}'
+cat data/roadster/roadster.mars  | awk '/SOE/,/EOE/' | head -2  | tail -1 | awk '{print $5}'
