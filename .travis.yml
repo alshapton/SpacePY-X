@@ -1,16 +1,20 @@
-# Configuration of Virtual Machine
 dist: xenial
 language: python
 python:
-  - "3.7"
-# Installation of dependencies
+- '3.7'
 install:
-  - pip install -r requirements.txt --upgrade-strategy=eager
-  - pip install pytest pytest-cov
-  - pip install codecov
-# Run Test Suite
+- pip install -r requirements.txt --upgrade-strategy=eager
+- pip install pytest pytest-cov
+- pip install codecov
 script:
-  - cd src/test
-  - ./test.zsh 
-  - py.test --cov-report term  --cov=./
-  - codecov --token=007bcce9-e4a7-4f29-ba4c-e4c7223799cd
+- cd src/test
+- "./test.zsh"
+- py.test --cov-report term  --cov=./
+- codecov --token=007bcce9-e4a7-4f29-ba4c-e4c7223799cd
+before_deploy:
+- cd ../..
+deploy:
+  provider: pypi
+  user: alshapton
+  password:
+    secure: D+NUQd69AI2pX1HtAYYdJCSidZEUgV2j+mHJUzZNi2DDzQ58gCwSd9P0eirdh0bUi4TnGJXl1Fzau5vF97IUb5Xwo+9CVI/xAPPiWmBjbn3cVBcG8nHvmZI6r8ZAqzohSM6IfT77QTRWodmXl03YI6pdjOpPQRjchgApkKyism0lngqxYmOjssZFN/cQt4USvVfZ7V/rfETbYKv0jWWcWRv3/N746HO94V+KFYE66TBT8P5Ubmk+ni2AytLeob5WjOoY47cjoWQ6Jf8r8x3sfqFRYV34rmJ6p41CIfUG1CBYsM6j3r2IIs9SJkT5+j4YzMq/5Z8MkilTOF04s6hWioiiu1MMKoUBDlKIejEwKCKxILmBx2hx4azdpFFiCnq9v4x534UjmXj6cYDACzjEIVrfGN5kVkN14YzgHoWPFKiHs1jk6MoYTnBlSVZGT/CGOFySzcxBZHX/xcWn9/i3yErpbPizd59JIloFWeKCS+YoEiXdMXCzUC+cngPXdHYZZndaltzGW3VGxMb6qn8ZPXDCjYvC5s5kq+oZgSRbiYlZCDfPr7AZPbA/mBWTJFIOXHXibW44B46JlgzaH7MvafnFQ7cFHX9i/7tP3yzda52TTCTOdibxgI+uIBIXqf1AJwElYXJgUx7YTuUQAWCVn/mO/hHjwiUz/AserVA3N7k=

@@ -20,7 +20,7 @@ install_requires = [{
 setup(name='SpacePY-X',
     version=version,
     description="Simple Python wrapper for the SpaceX API",
-    long_description=README + '\n\n' + NEWS,
+    long_description="Simple Python wrapper for the SpaceX API",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
