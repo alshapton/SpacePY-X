@@ -139,14 +139,14 @@
  
  
 *******************************************************************************
-Ephemeris / WWW_USER Fri Aug 30 20:20:02 2019 Pasadena, USA      / Horizons    
+Ephemeris / WWW_USER Sun Sep  1 12:29:15 2019 Pasadena, USA      / Horizons    
 *******************************************************************************
 Target body name: SpaceX Roadster (spacecraft) (-143205) {source: tesla_s10}
 Center body name: Mars (499)                      {source: mar097}
 Center-site name: BODYCENTRIC
 *******************************************************************************
-Start time      : A.D. 2019-Aug-30 20:20:01.0000 UT      
-Stop  time      : A.D. 2019-Aug-31 21:20:01.0000 UT      
+Start time      : A.D. 2019-Sep-01 12:29:14.0000 UT      
+Stop  time      : A.D. 2019-Sep-02 13:29:14.0000 UT      
 Step-size       : 1440 minutes
 *******************************************************************************
 Target pole/equ : No model available
@@ -162,8 +162,8 @@ Rel. lght bnd GM: 1.3271E+11, 4.2828E+04 km^3/s^2
 Atmos refraction: NO (AIRLESS)
 RA format       : HMS
 Time format     : CAL 
-EOP file        : eop.190829.p191120                                           
-EOP coverage    : DATA-BASED 1962-JAN-20 TO 2019-AUG-29. PREDICTS-> 2019-NOV-19
+EOP file        : eop.190830.p191121                                           
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2019-AUG-30. PREDICTS-> 2019-NOV-20
 Units conversion: 1 au= 149597870.700 km, c= 299792.458 km/s, 1 day= 86400.0 s 
 Table cut-offs 1: Elevation (-90.0deg=NO ),Airmass     n.a.    , Daylight (NO )
 Table cut-offs 2: Solar elongation (  0.0,180.0=NO ),Local Hour Angle( 0.0=NO )
@@ -172,8 +172,8 @@ Table cut-offs 3: RA/DEC angular rate (     0.0=NO )
  Date__(UT)__HR:MN:SS                   r        rdot            delta      deldot   VmagSn   VmagOb
 ****************************************************************************************************
 $$SOE
- 2019-Aug-30 20:20:01      0.995690832685   2.0851233 0.68514747333960  -7.1578485 33.35192 12.27920
- 2019-Aug-31 20:20:01      0.996931368713   2.2104611 0.68112921637037  -6.7557588 33.31866 12.17643
+ 2019-Sep-01 12:29:14      0.997806947614   2.2941837 0.67855601846169  -6.4825400 33.29521 12.10763
+ 2019-Sep-02 12:29:14      0.999167670766   2.4175836 0.67492994943472  -6.0732250 33.25883 12.00601
 $$EOE
 ****************************************************************************************************
 Column meaning:
@@ -249,8 +249,8 @@ COMMAND = '-143205'
 CENTER =  '500@499'
 MAKE_EPHEM =  'YES'
 TABLE_TYPE =  'OBSERVER'
-START_TIME =  '2019-08-30 20:20:01'
-STOP_TIME =  '2019-08-31 21:20:01'
+START_TIME =  '2019-09-01 12:29:14'
+STOP_TIME =  '2019-09-02 13:29:14'
 STEP_SIZE =  '1 d'
 CAL_FORMAT =  'CAL'
 TIME_DIGITS =  'MINUTES'

@@ -66,7 +66,7 @@ def setup_module():
     writeFile('data/roadster/roadster.mars',fg,'w')
 
     # Distance from Mars
-    sb="('roadster_mars1.zsh')"
+    sb=['roadster_mars0.zsh marsDistance','marsDistance']
     g=subprocess.run(sb,stdin=subprocess.PIPE, stdout=subprocess.PIPE,shell=True,universal_newlines=True)
     distanceFromMarskm=float(g.stdout.strip() ) * float(AU_TO_KM)
     distanceFromMarsmi = float(distanceFromMarskm) * float(KM_TO_MILES)
@@ -77,7 +77,7 @@ def setup_module():
     CDATA=CDATA+ '"LCL_mars_distance_mi":'+ str(distanceFromMarsmi) + ','
 
     # Orbital Speed
-    sb="('roadster_mars2.zsh')"
+    sb="('roadster_mars0.zsh speed')"
     g=subprocess.run(sb,stdin=subprocess.PIPE, stdout=subprocess.PIPE,shell=True,universal_newlines=True)
     OrbitalSpeedkph=float(g.stdout.strip() ) * (float(60.0) * float(60.0))
     OrbitalSpeedmph = float(OrbitalSpeedkph) * float(KM_TO_MILES)
