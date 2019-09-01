@@ -139,11 +139,11 @@
  
  
 *******************************************************************************
-Ephemeris / WWW_USER Sun Sep  1 20:23:33 2019 Pasadena, USA      / Horizons    
+Ephemeris / WWW_USER Sun Sep  1 20:23:35 2019 Pasadena, USA      / Horizons    
 *******************************************************************************
 Target body name: SpaceX Roadster (spacecraft) (-143205) {source: tesla_s10}
-Center body name: Mars (499)                      {source: mar097}
-Center-site name: BODYCENTRIC
+Center body name: Earth (399)                     {source: DE431mx}
+Center-site name: GEOCENTRIC
 *******************************************************************************
 Start time      : A.D. 2019-Sep-01 20:23:32.0000 UT      
 Stop  time      : A.D. 2019-Sep-02 21:23:32.0000 UT      
@@ -151,31 +151,31 @@ Step-size       : 1440 minutes
 *******************************************************************************
 Target pole/equ : No model available
 Target radii    : (unavailable)                                                
-Center geodetic : 0.00000000,0.00000000,0.0000000 {W-lon(deg),Lat(deg),Alt(km)}
-Center cylindric: 0.00000000,0.00000000,0.0000000 {W-lon(deg),Dxy(km),Dz(km)}
-Center pole/equ : IAU_MARS                        {West-longitude positive}
-Center radii    : 3396.2 x 3396.2 x 3376.2 km     {Equator, meridian, pole}    
+Center geodetic : 0.00000000,0.00000000,0.0000000 {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.00000000,0.00000000,0.0000000 {E-lon(deg),Dxy(km),Dz(km)}
+Center pole/equ : High-precision EOP model        {East-longitude positive}
+Center radii    : 6378.1 x 6378.1 x 6356.8 km     {Equator, meridian, pole}    
 Target primary  : Earth
-Vis. interferer : PHOBOS (R_eq= 13.000) km        {source: mar097}
-Rel. light bend : Sun, MARS                       {source: mar097}
-Rel. lght bnd GM: 1.3271E+11, 4.2828E+04 km^3/s^2                              
+Vis. interferer : MOON (R_eq= 1737.400) km        {source: DE431mx}
+Rel. light bend : Sun, EARTH                      {source: DE431mx}
+Rel. lght bnd GM: 1.3271E+11, 3.9860E+05 km^3/s^2                              
 Atmos refraction: NO (AIRLESS)
 RA format       : HMS
 Time format     : CAL 
 EOP file        : eop.190830.p191121                                           
 EOP coverage    : DATA-BASED 1962-JAN-20 TO 2019-AUG-30. PREDICTS-> 2019-NOV-20
 Units conversion: 1 au= 149597870.700 km, c= 299792.458 km/s, 1 day= 86400.0 s 
-Table cut-offs 1: Elevation (-90.0deg=NO ),Airmass     n.a.    , Daylight (NO )
+Table cut-offs 1: Elevation (-90.0deg=NO ),Airmass (>38.000=NO), Daylight (NO )
 Table cut-offs 2: Solar elongation (  0.0,180.0=NO ),Local Hour Angle( 0.0=NO )
 Table cut-offs 3: RA/DEC angular rate (     0.0=NO )                           
-****************************************************************************************************
- Date__(UT)__HR:MN:SS                   r        rdot            delta      deldot   VmagSn   VmagOb
-****************************************************************************************************
+**********************************************************************************
+ Date__(UT)__HR:MN:SS                   r        rdot            delta      deldot
+**********************************************************************************
 $$SOE
- 2019-Sep-01 20:23:32      0.998247260160   2.3349613 0.67733558443703  -6.3481456 33.28343 12.07408
- 2019-Sep-02 20:23:32      0.999631419604   2.4579614 0.67378750158071  -5.9376135 33.24644 11.97269
+ 2019-Sep-01 20:23:32      0.998236914025   2.3340127 2.00603406378864   2.0644602
+ 2019-Sep-02 20:23:32      0.999620489191   2.4570188 2.00725754192696   2.1723234
 $$EOE
-****************************************************************************************************
+**********************************************************************************
 Column meaning:
  
 TIME
@@ -225,12 +225,6 @@ coordinate center, and indicates relative motion. A positive "deldot" means the
 target center is moving away from the observer (coordinate center). A negative
 "deldot" means the target center is moving toward the observer.
 Units: AU and KM/S
- 
- VmagSn VmagOb =
-   Magnitude of target center velocity wrt Sun ("VmagSn") and the observer
-("VmagOb") at the time light left the target center to be observed (print
-time minus 1-way light-time).  These are absolute values of the velocity
-vectors (total speeds) and do not indicate direction of motion.  Units: KM/S
 
 
  Computations by ...
@@ -242,27 +236,27 @@ vectors (total speeds) and do not indicate direction of motion.  Units: KM/S
                   telnet ssd.jpl.nasa.gov 6775    (via command-line)
      Author     : Jon.D.Giorgini@jpl.nasa.gov
 
-****************************************************************************************************
+**********************************************************************************
 
 !$$SOF
 COMMAND = '-143205'
-CENTER =  '500@499'
-MAKE_EPHEM =  'YES'
-TABLE_TYPE =  'OBSERVER'
-START_TIME =  '2019-09-01 20:23:32'
+CENTER = '500@399'
+MAKE_EPHEM = 'YES'
+TABLE_TYPE = 'OBSERVER'
+START_TIME = '2019-09-01 20:23:32'
 STOP_TIME =  '2019-09-02 21:23:32'
-STEP_SIZE =  '1 d'
-CAL_FORMAT =  'CAL'
-TIME_DIGITS =  'MINUTES'
-ANG_FORMAT =  'HMS'
-OUT_UNITS =  'KM-S'
-RANGE_UNITS =  'AU'
-APPARENT =  'AIRLESS'
-SUPPRESS_RANGE_RATE =  'NO'
-SKIP_DAYLT =  'NO'
-EXTRA_PREC =  'NO'
-R_T_S_ONLY =  'NO'
-REF_SYSTEM =  'J2000'
-CSV_FORMAT =  'NO'
-OBJ_DATA =  'YES'
-QUANTITIES =  '19,20,22'
+STEP_SIZE =  '1 d' 
+CAL_FORMAT =  'CAL' 
+TIME_DIGITS =  'MINUTES' 
+ANG_FORMAT =  'HMS' 
+OUT_UNITS =  'KM-S' 
+RANGE_UNITS =  'AU' 
+APPARENT =  'AIRLESS' 
+SUPPRESS_RANGE_RATE =  'NO' 
+SKIP_DAYLT =  'NO' 
+EXTRA_PREC =  'NO' 
+R_T_S_ONLY =  'NO' 
+REF_SYSTEM =  'J2000' 
+CSV_FORMAT =  'NO' 
+OBJ_DATA =  'YES' 
+QUANTITIES =  '19,20'

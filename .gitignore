@@ -14,4 +14,6 @@ coverage.xml
 .coverage
 
 .idea/*
-roadster.output
+roadster.earth
+roadster.mars
+roadster.orbit

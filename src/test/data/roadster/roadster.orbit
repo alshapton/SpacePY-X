@@ -139,99 +139,74 @@
  
  
 *******************************************************************************
-Ephemeris / WWW_USER Sun Sep  1 20:23:33 2019 Pasadena, USA      / Horizons    
+Ephemeris / WWW_USER Sun Sep  1 20:23:34 2019 Pasadena, USA      / Horizons    
 *******************************************************************************
 Target body name: SpaceX Roadster (spacecraft) (-143205) {source: tesla_s10}
-Center body name: Mars (499)                      {source: mar097}
-Center-site name: BODYCENTRIC
+Center body name: Sun (10)                        {source: DE431mx}
+Center-site name: BODY CENTER
 *******************************************************************************
-Start time      : A.D. 2019-Sep-01 20:23:32.0000 UT      
-Stop  time      : A.D. 2019-Sep-02 21:23:32.0000 UT      
+Start time      : A.D. 2019-Sep-01 20:23:32.0000 TDB
+Stop  time      : A.D. 2019-Sep-02 21:23:32.0000 TDB
 Step-size       : 1440 minutes
 *******************************************************************************
-Target pole/equ : No model available
-Target radii    : (unavailable)                                                
-Center geodetic : 0.00000000,0.00000000,0.0000000 {W-lon(deg),Lat(deg),Alt(km)}
-Center cylindric: 0.00000000,0.00000000,0.0000000 {W-lon(deg),Dxy(km),Dz(km)}
-Center pole/equ : IAU_MARS                        {West-longitude positive}
-Center radii    : 3396.2 x 3396.2 x 3376.2 km     {Equator, meridian, pole}    
-Target primary  : Earth
-Vis. interferer : PHOBOS (R_eq= 13.000) km        {source: mar097}
-Rel. light bend : Sun, MARS                       {source: mar097}
-Rel. lght bnd GM: 1.3271E+11, 4.2828E+04 km^3/s^2                              
-Atmos refraction: NO (AIRLESS)
-RA format       : HMS
-Time format     : CAL 
-EOP file        : eop.190830.p191121                                           
-EOP coverage    : DATA-BASED 1962-JAN-20 TO 2019-AUG-30. PREDICTS-> 2019-NOV-20
-Units conversion: 1 au= 149597870.700 km, c= 299792.458 km/s, 1 day= 86400.0 s 
-Table cut-offs 1: Elevation (-90.0deg=NO ),Airmass     n.a.    , Daylight (NO )
-Table cut-offs 2: Solar elongation (  0.0,180.0=NO ),Local Hour Angle( 0.0=NO )
-Table cut-offs 3: RA/DEC angular rate (     0.0=NO )                           
-****************************************************************************************************
- Date__(UT)__HR:MN:SS                   r        rdot            delta      deldot   VmagSn   VmagOb
-****************************************************************************************************
+Center geodetic : 0.00000000,0.00000000,0.0000000 {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.00000000,0.00000000,0.0000000 {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 696000.0 x 696000.0 x 696000.0 k{Equator, meridian, pole}    
+Keplerian GM    : 2.9591220828559093E-04 au^3/d^2
+Output units    : AU-D, deg, Julian Day Number (Tp)                            
+Output type     : GEOMETRIC osculating elements
+Output format   : 10
+Reference frame : ICRF/J2000.0                                                 
+Coordinate systm: Ecliptic and Mean Equinox of Reference Epoch                 
+*******************************************************************************
+JDTDB
+   EC    QR   IN
+   OM    W    Tp
+   N     MA   TA
+   A     AD   PR
+*******************************************************************************
 $$SOE
- 2019-Sep-01 20:23:32      0.998247260160   2.3349613 0.67733558443703  -6.3481456 33.28343 12.07408
- 2019-Sep-02 20:23:32      0.999631419604   2.4579614 0.67378750158071  -5.9376135 33.24644 11.97269
+2458728.349675926 = A.D. 2019-Sep-01 20:23:32.0000 TDB 
+ EC= 2.557481469362682E-01 QR= 9.860547591650467E-01 IN= 1.077431528980875E+00
+ OM= 3.170911597380309E+02 W = 1.774827939853338E+02 Tp=  2458710.519675101154
+ N = 6.462974025992021E-01 MA= 1.152348322147627E+01 TA= 1.994704234001258E+01
+ A = 1.324893925498374E+00 AD= 1.663733091831701E+00 PR= 5.570191038246398E+02
+2458729.349675926 = A.D. 2019-Sep-02 20:23:32.0000 TDB 
+ EC= 2.557481266284088E-01 QR= 9.860548138427720E-01 IN= 1.077430073362891E+00
+ OM= 3.170911346226706E+02 W = 1.774828624241855E+02 Tp=  2458710.519712859765
+ N = 6.462973752950164E-01 MA= 1.216975570662570E+01 TA= 2.104607898709072E+01
+ A = 1.324893962813652E+00 AD= 1.663733111784532E+00 PR= 5.570191273570780E+02
 $$EOE
-****************************************************************************************************
-Column meaning:
- 
-TIME
+*******************************************************************************
+Coordinate system description:
 
-  Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
-prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
-civil or "wall-clock" time-scale. UTC is kept within 0.9 seconds of UT1
-by introduction of integer leap-seconds for 1972 and later.
+  Ecliptic and Mean Equinox of Reference Epoch
 
-  Conversion from the internal Barycentric Dynamical Time (TDB) to the
-non-uniform civil UT time-scale requested for output has not been determined
-for UTC times after the next July or January 1st. Therefore, the last known
-leap-second is used as a constant over future intervals.
+    Reference epoch: J2000.0
+    XY-plane: plane of the Earth's orbit at the reference epoch
+              Note: obliquity of 84381.448 arcseconds wrt ICRF equator (IAU76)
+    X-axis  : out along ascending node of instantaneous plane of the Earth's
+              orbit and the Earth's mean equator at the reference epoch
+    Z-axis  : perpendicular to the xy-plane in the directional (+ or -) sense
+              of Earth's north pole at the reference epoch.
 
-  Time tags refer to the UT time-scale conversion on Earth regardless of
-where the observer is located in the solar system. For example, if an
-observation from the surface of another body has an output time-tag of
-12:31:00 UT, it refers to a time-scale conversion from TDB to UT valid
-at the center of the Earth at that instant, not the observer's location
-elsewhere in the solar system, where clock rates may differ slightly due
-to the local gravity field and there is no precisely defined or adopted
-"UT" analog.
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
 
-  Any 'b' symbol in the 1st-column denotes a B.C. date. First-column blank
-(" ") denotes an A.D. date. Calendar dates prior to 1582-Oct-15 are in the
-Julian calendar system. Later calendar dates are in the Gregorian system.
+    JDTDB    Julian Day Number, Barycentric Dynamical Time
+      EC     Eccentricity, e                                                   
+      QR     Periapsis distance, q (au)                                        
+      IN     Inclination w.r.t XY-plane, i (degrees)                           
+      OM     Longitude of Ascending Node, OMEGA, (degrees)                     
+      W      Argument of Perifocus, w (degrees)                                
+      Tp     Time of periapsis (Julian Day Number)                             
+      N      Mean motion, n (degrees/day)                                      
+      MA     Mean anomaly, M (degrees)                                         
+      TA     True anomaly, nu (degrees)                                        
+      A      Semi-major axis, a (au)                                           
+      AD     Apoapsis distance (au)                                            
+      PR     Sidereal orbit period (day)                                       
 
-  NOTE: "n.a." in output means quantity "not available" at the print-time.
- 
- r       rdot =
-   Heliocentric range ("r", light-time corrected) and range-rate ("rdot")
-of the target center at the instant light seen by the observer at print-time
-would have left the target center (print-time minus down-leg light-time).
-The Sun-to-target distance traveled by a ray of light emanating from the
-center of the Sun that reaches the target center point at some instant and
-is recordable by the observer one down-leg light-time later at print-time.
-Units: AU and KM/S
- 
- delta  deldot =
-   Range ("delta") and range-rate ("delta-dot") of target center with respect
-to the observer at the instant light seen by the observer at print-time would
-have left the target center (print-time minus down-leg light-time); the
-distance traveled by a light ray emanating from the center of the target and
-recorded by the observer at print-time. "deldot" is a projection of the
-velocity vector along this ray, the light-time-corrected line-of-sight from the
-coordinate center, and indicates relative motion. A positive "deldot" means the
-target center is moving away from the observer (coordinate center). A negative
-"deldot" means the target center is moving toward the observer.
-Units: AU and KM/S
- 
- VmagSn VmagOb =
-   Magnitude of target center velocity wrt Sun ("VmagSn") and the observer
-("VmagOb") at the time light left the target center to be observed (print
-time minus 1-way light-time).  These are absolute values of the velocity
-vectors (total speeds) and do not indicate direction of motion.  Units: KM/S
-
+Geometric states/elements have no aberrations applied.
 
  Computations by ...
      Solar System Dynamics Group, Horizons On-Line Ephemeris System
@@ -239,30 +214,23 @@ vectors (total speeds) and do not indicate direction of motion.  Units: KM/S
      Pasadena, CA  91109   USA
      Information: http://ssd.jpl.nasa.gov/
      Connect    : telnet://ssd.jpl.nasa.gov:6775  (via browser)
+                  http://ssd.jpl.nasa.gov/?horizons
                   telnet ssd.jpl.nasa.gov 6775    (via command-line)
      Author     : Jon.D.Giorgini@jpl.nasa.gov
-
-****************************************************************************************************
+*******************************************************************************
 
 !$$SOF
 COMMAND = '-143205'
-CENTER =  '500@499'
+CENTER =  '500@10'
 MAKE_EPHEM =  'YES'
-TABLE_TYPE =  'OBSERVER'
+TABLE_TYPE =  'ELEMENTS'
 START_TIME =  '2019-09-01 20:23:32'
 STOP_TIME =  '2019-09-02 21:23:32'
 STEP_SIZE =  '1 d'
-CAL_FORMAT =  'CAL'
-TIME_DIGITS =  'MINUTES'
-ANG_FORMAT =  'HMS'
-OUT_UNITS =  'KM-S'
-RANGE_UNITS =  'AU'
-APPARENT =  'AIRLESS'
-SUPPRESS_RANGE_RATE =  'NO'
-SKIP_DAYLT =  'NO'
-EXTRA_PREC =  'NO'
-R_T_S_ONLY =  'NO'
-REF_SYSTEM =  'J2000'
-CSV_FORMAT =  'NO'
+OUT_UNITS =  'AU-D'
+REF_PLANE =  'ECLIPTIC' 
+REF_SYSTEM =  'J2000' 
+TP_TYPE =  'ABSOLUTE' 
+ELEM_LABELS =  'YES' 
+CSV_FORMAT =  'NO' 
 OBJ_DATA =  'YES'
-QUANTITIES =  '19,20,22'

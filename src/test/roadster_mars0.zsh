@@ -3,7 +3,7 @@
 #
 # Parameters
 
-
+echo $1 > fred
 REQUIRED_VALUE=$1
 case $REQUIRED_VALUE in
   marsDistance)
@@ -14,4 +14,7 @@ case $REQUIRED_VALUE in
       # Extract the roadster's orbital speed
       cat data/roadster/roadster.mars  | awk '/SOE/,/EOE/'  | awk 'NR==2 {print $7}'
       ;;
+  epoch)
+    # Extract the EPOCH from the orbit file
+    cat data/roadster/roadster.orbit | grep "EPOCH=" | awk '{print $2}'
 esac
