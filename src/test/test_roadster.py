@@ -67,14 +67,14 @@ def test_details(setup_module):
     
 def test_mars_distance_km(setup_module):
     assert minus_percent(1, json.loads(setup_module)["LCL_mars_distance_km"]) <= \
-                            json.loads(setup_module)["API_mars_distance_km"] <= \
-            plus_percent(1, json.loads(setup_module)["LCL_mars_distance_km"])
+    json.loads(setup_module)["API_mars_distance_km"] <= \
+    plus_percent(1, json.loads(setup_module)["LCL_mars_distance_km"])
 
     
 def test_mars_distance_mi(setup_module):
     assert minus_percent(1, json.loads(setup_module)["LCL_mars_distance_mi"]) <= \
-                            json.loads(setup_module)["API_mars_distance_mi"] <= \
-            plus_percent(1, json.loads(setup_module)["LCL_mars_distance_mi"])
+    json.loads(setup_module)["API_mars_distance_mi"] <= \
+    plus_percent(1, json.loads(setup_module)["LCL_mars_distance_mi"])
 
     
 def test_earth_distance_km(setup_module):
@@ -333,11 +333,9 @@ def teardown_module():
         os.remove(BASE + 'orbit')
     return True
 
-    '''
-        Helper functions
-    '''
-
-
+    
+    # Helper functions
+    
 def percentage(percent, whole):
     return (percent * whole) / 100.0
 
