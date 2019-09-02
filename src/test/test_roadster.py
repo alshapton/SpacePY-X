@@ -22,7 +22,7 @@ END = datetime.now() + timedelta(days=1)
 TOMORROW = END.strftime('%Y-%m-%d %H:%M:%S')
 
 # Base directory for API-sourced data
-BASE = './data/roadster/roadster.'
+BASE = 'data/roadster/roadster.'
 
 
 def test_name(setup_module):
