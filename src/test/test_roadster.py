@@ -22,7 +22,7 @@ END = datetime.now() + timedelta(days=1)
 TOMORROW = END.strftime('%Y-%m-%d %H:%M:%S')
 
 # Base directory for API-sourced data
-BASE = 'data/roadster/roadster.'
+BASE = 'roadster.'
 
 
 def test_name(setup_module):
@@ -324,7 +324,7 @@ def setup_module():
 
 
 @pytest.fixture(scope='module')
-def teardown_module():
+def Xteardown_module():
     if os.path.exists(BASE + 'earth'):
         os.remove(BASE + 'earth')
     if os.path.exists(BASE + 'mars'):

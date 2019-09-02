@@ -11,7 +11,7 @@
 #
 
 REQUIRED_VALUE=$1
-BASE="data/roadster/roadster"
+BASE="roadster"
 
 case $REQUIRED_VALUE in
   marsDistance)
