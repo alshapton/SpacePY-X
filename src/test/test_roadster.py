@@ -22,7 +22,7 @@ END = datetime.now() + timedelta(days=1)
 TOMORROW = END.strftime('%Y-%m-%d %H:%M:%S')
 
 # Base directory for API-sourced data
-BASE = 'data/roadster/roadster.'
+BASE = './data/roadster/roadster.'
 
 
 def test_name(setup_module):
@@ -214,7 +214,7 @@ def setup_module():
     writeFile(BASE + 'earth', fg, 'w')
 
     # EPOCH
-    sb = ['script_roadster.zsh epoch', 'epoch']
+    sb = ['./script_roadster.zsh epoch', 'epoch']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     epoch = float(g.stdout.strip())
 
@@ -222,7 +222,7 @@ def setup_module():
     CDATA = CDATA + '"API_epoch":' + str(epoch_from_api) + ','
 
     # Semi-major Axis
-    sb = ['script_roadster.zsh sma', 'sma']
+    sb = ['./script_roadster.zsh sma', 'sma']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     sma = float(g.stdout.strip())
 
@@ -230,7 +230,7 @@ def setup_module():
     CDATA = CDATA + '"API_sma":' + str(sma_from_api) + ','
 
     # Eccentricity
-    sb = ['script_roadster.zsh ec', 'ec']
+    sb = ['./script_roadster.zsh ec', 'ec']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     ec = float(g.stdout.strip())
 
@@ -238,7 +238,7 @@ def setup_module():
     CDATA = CDATA + '"API_ec":' + str(ec_from_api) + ','
 
     # Periapsis
-    sb = ['script_roadster.zsh qr', 'qr']
+    sb = ['./script_roadster.zsh qr', 'qr']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     qr = float(g.stdout.strip())
 
@@ -246,7 +246,7 @@ def setup_module():
     CDATA = CDATA + '"API_qr":' + str(qr_from_api) + ','
 
     # Apoapsis
-    sb = ['script_roadster.zsh ad', 'ad']
+    sb = ['./script_roadster.zsh ad', 'ad']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     ad = float(g.stdout.strip())
 
@@ -254,7 +254,7 @@ def setup_module():
     CDATA = CDATA + '"API_ad":' + str(ad_from_api) + ','
 
     # Longitude
-    sb = ['script_roadster.zsh om', 'om']
+    sb = ['./script_roadster.zsh om', 'om']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     om = float(g.stdout.strip())
 
@@ -262,7 +262,7 @@ def setup_module():
     CDATA = CDATA + '"API_om":' + str(om_from_api) + ','
 
     # Longitude
-    sb = ['script_roadster.zsh w', 'w']
+    sb = ['./script_roadster.zsh w', 'w']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     w = float(g.stdout.strip())
 
@@ -270,7 +270,7 @@ def setup_module():
     CDATA = CDATA + '"API_w":' + str(w_from_api) + ','
 
     # Apoapsis
-    sb = ['script_roadster.zsh inc', 'inc']
+    sb = ['./script_roadster.zsh inc', 'inc']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     inc = float(g.stdout.strip())
 
@@ -278,7 +278,7 @@ def setup_module():
     CDATA = CDATA + '"API_inc":' + str(inc_from_api) + ','
 
     # Period (days)
-    sb = ['script_roadster.zsh period', 'period']
+    sb = ['./script_roadster.zsh period', 'period']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     period = float(g.stdout.strip())
 
@@ -286,7 +286,7 @@ def setup_module():
     CDATA = CDATA + '"API_period":' + str(period_from_api) + ','
 
     # Distance from Earth
-    sb = ['script_roadster.zsh earthDistance', 'earthDistance']
+    sb = ['./script_roadster.zsh earthDistance', 'earthDistance']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     distanceFromEarthkm = float(g.stdout.strip()) * float(AU_TO_KM)
     distanceFromEarthmi = float(distanceFromEarthkm) * float(KM_TO_MILES)
@@ -297,7 +297,7 @@ def setup_module():
     CDATA = CDATA + '"LCL_earth_distance_mi":' + str(distanceFromEarthmi) + ','
 
     # Distance from Mars
-    sb = ['script_roadster.zsh marsDistance', 'marsDistance']
+    sb = ['./script_roadster.zsh marsDistance', 'marsDistance']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     distanceFromMarskm = float(g.stdout.strip()) * float(AU_TO_KM)
     distanceFromMarsmi = float(distanceFromMarskm) * float(KM_TO_MILES)
@@ -308,7 +308,7 @@ def setup_module():
     CDATA = CDATA + '"LCL_mars_distance_mi":' + str(distanceFromMarsmi) + ','
 
     # Orbital Speed
-    sb = ['script_roadster.zsh speed', 'speed']
+    sb = ['./script_roadster.zsh speed', 'speed']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     OrbitalSpeedkph = float(g.stdout.strip()) * (float(60.0) * float(60.0))
     OrbitalSpeedmph = float(OrbitalSpeedkph) * float(KM_TO_MILES)
