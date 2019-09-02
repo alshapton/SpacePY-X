@@ -68,4 +68,3 @@ def makeRequest(requestUrl,timeOut=1,parameters=''):
     else:
         response = url_response.json()
     return response
-
