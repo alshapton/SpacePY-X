@@ -2,7 +2,7 @@ import sys
 
 sys.path.append('../')
 import pytest
-
+import os
 import spacexpython
 from spacexpython.exceptions import *
 from spacexpython.utils import *
@@ -30,29 +30,41 @@ def test_mars_distance_km(setup_module):
     assert minus_percent(1, json.loads(setup_module)["LCL_mars_distance_km"]) <= json.loads(setup_module)[
         "API_mars_distance_km"] <= plus_percent(1, json.loads(setup_module)["LCL_mars_distance_km"])
 
-
 def test_mars_distance_mi(setup_module):
     assert minus_percent(1, json.loads(setup_module)["LCL_mars_distance_mi"]) <= json.loads(setup_module)[
         "API_mars_distance_mi"] <= plus_percent(1, json.loads(setup_module)["LCL_mars_distance_mi"])
 
-
 def test_orbital_speed_kph(setup_module):
     assert minus_percent(1, json.loads(setup_module)["LCL_speed_kph"]) <= json.loads(setup_module)[
         "API_speed_kph"] <= plus_percent(1, json.loads(setup_module)["LCL_speed_kph"])
-
 
 def test_orbital_speed_mph(setup_module):
     assert minus_percent(1, json.loads(setup_module)["LCL_speed_mph"]) <= json.loads(setup_module)[
         "API_speed_mph"] <= plus_percent(1, json.loads(setup_module)["LCL_speed_mph"])
 
 def test_epoch(setup_module):
-    assert json.loads(setup_module)["LCL_epoch"] == json.loads(setup_module)["API_epoch"]
+    minus_percent(1, json.loads(setup_module)["LCL_epoch"]) <= json.loads(setup_module)[
+        "API_epoch"] <= plus_percent(1, json.loads(setup_module)["LCL_epoch"])
 
+def test_sma(setup_module):
+    minus_percent(1, json.loads(setup_module)["LCL_sma"]) <= json.loads(setup_module)[
+        "API_sma"] <= plus_percent(1, json.loads(setup_module)["LCL_sma"])
+
+def test_ec(setup_module):
+    minus_percent(1, json.loads(setup_module)["LCL_ec"]) <= json.loads(setup_module)[
+        "API_ec"] <= plus_percent(1, json.loads(setup_module)["LCL_ec"])
+
+def test_qr(setup_module):
+    minus_percent(1, json.loads(setup_module)["LCL_qr"]) <= json.loads(setup_module)[
+        "API_qr"] <= plus_percent(1, json.loads(setup_module)["LCL_qr"])
+
+def test_ad(setup_module):
+    minus_percent(1, json.loads(setup_module)["LCL_ad"]) <= json.loads(setup_module)[
+        "API_ad"] <= plus_percent(1, json.loads(setup_module)["LCL_ad"])
 
 @pytest.fixture(scope='module')
 def setup_module():
     CDATA = ""
-
     try:
         roadster_data = alphaOrder(spacexpython.roadster.roadster())
     except spacexpython.utils.SpaceXReadTimeOut:
@@ -66,6 +78,11 @@ def setup_module():
     orbital_speed_mph = (json.loads(roadster_data)["speed_mph"])
 
     epoch_from_api = (json.loads(roadster_data)["epoch_jd"])
+    sma_from_api = (json.loads(roadster_data)["semi_major_axis_au"])
+    ec_from_api = (json.loads(roadster_data)["eccentricity"])
+    qr_from_api = (json.loads(roadster_data)["periapsis_au"])
+    ad_from_api = (json.loads(roadster_data)["apoapsis_au"])
+
 
     orbitURL = "https://ssd.jpl.nasa.gov/horizons_batch.cgi?batch=1&COMMAND='-143205'&CENTER= '500@10'&MAKE_EPHEM= 'YES'" + \
                "&TABLE_TYPE= 'ELEMENTS'&START_TIME= '" + NOW + "'&STOP_TIME= '" + TOMORROW + "'&STEP_SIZE= '1 d'&OUT_UNITS= 'AU-D'" + \
@@ -101,16 +118,48 @@ def setup_module():
     writeFile(BASE + 'earth', fg, 'w')
 
 
-    # Get EPOCH
-    sb = ['roadster_mars0.zsh epoch', 'epoch']
+    # EPOCH
+    sb = ['script_roadster.zsh epoch', 'epoch']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     epoch = float(g.stdout.strip())
-
+    print (epoch)
     CDATA = CDATA + '{"LCL_epoch":' + str(epoch) + ','
     CDATA = CDATA + '"API_epoch":' + str(epoch_from_api) + ','
 
+    # Semi-major Axis
+    sb = ['script_roadster.zsh epoch', 'sma']
+    g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+    sma = float(g.stdout.strip())
+
+    CDATA = CDATA + '"LCL_sma":' + str(sma) + ','
+    CDATA = CDATA + '"API_sma":' + str(sma_from_api) + ','
+
+    # Eccentricity
+    sb = ['script_roadster.zsh epoch', 'ec']
+    g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+    ec = float(g.stdout.strip())
+
+    CDATA = CDATA + '"LCL_ec":' + str(ec) + ','
+    CDATA = CDATA + '"API_ec":' + str(ec_from_api) + ','
+
+    # Periapsis
+    sb = ['script_roadster.zsh epoch', 'qr']
+    g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+    qr = float(g.stdout.strip())
+
+    CDATA = CDATA + '"LCL_qr":' + str(qr) + ','
+    CDATA = CDATA + '"API_qr":' + str(qr_from_api) + ','
+
+    # Apoapsis
+    sb = ['script_roadster.zsh epoch', 'ad']
+    g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+    ad = float(g.stdout.strip())
+
+    CDATA = CDATA + '"LCL_ad":' + str(ad) + ','
+    CDATA = CDATA + '"API_ad":' + str(ad_from_api) + ','
+
     # Distance from Mars
-    sb = ['roadster_mars0.zsh marsDistance', 'marsDistance']
+    sb = ['script_roadster.zsh marsDistance', 'marsDistance']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     distanceFromMarskm = float(g.stdout.strip()) * float(AU_TO_KM)
     distanceFromMarsmi = float(distanceFromMarskm) * float(KM_TO_MILES)
@@ -121,7 +170,7 @@ def setup_module():
     CDATA = CDATA + '"LCL_mars_distance_mi":' + str(distanceFromMarsmi) + ','
 
     # Orbital Speed
-    sb = ['roadster_mars0.zsh speed','speed']
+    sb = ['script_roadster.zsh speed','speed']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     OrbitalSpeedkph = float(g.stdout.strip()) * (float(60.0) * float(60.0))
     OrbitalSpeedmph = float(OrbitalSpeedkph) * float(KM_TO_MILES)
@@ -133,6 +182,16 @@ def setup_module():
 
     CDATA = CDATA + '"LAST": 0}'
     return CDATA
+
+@pytest.fixture(scope='module')
+def teardown_module():
+    if os.path.exists(BASE + 'earth'):
+        os.remove(BASE + 'earth')
+    if os.path.exists(BASE + 'mars'):
+        os.remove(BASE + 'mars')
+    if os.path.exists(BASE + 'orbit'):
+        os.remove(BASE + 'orbit')
+    return True
 
     '''
         Helper functions
