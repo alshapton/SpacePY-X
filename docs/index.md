@@ -21,7 +21,7 @@
 ### Documentation
 This API Wrapper aims to provide a simple and easy way to use the [SpaceX-API](https://github.com/r-spacex/SpaceX-API) in Python projects.
 <br>
-See the [Wiki](https://github.com/alshapton/SpacePY-X/wiki) for full wrapper documentation.
+Continue to read the [Documentation](Home.md) for full wrapper documentation.
 
 ### Installation
 Note that this supports Python 3 *ONLY*
