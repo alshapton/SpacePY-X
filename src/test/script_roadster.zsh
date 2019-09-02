@@ -18,6 +18,10 @@ case $REQUIRED_VALUE in
       # Extract the roadster's distance from Mars
       cat $BASE.mars  | awk '/SOE/,/EOE/'  | awk 'NR==2 {print $5}'
       ;;
+  earthDistance)
+      # Extract the roadster's distance from Earth
+      cat $BASE.earth  | awk '/SOE/,/EOE/'  | awk 'NR==2 {print $5}'
+      ;;
   speed)
       # Extract the roadster's orbital speed
       cat $BASE.mars  | awk '/SOE/,/EOE/'  | awk 'NR==2 {print $7}'
@@ -45,4 +49,19 @@ case $REQUIRED_VALUE in
   om)
       # Extract Longitude of Ascending Node
       cat $BASE.orbit | grep " OM=" | awk 'NR==2 {print $2}'
+      ;;
+  w)
+      # Extract Eperiapsis Argument
+      cat $BASE.orbit | grep " OM=" | awk 'NR==2 {print $5}'
+      #
+      # Even though the requirement is to get the 'W' field, the best tracing mechanism is to find the 'OM' lines
+      #
+      ;;
+  inc)
+      # Extract Longitude of Ascending Node
+      cat $BASE.orbit | grep " IN=" | awk 'NR==2 {print $6}'
+      ;;
+  period)
+      # Extract period
+      cat $BASE.orbit | grep " PR=" | awk 'NR==2 {print $7}'
 esac
