@@ -55,26 +55,26 @@ def test_orbit_type(setup_module):
     
 def test_wikipedia(setup_module):
     assert json.loads(setup_module)["API_wikipedia"] == "https://en.wikipedia.org/wiki/Elon_Musk%27s_Tesla_Roadster"
-
+    
     
 def test_details(setup_module):
     assert json.loads(setup_module)["API_details"] == "Elon Musk's Tesla Roadster is an electric " + \
-    "sports car that served as the dummy payload for the February 2018 Falcon Heavy test flight " + \
-    "and is now an artificial satellite of the Sun. Starman, a mannequin dressed in a spacesuit, " + \
-    "occupies the driver's seat. The car and rocket are products of Tesla and SpaceX. This 2008-model " + \
-    "Roadster was previously used by Musk for commuting, and is the only consumer car sent into space."
+        "sports car that served as the dummy payload for the February 2018 Falcon Heavy test flight " + \
+        "and is now an artificial satellite of the Sun. Starman, a mannequin dressed in a spacesuit, " + \
+        "occupies the driver's seat. The car and rocket are products of Tesla and SpaceX. This 2008-model " + \
+        "Roadster was previously used by Musk for commuting, and is the only consumer car sent into space."
 
     
 def test_mars_distance_km(setup_module):
     assert minus_percent(1, json.loads(setup_module)["LCL_mars_distance_km"]) <= \
-    json.loads(setup_module)["API_mars_distance_km"] <= \
-    plus_percent(1, json.loads(setup_module)["LCL_mars_distance_km"])
+        json.loads(setup_module)["API_mars_distance_km"] <= \
+        plus_percent(1, json.loads(setup_module)["LCL_mars_distance_km"])
 
     
 def test_mars_distance_mi(setup_module):
     assert minus_percent(1, json.loads(setup_module)["LCL_mars_distance_mi"]) <= \
-    json.loads(setup_module)["API_mars_distance_mi"] <= \
-    plus_percent(1, json.loads(setup_module)["LCL_mars_distance_mi"])
+        json.loads(setup_module)["API_mars_distance_mi"] <= \
+        plus_percent(1, json.loads(setup_module)["LCL_mars_distance_mi"])
 
     
 def test_earth_distance_km(setup_module):
@@ -192,7 +192,7 @@ def setup_module():
                   "&REF_SYSTEM= 'J2000'&CSV_FORMAT= 'NO'&OBJ_DATA= 'YES'&QUANTITIES= '19,20,22'"
 
     earthDistURL = "https://ssd.jpl.nasa.gov/horizons_batch.cgi?batch=1&COMMAND='-143205'&CENTER='500@399'" + \
-                    "&MAKE_EPHEM='YES'&TABLE_TYPE='OBSERVER'&START_TIME='"+ NOW + "'&STOP_TIME = '" + TOMORROW + "'"+ \
+                    "&MAKE_EPHEM='YES'&TABLE_TYPE='OBSERVER'&START_TIME='"+ NOW + "'&STOP_TIME = '" + TOMORROW + "'" + \
                     "&STEP_SIZE = '1 d' &CAL_FORMAT = 'CAL' &TIME_DIGITS = 'MINUTES' &ANG_FORMAT = 'HMS' " + \
                     "&OUT_UNITS = 'KM-S' &RANGE_UNITS = 'AU' &APPARENT = 'AIRLESS' &SUPPRESS_RANGE_RATE = 'NO' " + \
                     "&SKIP_DAYLT = 'NO' &EXTRA_PREC = 'NO' &R_T_S_ONLY = 'NO' &REF_SYSTEM = 'J2000' " + \
@@ -201,7 +201,7 @@ def setup_module():
     # Get the data for the Mars Distance information from JPL Horizons API
     fg = makeHTTP(marsDistURL, 1)
     # Create a new file with the results of the call to the JPL Horizons API for Mars distance
-    writeFile(BASE +'mars', fg, 'w')
+    writeFile(BASE + 'mars', fg, 'w')
 
     # Get the data for the Orbit Parameters information from JPL Horizons API
     fg = makeHTTP(orbitURL, 1)
@@ -217,7 +217,7 @@ def setup_module():
     sb = ['script_roadster.zsh epoch', 'epoch']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     epoch = float(g.stdout.strip())
-    print (epoch)
+
     CDATA = CDATA + '"LCL_epoch":' + str(epoch) + ','
     CDATA = CDATA + '"API_epoch":' + str(epoch_from_api) + ','
 
@@ -308,7 +308,7 @@ def setup_module():
     CDATA = CDATA + '"LCL_mars_distance_mi":' + str(distanceFromMarsmi) + ','
 
     # Orbital Speed
-    sb = ['script_roadster.zsh speed','speed']
+    sb = ['script_roadster.zsh speed', 'speed']
     g = subprocess.run(sb, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     OrbitalSpeedkph = float(g.stdout.strip()) * (float(60.0) * float(60.0))
     OrbitalSpeedmph = float(OrbitalSpeedkph) * float(KM_TO_MILES)
@@ -319,7 +319,7 @@ def setup_module():
     CDATA = CDATA + '"LCL_speed_mph":' + str(orbital_speed_mph) + ','
 
     CDATA = CDATA + '"LAST": 0}'
-    writeFile('fred',CDATA,"w")
+
     return CDATA
 
 
@@ -333,7 +333,6 @@ def teardown_module():
         os.remove(BASE + 'orbit')
     return True
 
-    
     # Helper functions
     
 def percentage(percent, whole):
