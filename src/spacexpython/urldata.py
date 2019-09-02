@@ -57,3 +57,6 @@ class Domain(object):
 
     """ Payload Information """
     main_payloads = "payloads"
+
+    """ Roadster Information """
+    main_roadster = "roadster"

@@ -13,6 +13,8 @@ functions:
 """
 
 import json
+import requests
+
 
 def keyOrder(JSONDocument,ky):
     """ Orders a JSON Document by key order
@@ -85,7 +87,7 @@ def writeJSONFile(filename,JSONDocument):
         json.dump(JSONDocument, outfile)
     return True
 
-def writeFile(filename,data):
+def writeFile(filename,data,mode):
     """ Writes/appends data to a file
 
     Parameters
@@ -100,6 +102,34 @@ def writeFile(filename,data):
     True
     """
 
-    with open(filename, 'a+') as outfile:
+    with open(filename, mode) as outfile:
         outfile.write(data)
     return True
+
+def makeHTTP(requestUrl,timeOut=1):
+    """ sends a request to an http(s) endpoint
+
+    Parameters
+    ----------
+    requestURL : str
+        url to call
+    timeOut : int
+        optional - call timeout
+
+    Returns
+    -------
+    response
+        a string which is a string returned from the http call
+
+    Exceptions
+    ----------
+        SpaceXReadTimeOut
+            an exception raised when the API call breaches the timeout limit
+    """
+    try:
+        url_response = requests.get(url=str(requestUrl), timeout=timeOut)
+    except requests.exceptions.ReadTimeout:
+        raise TimeoutError('HTTP Timeout Error')
+    else:
+        response = url_response.text
+    return response
