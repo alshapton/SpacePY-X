@@ -18,7 +18,7 @@ def test_launchpads():
         print("Failure on launchpads.alllaunchpads")
     assert launchpads_data == launchpads_result
 
-def test_one_landingpad():
+def test_one_launchpad():
     one_data=''
     one_result=alphaOrder(readJSONFile('launchpads/onepad4.json'))
     try:
