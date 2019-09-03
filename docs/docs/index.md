@@ -1,4 +1,5 @@
-# SpaceX API wrapper in Python
+| <img src="images/pyrocket.png" width="200"/> | <h1><b>Introduction to SpacePY-X<b></h1>  <br>This API Wrapper aims to provide a simple and<br>easy way to use the [SpaceX-API](https://github.com/r-spacex/SpaceX-API) in Python projects.<br><br>This site provides the documentation<br>about the functions available in SpacePY-X. <br><br>For documentation specific to the SpaceX-API, please <br>see the [documentation](https://github.com/r-spacex/SpaceX-API/wiki) on [the SpaceX-API Github Page](https://github.com/r-spacex/SpaceX-API/) |
+|:----------------------------------------------------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 <div align="center">
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c8b036f596d2471a9ce4c4e78bf9a3f3)](https://app.codacy.com/app/alshapton/SpacePY-X?utm_source=github.com&utm_medium=referral&utm_content=alshapton/SpacePY-X&utm_campaign=Badge_Grade_Settings)
@@ -18,12 +19,12 @@
 
 </div>
 
-### Documentation
+## Documentation
 This API Wrapper aims to provide a simple and easy way to use the [SpaceX-API](https://github.com/r-spacex/SpaceX-API) in Python projects.
 <br>
-Continue to read the [Documentation](Home.md) for full wrapper documentation.
+Continue to read the [Documentation](detail/Usage.md) for full wrapper documentation.
 
-### Installation
+## Installation
 Note that this supports Python 3 *ONLY*
 
 To install via `pip` use:
@@ -37,6 +38,12 @@ import spacexpython
 rocket_data = spacexpython.rockets.falconHeavy()
 print(rocket_data)
 ```
+
+## Authentication
+No authentication is currently required by [r-SpaceX](https://github.com/r-spacex) to use this public API and thus is not required in this wrapper.
+
+## Rate Limiting
+The API has a rate limit of 50 req/sec per IP address, if exceeded, a response of 429 will be given until the rate drops back below 50 req/sec.
 
 ### Credits
 Jake Meyer's [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API)

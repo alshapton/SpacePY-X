@@ -9,7 +9,7 @@ develop-eggs
 tmp
 build
 dist
-
+docs/site
 coverage.xml
 .coverage
 
