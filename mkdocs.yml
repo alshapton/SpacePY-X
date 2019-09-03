@@ -1,1 +1,12 @@
-site_name: My Docs
+site_name: SpacePY-X
+site_url: http://spacepy-x.readthedocs.io
+repo_url: https://github.com/alshapton/SpacePY-X/
+theme:
+    name: readthedocs
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - python
+nav:
+    - Home: index.md
+    - Functions: detail/Usage.md
