@@ -1,7 +1,6 @@
 import sys
 sys.path.append('../')
 import pytest
-import os
 import spacexpython
 from spacexpython.exceptions import *
 from spacexpython.utils import *
@@ -322,16 +321,6 @@ def setup_module():
 
     return CDATA
 
-
-@pytest.fixture(scope='module')
-def Xteardown_module():
-    if os.path.exists(BASE + 'earth'):
-        os.remove(BASE + 'earth')
-    if os.path.exists(BASE + 'mars'):
-        os.remove(BASE + 'mars')
-    if os.path.exists(BASE + 'orbit'):
-        os.remove(BASE + 'orbit')
-    return True
 
     # Helper functions
     

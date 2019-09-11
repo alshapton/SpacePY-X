@@ -1,1 +1,1 @@
-python3 -m  pytest test_roadster.py  -vv
+python3 -m pytest test_ships.py -vv

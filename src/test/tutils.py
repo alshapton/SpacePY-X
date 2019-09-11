@@ -13,6 +13,7 @@ functions:
 """
 
 import json
+
 import requests
 
 
@@ -111,7 +112,7 @@ def makeHTTP(requestUrl,timeOut=1):
 
     Parameters
     ----------
-    requestURL : str
+    requestUrl : str
         url to call
     timeOut : int
         optional - call timeout
@@ -127,7 +128,9 @@ def makeHTTP(requestUrl,timeOut=1):
             an exception raised when the API call breaches the timeout limit
     """
     try:
-        url_response = requests.get(url=str(requestUrl), timeout=timeOut)
+        url_response = requests.get(url=str(requestUrl), timeout=timeOut, headers={
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+                                    )
     except requests.exceptions.ReadTimeout:
         raise TimeoutError('HTTP Timeout Error')
     else:
