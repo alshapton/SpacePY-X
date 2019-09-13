@@ -201,17 +201,17 @@ def setup_module():
     # Get the data for the Mars Distance information from JPL Horizons API
     fg = makeHTTP(marsDistURL, 1)
     # Create a new file with the results of the call to the JPL Horizons API for Mars distance
-    writeFile(BASE + 'mars', fg, 'w')
+    writeFile(BASE + 'mars', fg, 'w+')
 
     # Get the data for the Orbit Parameters information from JPL Horizons API
     fg = makeHTTP(orbitURL, 1)
     # Create a new file with the results of the call to the JPL Horizons API for Orbit Parameters
-    writeFile(BASE + 'orbit', fg, 'w')
+    writeFile(BASE + 'orbit', fg, 'w+')
 
     # Get the data for the Earth Distance  information from JPL Horizons API
     fg = makeHTTP(earthDistURL, 1)
     # Create a new file with the results of the call to the JPL Horizons API for the Earth Distance
-    writeFile(BASE + 'earth', fg, 'w')
+    writeFile(BASE + 'earth', fg, 'w+')
 
     # EPOCH
     sb = ['./script_roadster.zsh epoch', 'epoch']
