@@ -136,3 +136,12 @@ def makeHTTP(requestUrl,timeOut=1):
     else:
         response = url_response.text
     return response
+
+def percentage(percent, whole):
+    return (percent * whole) / 100.0
+
+def plus_percent(percent, value):
+    return value + percentage(percent, value)
+
+def minus_percent(percent, value):
+    return value - percentage(percent, value)

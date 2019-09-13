@@ -21,7 +21,7 @@ END = datetime.now() + timedelta(days=1)
 TOMORROW = END.strftime('%Y-%m-%d %H:%M:%S')
 
 # Base directory for API-sourced data
-BASE = 'roadster.'
+BASE = 'data/roadster/roadster.'
 
 
 def test_name(setup_module):
@@ -97,53 +97,54 @@ def test_orbital_speed_mph(setup_module):
 
     
 def test_epoch(setup_module):
-    minus_percent(1, json.loads(setup_module)["LCL_epoch"]) <= json.loads(setup_module)[
+    assert minus_percent(1, json.loads(setup_module)["LCL_epoch"]) <= json.loads(setup_module)[
         "API_epoch"] <= plus_percent(1, json.loads(setup_module)["LCL_epoch"])
 
     
 def test_sma(setup_module):
-    minus_percent(1, json.loads(setup_module)["LCL_sma"]) <= json.loads(setup_module)[
+    assert minus_percent(1, json.loads(setup_module)["LCL_sma"]) <= json.loads(setup_module)[
         "API_sma"] <= plus_percent(1, json.loads(setup_module)["LCL_sma"])
 
     
 def test_ec(setup_module):
-    minus_percent(1, json.loads(setup_module)["LCL_ec"]) <= json.loads(setup_module)[
+    assert minus_percent(1, json.loads(setup_module)["LCL_ec"]) <= json.loads(setup_module)[
         "API_ec"] <= plus_percent(1, json.loads(setup_module)["LCL_ec"])
 
     
 def test_qr(setup_module):
-    minus_percent(1, json.loads(setup_module)["LCL_qr"]) <= json.loads(setup_module)[
+    assert minus_percent(1, json.loads(setup_module)["LCL_qr"]) <= json.loads(setup_module)[
         "API_qr"] <= plus_percent(1, json.loads(setup_module)["LCL_qr"])
 
     
 def test_ad(setup_module):
-    minus_percent(1, json.loads(setup_module)["LCL_ad"]) <= json.loads(setup_module)[
+    assert minus_percent(1, json.loads(setup_module)["LCL_ad"]) <= json.loads(setup_module)[
         "API_ad"] <= plus_percent(1, json.loads(setup_module)["LCL_ad"])
 
     
 def test_om(setup_module):
-    minus_percent(1, json.loads(setup_module)["LCL_om"]) <= json.loads(setup_module)[
+    assert minus_percent(1, json.loads(setup_module)["LCL_om"]) <= json.loads(setup_module)[
         "API_om"] <= plus_percent(1, json.loads(setup_module)["LCL_om"])
 
     
 def test_w(setup_module):
-    minus_percent(1, json.loads(setup_module)["LCL_w"]) <= json.loads(setup_module)[
+    assert minus_percent(1, json.loads(setup_module)["LCL_w"]) <= json.loads(setup_module)[
         "API_w"] <= plus_percent(1, json.loads(setup_module)["LCL_w"])
 
     
 def test_inc(setup_module):
-    minus_percent(1, json.loads(setup_module)["LCL_inc"]) <= json.loads(setup_module)[
+    assert minus_percent(1, json.loads(setup_module)["LCL_inc"]) <= json.loads(setup_module)[
         "API_inc"] <= plus_percent(1, json.loads(setup_module)["LCL_inc"])
 
     
 def test_period(setup_module):
-    minus_percent(1, json.loads(setup_module)["LCL_period"]) <= json.loads(setup_module)[
+    assert minus_percent(1, json.loads(setup_module)["LCL_period"]) <= json.loads(setup_module)[
         "API_period"] <= plus_percent(1, json.loads(setup_module)["LCL_period"])
 
 
 @pytest.fixture(scope='module')
 def setup_module():
     CDATA = ""
+    roadster_data=''
     try:
         roadster_data = alphaOrder(spacexpython.roadster.roadster())
     except spacexpython.utils.SpaceXReadTimeOut:
@@ -322,15 +323,4 @@ def setup_module():
     return CDATA
 
 
-    # Helper functions
-    
-def percentage(percent, whole):
-    return (percent * whole) / 100.0
 
-
-def plus_percent(percent, value):
-    return value + percentage(percent, value)
-
-
-def minus_percent(percent, value):
-    return value - percentage(percent, value)
