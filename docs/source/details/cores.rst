@@ -1,21 +1,21 @@
-.. image:: ../images/Spacex-Dragon.jpg
-   :scale: 50 %
+.. image:: ../images/SpaceX_factory_Merlin_engine.jpg
+   :scale: 12 %
 
-Source: `NASA <https://nasa.gov>`_ `Images <https://images.nasa.gov/details-iss058e027464.html>`_ [Ref1]_
+Source: [Ref2]_
 
-Capsule Information
+Core Information
 *******************
 
-This group of API calls will enable the retrieval of capsule data. ALL capsule calls can be given a set of parameters, with which to modify the response.
+This group of API calls will enable the retrieval of core data. ALL core calls can be given a set of parameters, with which to modify the response.
 Like all functions in this module, the API parameters must be given as a JSON payload such as can be seen :doc:`here <jsonpayload>`.
 
-All Capsules
+All Cores
 ````````````
 
 .. code-block:: python
 
-    capsules = spacexpython.capsules(parameters,timeOut)
-    print(capsule)
+    cores = spacexpython.cores(parameters,timeOut)
+    print(core)
 
 Parameters:
 
@@ -31,15 +31,15 @@ Parameters:
 | timeOut    | Number of seconds to wait until a timeout |      N    |    1    |
 +------------+-------------------------------------------+-----------+---------+
 
-`Valid parameters <https://docs.spacexdata.com/?version=latest#00ac651a-8ba2-4b4c-858a-4034dd1254fa>`_
+`Valid parameters <https://docs.spacexdata.com/?version=latest#8841c0cf-4341-4c73-852e-df4d90a7db98>`_
 
-Specific Capsule
+Specific Core
 ````````````````
 
 .. code-block:: python
 
-    capsule = spacexpython.one(capsule_id,parameters,timeOut)
-    print(capsule)
+    core = spacexpython.one(core_id,parameters,timeOut)
+    print(core)
 
 Parameters:
 
@@ -48,7 +48,7 @@ Parameters:
 +------------+-------------------------------------------+-----------+---------+
 | Name       | Purpose                                   | Mandatory | Default |
 +============+===========================================+===========+=========+
-| capsule_id | ID of the capsule                         |      Y    |         |
+| core_id    | ID of the core                            |      Y    |         |
 +------------+-------------------------------------------+-----------+---------+
 | parameters | JSON list of URL qualifiers in the form   |      N    |         |
 +            +                                           +           +         +
@@ -57,15 +57,15 @@ Parameters:
 | timeOut    | Number of seconds to wait until a timeout |      N    |    1    |
 +------------+-------------------------------------------+-----------+---------+
 
-`Valid parameters <https://docs.spacexdata.com/?version=latest#4376c913-2589-4afd-a5f2-80ab8adc3fd0>`_
+`Valid parameters <https://docs.spacexdata.com/?version=latest#dc18b875-5f98-4e44-a124-ad95647335dc>`_
 
-Upcoming Capsules
+Upcoming Cores
 `````````````````
 
 .. code-block:: python
 
-    upcoming_capsules = spacexpython.capsules.upcoming()
-    print(upcoming_capsules)
+    upcoming_cores = spacexpython.cores.upcoming()
+    print(upcoming_cores)
 
 Parameters:
 
@@ -81,15 +81,15 @@ Parameters:
 | timeOut    | Number of seconds to wait until a timeout |      N    |    1    |
 +------------+-------------------------------------------+-----------+---------+
 
-`Valid parameters <https://docs.spacexdata.com/?version=latest#08eb1220-8c52-4062-8147-d9ad33c2a891>`_
+`Valid parameters <https://docs.spacexdata.com/?version=latest#a22624ca-36bd-4d20-932c-f5c1897ae75b>`_
 
-Past Capsules
+Past Cores
 `````````````
 
 .. code-block:: python
 
-    past_capsules = spacexpython.capsules.past()
-    print(past_capsules)
+    past_cores = spacexpython.cores.past()
+    print(past_cores)
 
 Parameters:
 
@@ -105,6 +105,6 @@ Parameters:
 | timeOut    | Number of seconds to wait until a timeout |      N    |    1    |
 +------------+-------------------------------------------+-----------+---------+
 
-`Valid parameters <https://docs.spacexdata.com/?version=latest#cc22ddc7-1e9c-47c8-8758-bfa58ca13191>`_
+`Valid parameters <https://docs.spacexdata.com/?version=latest#3e925329-8706-4859-8a7b-d6bcfd1d866a>`_
 
-.. [Ref1] iss058e027464 (March 4, 2019) --- The uncrewed SpaceX Crew Dragon spacecraft is the first Commercial Crew vehicle to visit the International Space Station. Here it is pictured with its nose cone open revealing its docking mechanism while approaching the station's Harmony module. The Crew Dragon would automatically dock moments later to the international docking adapter attached to the forward end of Harmony.
+.. [Ref2] By Steve Jurvetson from Menlo Park, USA - Flickr: Merlin Engine, CC BY 2.0 - One of nine Merlin engines used in the Falcon 9 booster.

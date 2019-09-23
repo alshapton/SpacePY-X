@@ -3,7 +3,7 @@ Basic Usage
 
 .. rubric:: Installation
 
-To install via pip, use:
+To install via ``pip``, use:
 
 .. code-block:: python
 

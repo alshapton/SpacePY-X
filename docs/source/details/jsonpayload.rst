@@ -1,5 +1,7 @@
-Useful Information
-*******************
+.. toctree::
+   :titlesonly:
+   :hidden:
+   :maxdepth: 2
 
 JSON Parameters
 ***************
@@ -31,18 +33,3 @@ An example of this would be:
 
     As of version 1.0.0.alpha4, no parameter validation takes place, therefore incorrect parameters will produce
     unknown and unpredictable effects. Please check all spelling and validity of parameters prior to use.
-
-Exceptions
-**********
-
-Should an error occur anywhere in the call to a function (whether that be in the wrapper or the REST API itself), an
-exception will be raised.
-
-All normal Python exceptions exist that can be trapped, however, the wrapper implements a new exception:
-
-.. code-block:: python
-
-    SpaceXReadTimeOut
-
-This exception occurs when the API times out for any reason. It can be trapped, and possibly a retry or other action
-performed as appropriate.

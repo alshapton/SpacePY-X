@@ -1,11 +1,13 @@
 .. toctree::
    :titlesonly:
    :hidden:
+   :maxdepth: 1
 
    details/usage.rst
    details/capsules.rst
-   details/useful.rst
-
+   details/jsonpayload.rst
+   details/exceptions.rst
+   details/cores.rst
 
 ***********************************************************************************************
 Simple and Easy API Wrapper for `r-spacex/SpaceX-API <https://github.com/r-spacex/SpaceX-API>`_
