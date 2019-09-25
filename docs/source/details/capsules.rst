@@ -14,7 +14,7 @@ All Capsules
 
 .. code-block:: python
 
-    capsules = spacexpython.capsules(parameters,timeOut)
+    capsules = spacexpython.capsules.capsules(parameters,timeOut)
     print(capsule)
 
 Parameters:
@@ -38,7 +38,7 @@ Specific Capsule
 
 .. code-block:: python
 
-    capsule = spacexpython.one(capsule_id,parameters,timeOut)
+    capsule = spacexpython.capsules.one(capsule_id,parameters,timeOut)
     print(capsule)
 
 Parameters:
@@ -64,7 +64,7 @@ Upcoming Capsules
 
 .. code-block:: python
 
-    upcoming_capsules = spacexpython.capsules.upcoming()
+    upcoming_capsules = spacexpython.capsules.upcoming(parameters,timeOut)
     print(upcoming_capsules)
 
 Parameters:
@@ -88,7 +88,7 @@ Past Capsules
 
 .. code-block:: python
 
-    past_capsules = spacexpython.capsules.past()
+    past_capsules = spacexpython.capsules.past(parameters,timeOut)
     print(past_capsules)
 
 Parameters:

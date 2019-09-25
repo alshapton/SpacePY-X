@@ -2,12 +2,9 @@
    :titlesonly:
    :hidden:
    :maxdepth: 1
+   :glob:
 
-   details/usage.rst
-   details/capsules.rst
-   details/jsonpayload.rst
-   details/exceptions.rst
-   details/cores.rst
+   details/*
 
 ***********************************************************************************************
 Simple and Easy API Wrapper for `r-spacex/SpaceX-API <https://github.com/r-spacex/SpaceX-API>`_
@@ -20,7 +17,7 @@ way to use the `SpaceX-API <https://github.com/r-spacex/SpaceX-API>`_ in Python 
 
 .. rubric:: Installation: Note that this supports Python 3 *ONLY*
 
-To install via pip use: pip install spacePY-X
+To install via ``pip`` use: ``pip install spacePY-X``
 
 .. rubric:: Authentication
 
