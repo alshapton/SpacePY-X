@@ -5,6 +5,7 @@
    :glob:
 
    details/*
+   details/useful/*
 
 ***********************************************************************************************
 Simple and Easy API Wrapper for `r-spacex/SpaceX-API <https://github.com/r-spacex/SpaceX-API>`_

@@ -1,8 +1,3 @@
-.. toctree::
-   :titlesonly:
-   :hidden:
-   :maxdepth: 2
-
 JSON Parameters
 ***************
 
