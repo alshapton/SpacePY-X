@@ -42,6 +42,8 @@ def rocket(rocket,parameters='',timeOut=1):
 
     Parameters
     ----------
+    rocket
+        mandatory - the rocket ID of the rocket in question
     parameters
         optional - a JSON document containing valid query modifiers
     timeOut
@@ -55,7 +57,7 @@ def rocket(rocket,parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.main_rockets + "/" + rocket
     return utils.makeRequest(requestUrl,timeOut)
 
-# Consider removing these
+
 def falcon1(parameters='',timeOut=1):
     requestUrl = urldata.Domain.main + urldata.Domain.falcon1
     return utils.makeRequest(requestUrl,timeOut,parameters)
