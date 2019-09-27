@@ -61,4 +61,4 @@ Parameters:
 `Valid parameters <https://docs.spacexdata.com/?version=latest#fbc2676e-6248-48ce-95c8-c64784638288>`_
 
 .. [Ref7]  Taken: October 23rd 2009 - An aerial view of Space Launch Complex 40 on Cape Canaveral Air Force Station. The pad will be used to support the new Falcon rockets to be launched by Space Exploration Technologies, known as SpaceX.
-           `Camera Location <https://tools.wmflabs.org/geohack/geohack.php?pagename=File:Launch_pad_40_awaiting_Falcon_9_rocket.jpg&params=028.562080_N_-080.583541_E_globe:Earth_type:camera_&language=en>`_
+           `Camera Location <https://tools.wmflabs.org/geohack/geohack.php?pagename=File:Launch_pad_40_awaiting_Falcon_9_rocket.jpg&params=028.562080_N_-080.583541_E_globe:Earth_type:camera_&language=en>`_launchpads.rst

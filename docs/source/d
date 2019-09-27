@@ -1,0 +1,10 @@
+git tag archive/$1 $1
+git branch -d $1
+git push origin :$1 
+git push --tags
+
+echo "
+
+
+"
+git branch
