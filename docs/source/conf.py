@@ -49,9 +49,10 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx_rtd_theme',
 ]
+html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['./_templates']
+templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -83,9 +84,6 @@ pygments_style = None
 # a list of builtin themes.
 #
 
-import stsci_rtd_theme
-html_theme = 'stsci_rtd_theme'
-html_theme_path = [stsci_rtd_theme.get_html_theme_path()]
 
 
 # Theme options are theme-specific and customize the look and feel of a theme
