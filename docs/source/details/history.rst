@@ -8,7 +8,7 @@ History Information
 
 This group of API calls will enable the retrieval of history data. History data is classed as significant steps forward in SpaceX's journey toward commercial spaceflight
 ALL history calls can be given a set of parameters, with which to modify the response.
-Like all functions in this module, the API parameters must be given as a JSON payload such as can be seen :doc:`here <jsonpayload>`.
+Like all functions in this module, the API parameters must be given as a JSON payload such as can be seen :doc:`here <./useful/jsonpayload>`.
 
 All historic events
 ```````````````````

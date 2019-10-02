@@ -13,7 +13,7 @@ To install via ``pip``, use:
 
 .. code-block:: python
 
-    pip install  spacePY-X
+    pip install spacePY-X
 
     import spacePY-X
 

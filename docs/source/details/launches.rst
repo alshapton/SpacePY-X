@@ -8,10 +8,10 @@ Launch Information
 
 This group of API calls will enable the retrieval of Launch data. 
 ALL Launch calls can be given a set of parameters, with which to modify the response.
-Like all functions in this module, the API parameters must be given as a JSON payload such as can be seen :doc:`here <jsonpayload>`.
+Like all functions in this module, the API parameters must be given as a JSON payload such as can be seen :doc:`here <./useful/jsonpayload>`.
 
 All Launches
-```````````
+````````````
 
 .. code-block:: python
 
@@ -108,7 +108,7 @@ Parameters:
 `Valid parameters <https://docs.spacexdata.com/?version=latest#c75a20cf-50e7-4a4a-8856-ee729e0d3868>`_
 
 Latest Launch
-```````````
+`````````````
 
 .. code-block:: python
 

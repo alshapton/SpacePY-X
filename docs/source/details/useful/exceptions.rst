@@ -19,6 +19,6 @@ performed as appropriate, for example:
     try:
         capsules_data = keyOrder(alphaOrder(spacexpython.capsules.capsules('',1)),'capsule_serial')
     except spacexpython.utils.SpaceXReadTimeOut:
-        print("Failure on retriueval of capsule information")
+        print("Failure on retrieval of capsule information")
 
 

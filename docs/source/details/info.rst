@@ -11,7 +11,7 @@ This group of API calls allows the retrieval of information regarding :
 * SpaceX corporate information
 * API Information
 
-Like all functions in this module, the API parameters must be given as a JSON payload such as can be seen :doc:`here <jsonpayload>`.
+Like all functions in this module, the API parameters must be given as a JSON payload such as can be seen :doc:`here <./useful/jsonpayload>`.
 
 Company Information
 ```````````````````

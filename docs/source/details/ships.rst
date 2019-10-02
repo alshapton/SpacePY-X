@@ -10,7 +10,7 @@ Ship Information
 This group of API calls will enable the retrieval of data about the ships that SpaceX has used over its' operational timeframe.
 These include autonomous drone ships, barges, recovery and transport ships.
 ALL these calls can be given a set of parameters, with which to modify the response.
-Like all functions in this module, the API parameters must be given as a JSON payload such as can be seen :doc:`here <jsonpayload>`.
+Like all functions in this module, the API parameters must be given as a JSON payload such as can be seen :doc:`here <./useful/jsonpayload>`.
 
 All Ships
 ````````````

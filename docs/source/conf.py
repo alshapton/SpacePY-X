@@ -26,12 +26,12 @@ author = u'Andrew Shapton'
 # The short X.Y version
 version = u''
 # The full version, including alpha/beta/rc tags
-release = u''
+release = u'0.1'
 
 
 # -- General configuration ---------------------------------------------------
 
-# If your documentation needs a minimal Sphinx version, zstate it here.
+# If your documentation needs a minimal Sphinx version, state it here.
 #
 # needs_sphinx = '1.0'
 
@@ -45,11 +45,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    'sphinx_rtd_theme',
 ]
-
-html_theme = "sphinx_rtd_theme"
-html_theme_path = ["_themes/sphinx_rtd_theme"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -80,17 +76,23 @@ pygments_style = None
 
 
 # -- Options for HTML output -------------------------------------------------
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-
-
+html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
 # html_theme_options = {}
+html_theme_options = {
+    'logo': 'pyrocket.png',
+    'github_user': 'alshapton',
+    'github_repo': 'SpacePY-X',
+    'fixed_sidebar': 'true',
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -106,7 +108,13 @@ html_static_path = ['_static']
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
-
+html_sidebars = {
+    '**': [
+        'navigation.html',
+        'relations.html',
+        'searchbox.html'
+    ]
+}
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
@@ -160,7 +168,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'SpacePY-X', u'SpacePY-X Documentation',
-     author, 'SpacePY-X', 'One line description of project.',
+     author, 'SpacePY-X', 'Python wrapper to SpaceX-API.',
      'Miscellaneous'),
 ]
 
@@ -189,5 +197,3 @@ epub_exclude_files = ['search.html']
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
-
-
