@@ -58,7 +58,7 @@ def past(parameters='',timeOut=1):
 def one(launch='',parameters='',timeOut=1):
     """
 
-    :tyoe launch: str
+    :type launch: str
     :type parameters: Optional[str]
     :type timeOut: Optional[int]
 
