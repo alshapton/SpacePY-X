@@ -10,6 +10,7 @@ from .tutils import *
 
 
 def test_capsules():
+    fred=spacexpython.rockets.rocket()
     capsules_data=''
     capsules_result=keyOrder(alphaOrder(readJSONFile('capsules/capsules.json')),'capsule_serial')
     try:

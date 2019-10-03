@@ -20,7 +20,11 @@ sys.path.append('../')
 from .exceptions import *
 
 def jsonParameters(parameters):
-    """converts a JSON document into a URL parameter string
+    """
+
+    :type parameters: str
+
+    converts a JSON document into a URL parameter string
 
     Parameters
     ----------
@@ -42,8 +46,14 @@ def jsonParameters(parameters):
             parms=parms+key+'='+value+'&'
         return parms[:-1]
 
-def makeRequest(requestUrl,timeOut=1,parameters=''):
-    """ sends a request to the API
+def makeRequest(requestUrl, timeOut = 1, parameters = ''):
+    """
+    :param requestUrl: str
+    :param timeOut: Optional[str]
+    :param parameters: Optional[str]
+    :return: object:
+
+    Sends a request to the API
 
     Parameters
     ----------
@@ -51,6 +61,9 @@ def makeRequest(requestUrl,timeOut=1,parameters=''):
         string to pass into the REST API
     timeOut : int
         optional - API call timeout
+    parameters : str
+        optional parameters to append to URL as query modifiers
+
     Returns
     -------
     response
@@ -61,6 +74,7 @@ def makeRequest(requestUrl,timeOut=1,parameters=''):
         SpaceXReadTimeOut
             an exception raised when the API call breaches the timeout limit
     """
+
     try:
         url_response = requests.get(url=str(requestUrl)+jsonParameters(parameters), timeout=timeOut)
     except requests.exceptions.ReadTimeout:
