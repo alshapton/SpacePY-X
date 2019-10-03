@@ -20,7 +20,11 @@ sys.path.append('../')
 from .exceptions import *
 
 def jsonParameters(parameters):
-    """converts a JSON document into a URL parameter string
+    """
+
+    :type parameters: str
+
+    converts a JSON document into a URL parameter string
 
     Parameters
     ----------
