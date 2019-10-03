@@ -44,3 +44,24 @@ def upcoming(parameters='',timeOut=1):
     """
     requestUrl = urldata.Domain.main + urldata.Domain.upcoming_launches
     return utils.makeRequest(requestUrl,timeOut,parameters)
+
+def past(parameters='',timeOut=1):
+    """
+
+    :type parameters: Optional[str]
+    :type timeOut: Optional[int]
+
+    """
+    requestUrl = urldata.Domain.main + urldata.Domain.past_launches
+    return utils.makeRequest(requestUrl,timeOut,parameters)
+
+def one(launch='',parameters='',timeOut=1):
+    """
+
+    :type launch: str
+    :type parameters: Optional[str]
+    :type timeOut: Optional[int]
+
+    """
+    requestUrl = urldata.Domain.main + urldata.Domain + "/" + launch
+    return utils.makeRequest(requestUrl,timeOut,parameters)

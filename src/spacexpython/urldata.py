@@ -18,6 +18,7 @@ class Domain(object):
     latest_launches = main_launches + "/latest"
     next_launches =  main_launches + "/next"
     upcoming_launches = main_launches + "/upcoming"
+    past_launches = main_launches + "/past"
 
     """ Company information """
     main_info = "info"
