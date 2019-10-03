@@ -2,11 +2,9 @@ from setuptools import setup, find_packages
 import sys, os
 
 here = os.path.abspath(os.path.dirname(__file__))
-README = open(os.path.join(here, 'README-pypi.rst')).read()
+README = open(os.path.join(here, 'README.rst')).read()
 NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 
-
-version = 'v1.1.0.a5'
 
 install_requires = [{
     # List your project dependencies here.
@@ -19,9 +17,9 @@ install_requires = [{
 
 
 setup(name='SpacePY-X',
-    version=version,
+    version="v1.1.0",
     description="Simple Python wrapper for the SpaceX API",
-    long_description="Simple Python wrapper for the SpaceX API - still in alpha phase - breaking changes may occur",
+    long_description=README,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
