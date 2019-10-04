@@ -1,5 +1,4 @@
 # SpaceX API wrapper in Python
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 <div align="center">
 <img src="https://github.com/alshapton/SpacePY-X/blob/master/pyrocket.png">
 
