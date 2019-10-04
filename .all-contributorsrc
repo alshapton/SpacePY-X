@@ -6,6 +6,13 @@
   "commit": false,
   "contributors": [
     {
+      "login": "fossabot",
+      "name": "fossabot",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/29791463?v=4",
+      "profile": "http://fossa.io",
+      "contributions": [
+        "review"
+        ]
       "login": "vinayphadnis",
       "name": "Vinay Phadnis",
       "avatar_url": "https://avatars0.githubusercontent.com/u/21256352?v=4",

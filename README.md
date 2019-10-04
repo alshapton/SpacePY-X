@@ -57,6 +57,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore -->
 <table>
   <tr>
+    <td align="center"><a href="http://fossa.io"><img src="https://avatars0.githubusercontent.com/u/29791463?v=4" width="100px;" alt="fossabot"/><br /><sub><b>fossabot</b></sub></a><br /><a href="#review-fossabot" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="http://www.vphadnis.com"><img src="https://avatars0.githubusercontent.com/u/21256352?v=4" width="100px;" alt="Vinay Phadnis"/><br /><sub><b>Vinay Phadnis</b></sub></a><br /><a href="https://github.com/alshapton/SpacePY-X/commits?author=vinayphadnis" title="Code">💻</a></td>
     <td align="center"><a href="https://pyup.io"><img src="https://avatars0.githubusercontent.com/u/16239342?v=4" width="100px;" alt="pyup.io bot"/><br /><sub><b>pyup.io bot</b></sub></a><br /><a href="#review-pyup-bot" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://www.codacy.com"><img src="https://avatars3.githubusercontent.com/u/23704769?v=4" width="100px;" alt="Codacy Badger"/><br /><sub><b>Codacy Badger</b></sub></a><br /><a href="#review-codacy-badger" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/alshapton/SpacePY-X/commits?author=codacy-badger" title="Code">💻</a></td>
@@ -64,5 +65,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
