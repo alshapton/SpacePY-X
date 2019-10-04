@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "pyup-bot",
+      "name": "pyup.io bot",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/16239342?v=4",
+      "profile": "https://pyup.io",
+      "contributions": [
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "SpacePY-X",
+  "projectOwner": "alshapton",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
