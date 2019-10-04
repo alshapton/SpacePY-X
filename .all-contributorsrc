@@ -50,6 +50,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "pep8speaks",
+      "name": "PEP 8 Speaks",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/24736507?v=4",
+      "profile": "https://pep8speaks.com",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
