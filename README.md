@@ -56,6 +56,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://pyup.io"><img src="https://avatars0.githubusercontent.com/u/16239342?v=4" width="100px;" alt="pyup.io bot"/><br /><sub><b>pyup.io bot</b></sub></a><br /><a href="#review-pyup-bot" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://www.codacy.com"><img src="https://avatars3.githubusercontent.com/u/23704769?v=4" width="100px;" alt="Codacy Badger"/><br /><sub><b>Codacy Badger</b></sub></a><br /><a href="#review-codacy-badger" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/alshapton/SpacePY-X/commits?author=codacy-badger" title="Code">💻</a></td>
   </tr>
 </table>
 
