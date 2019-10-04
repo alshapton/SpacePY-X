@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "vinayphadnis",
+      "name": "Vinay Phadnis",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/21256352?v=4",
+      "profile": "http://www.vphadnis.com",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "SpacePY-X",
+  "projectOwner": "alshapton",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
