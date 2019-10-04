@@ -3,7 +3,7 @@
 <img src="https://github.com/alshapton/SpacePY-X/blob/master/pyrocket.png">
 
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c8b036f596d2471a9ce4c4e78bf9a3f3)](https://app.codacy.com/app/alshapton/SpacePY-X?utm_source=github.com&utm_medium=referral&utm_content=alshapton/SpacePY-X&utm_campaign=Badge_Grade_Settings)
 [![Updates](https://pyup.io/repos/github/alshapton/SpacePY-X/shield.svg)](https://pyup.io/repos/github/alshapton/SpacePY-X/)
 [![Python 3](https://pyup.io/repos/github/alshapton/SpacePY-X/python-3-shield.svg)](https://pyup.io/repos/github/alshapton/SpacePY-X/)
@@ -61,6 +61,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://pyup.io"><img src="https://avatars0.githubusercontent.com/u/16239342?v=4" width="100px;" alt="pyup.io bot"/><br /><sub><b>pyup.io bot</b></sub></a><br /><a href="#review-pyup-bot" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://www.codacy.com"><img src="https://avatars3.githubusercontent.com/u/23704769?v=4" width="100px;" alt="Codacy Badger"/><br /><sub><b>Codacy Badger</b></sub></a><br /><a href="#review-codacy-badger" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/alshapton/SpacePY-X/commits?author=codacy-badger" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/all-contributors/all-contributors-bot"><img src="https://avatars3.githubusercontent.com/u/46843839?v=4" width="100px;" alt="allcontributors[bot]"/><br /><sub><b>allcontributors[bot]</b></sub></a><br /><a href="https://github.com/alshapton/SpacePY-X/commits?author=allcontributors" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://pep8speaks.com"><img src="https://avatars1.githubusercontent.com/u/24736507?v=4" width="100px;" alt="PEP 8 Speaks"/><br /><sub><b>PEP 8 Speaks</b></sub></a><br /><a href="#review-pep8speaks" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
