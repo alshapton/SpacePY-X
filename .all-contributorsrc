@@ -6,6 +6,13 @@
   "commit": false,
   "contributors": [
     {
+      "login": "pyup-bot",
+      "name": "pyup.io bot",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/16239342?v=4",
+      "profile": "https://pyup.io",
+      "contributions": [
+        "review"
+       ]
       "login": "codacy-badger",
       "name": "Codacy Badger",
       "avatar_url": "https://avatars3.githubusercontent.com/u/23704769?v=4",
