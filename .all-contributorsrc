@@ -1,50 +1,60 @@
 {
-	"files": [
-		"README.md"
-	],
-	"imageSize": 100,
-	"commit": false,
-	"contributors": [{
-			"login": "fossabot",
-			"name": "fossabot",
-			"avatar_url": "https://avatars0.githubusercontent.com/u/29791463?v=4",
-			"profile": "http://fossa.io",
-			"contributions": [
-				"review"
-			]
-		},
-		{
-			"login": "vinayphadnis",
-			"name": "Vinay Phadnis",
-			"avatar_url": "https://avatars0.githubusercontent.com/u/21256352?v=4",
-			"profile": "http://www.vphadnis.com",
-			"contributions": [
-				"code"
-			]
-		},
-		{
-			"login": "pyup-bot",
-			"name": "pyup.io bot",
-			"avatar_url": "https://avatars0.githubusercontent.com/u/16239342?v=4",
-			"profile": "https://pyup.io",
-			"contributions": [
-				"review"
-			]
-		},
-		{
-			"login": "codacy-badger",
-			"name": "Codacy Badger",
-			"avatar_url": "https://avatars3.githubusercontent.com/u/23704769?v=4",
-			"profile": "https://www.codacy.com",
-			"contributions": [
-				"review",
-				"code"
-			]
-		}
-	],
-	"contributorsPerLine": 7,
-	"projectName": "SpacePY-X",
-	"projectOwner": "alshapton",
-	"repoType": "github",
-	"repoHost": "https://github.com"
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "fossabot",
+      "name": "fossabot",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/29791463?v=4",
+      "profile": "http://fossa.io",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "vinayphadnis",
+      "name": "Vinay Phadnis",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/21256352?v=4",
+      "profile": "http://www.vphadnis.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "pyup-bot",
+      "name": "pyup.io bot",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/16239342?v=4",
+      "profile": "https://pyup.io",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "codacy-badger",
+      "name": "Codacy Badger",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23704769?v=4",
+      "profile": "https://www.codacy.com",
+      "contributions": [
+        "review",
+        "code"
+      ]
+    },
+    {
+      "login": "allcontributors",
+      "name": "allcontributors[bot]",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/46843839?v=4",
+      "profile": "https://github.com/all-contributors/all-contributors-bot",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "SpacePY-X",
+  "projectOwner": "alshapton",
+  "repoType": "github",
+  "repoHost": "https://github.com"
 }
