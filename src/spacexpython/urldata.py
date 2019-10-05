@@ -64,3 +64,6 @@ class Domain(object):
 
     """ Ships Information """
     main_ships = "ships"
+
+    """ Crew Information """
+    main_crew = "crew"
