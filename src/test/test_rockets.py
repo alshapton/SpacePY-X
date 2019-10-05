@@ -54,11 +54,21 @@ def test_rocketBFR():
     bfr_data=''
     bfr_result=alphaOrder(readJSONFile('rockets/BFR.json'))
     try:
-        bfr_data = alphaOrder(spacexpython.rockets.rocket('bfr','',1))
+        bfr_data = alphaOrder(spacexpython.rockets.rocket('starship','',1))
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
-        print("Failure on info.api")
+        print("Failure on BFR(now starship)")
     assert bfr_data == bfr_result
+
+def test_rocketstarship():
+    starship_data=''
+    starship_result=alphaOrder(readJSONFile('rockets/starship.json'))
+    try:
+        starship_data = alphaOrder(spacexpython.rockets.rocket('starship','',1))
+    except spacexpython.utils.SpaceXReadTimeOut:
+        pytest.xfail("Space/X API Read Timed Out")
+        print("Failure on Starship (was BFR)")
+    assert starship_data == starship_result
 
 
 def test_rocketFH():
