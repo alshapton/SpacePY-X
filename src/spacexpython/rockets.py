@@ -180,3 +180,29 @@ def bfr(parameters='',timeOut=1):
     """
     requestUrl = urldata.Domain.main + urldata.Domain.bigfalconrocket
     return utils.makeRequest(requestUrl,timeOut,parameters)
+
+def starship(parameters='',timeOut=1):
+    """ Return a JSON document containing details of a the Starship
+
+    :type parameters: Optional[str]
+    :type timeOut: Optional[int]
+
+    Parameters
+    ----------
+    parameters
+        optional - a JSON document containing valid query modifiers
+    timeOut
+        optional - an integer stating the timeout in seconds of the REST api call
+
+    Exceptions
+    ----------
+        SpaceXReadTimeOut
+            an exception raised when the API call breaches the timeout limit
+
+    Returns
+    -------
+    string
+        a JSON document containing details about the Starship
+    """
+    requestUrl = urldata.Domain.main + urldata.Domain.starship
+    return utils.makeRequest(requestUrl,timeOut,parameters)

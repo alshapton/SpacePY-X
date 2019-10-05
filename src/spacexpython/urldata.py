@@ -30,6 +30,8 @@ class Domain(object):
     falcon9 = main_rockets + "/falcon9"
     falconheavy = main_rockets + "/falconheavy"
     bigfalconrocket = main_rockets + "/bfr"
+    bigfalconrocket = main_rockets + "/starship"
+
 
     """ Capsule Information """
     main_capsules = "capsules"
