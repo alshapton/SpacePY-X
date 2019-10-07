@@ -9,6 +9,7 @@ def capsules(parameters='', timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters,'capsules','capsules')
     requestUrl = urldata.Domain.main + urldata.Domain.main_capsules
     return utils.makeRequest(requestUrl, timeOut, parameters)
 

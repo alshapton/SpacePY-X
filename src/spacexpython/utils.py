@@ -15,6 +15,9 @@ import sys
 
 import requests
 
+from tinydb import TinyDB, Query
+
+
 sys.path.append('../')
 
 from .exceptions import *
@@ -82,3 +85,30 @@ def makeRequest(requestUrl, timeOut = 1, parameters = ''):
     else:
         response = url_response.json()
     return response
+
+
+def validateParameters(parameters,function,subfunction):
+    # Open the database
+    db = TinyDB('matrix.json')
+    # Get the list of rows for this function/subfunction
+    Row = Query()
+    subFunctionLine = db.get((Row.function == function) & (Row.subfunction == subfunction))
+    print(subFunctionLine)
+    functionParameters = subFunctionLine.get("parameters")
+    fp=[]
+    ft=[]
+
+    # get list of parameters in function/subfunction and populate 2 lists with their names and types
+    for i in functionParameters:
+        fp.append(i.get("parameter"))
+        ft.append(i.get("parameter")+ ".<type '" + i.get("type")+"'>")
+
+    # Cycle though list of supplied parameters, testing each for name validity and type validity
+    for i in parameters:
+        if i not in fp:
+            raise SpaceXParameterError(i + " is not a valid parameter for "+ function + "." + subfunction)
+        else:
+            if (i + "." + str(type(parameters[i]))) not in ft:
+                raise SpaceXParameterError(str(type(parameters[i])) + " is not valid for " + function + "." + subfunction + "(parameter: "+ i + ")")
+    # If every parameter and type combination work out then good to go !
+    return True
