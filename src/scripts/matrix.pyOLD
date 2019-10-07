@@ -1,0 +1,47 @@
+
+
+
+import sys
+sys.path.append('../')
+sys.path.append('../spacexpython/')
+from tinydb import TinyDB, Query
+from exceptions import *
+
+import json
+import ast
+
+db = TinyDB('matrix.json')      # Connect/Create an existing database
+db.purge()                      # If one already exists - purge it.
+
+# Insert all the matriuces for the wrappers into the database
+db.insert({"function":"capsules","subfunction":"capsules","parameters":[{"parameter":"capsule_serial","example":"C112","type":"str","comment":"Filter by capsule serial number"},{"parameter":"capsule_id","example":"dragon1","type":"str","comment":"Filter by capsule id"},{"parameter":"status","example":"active","type":"str","comment":"Filter by capsule status"},{"parameter":"original_launch","example":"2017-02-19T14:39:00.000ZUTC ISO","type":"timestamp","comment":"Filter by capsule original launch date"},{"parameter":"mission","example":"SpaceX CRS-5","type":"str","comment":"Filter by capsule mission"},{"parameter":"landings","example":"2","type":"int","comment":"Filter by capsule landings"},{"parameter":"type","example":"Dragon 1.1","type":"str","comment":"Filter by capsule type"},{"parameter":"reuse_count","example":" 1","type":"int","comment":"Filter by number of times the capsule was reused"}]})
+parameters={"capsule_serial":"C112","landings":1,"id":"true"}
+
+
+
+def validateParameters(parameters,function,subfunction):
+    # Open the database
+    db = TinyDB('matrix.json')
+    # Get the list of rows for this function/subfunction
+    Row = Query()
+    subFunctionLine = db.get((Row.function == function) & (Row.subfunction == subfunction))
+    functionParameters = subFunctionLine.get("parameters")
+    fp=[]
+    ft=[]
+
+    # get list of parameters in function/subfunction and populate 2 lists with their names and types
+    for i in functionParameters:
+        fp.append(i.get("parameter"))
+        ft.append(i.get("parameter")+ ".<type '" + i.get("type")+"'>")
+
+    # Cycle though list of supplied parameters, testing each for name validity and type validity
+    for i in parameters:
+        if i not in fp:
+            raise SpaceXParameterError(i + " is not a valid parameter for "+ function + "." + subfunction)
+        else:
+            if (i + "." + str(type(parameters[i]))) not in ft:
+                raise SpaceXParameterError(str(type(parameters[i])) + " is not valid for " + function + "." + subfunction + "(parameter: "+ i + ")")
+    # If every parameter and type combination work out then good to go !
+    return True
+
+x=validateParameters(parameters,'capsules','capsules')
