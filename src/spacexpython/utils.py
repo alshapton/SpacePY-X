@@ -9,7 +9,7 @@ functions:
     * jsonParameters - converts a JSON document into a URL parameter string
     * makeRequest - function to call a REST api
 """
-
+import ast
 import json
 import sys
 
@@ -87,13 +87,19 @@ def makeRequest(requestUrl, timeOut = 1, parameters = ''):
     return response
 
 
-def validateParameters(parameters,function,subfunction):
+def validateParameters(inParameters,inFunction,subfunction):
+    #If there are no parameters, then nothing needs validating.
+    if (inParameters == ''):
+        return True
+    parameters = ast.literal_eval(inParameters)
+    # Get the function name from the call
+    discard, function = inFunction.split('.')
+
     # Open the database
     db = TinyDB('matrix.json')
     # Get the list of rows for this function/subfunction
     Row = Query()
     subFunctionLine = db.get((Row.function == function) & (Row.subfunction == subfunction))
-    print(subFunctionLine)
     functionParameters = subFunctionLine.get("parameters")
     fp=[]
     ft=[]
@@ -101,14 +107,20 @@ def validateParameters(parameters,function,subfunction):
     # get list of parameters in function/subfunction and populate 2 lists with their names and types
     for i in functionParameters:
         fp.append(i.get("parameter"))
-        ft.append(i.get("parameter")+ ".<type '" + i.get("type")+"'>")
+        ft.append(i.get("parameter")+ ".<class '" + i.get("type")+"'>")
 
     # Cycle though list of supplied parameters, testing each for name validity and type validity
-    for i in parameters:
-        if i not in fp:
-            raise SpaceXParameterError(i + " is not a valid parameter for "+ function + "." + subfunction)
+    for key, value in parameters.items():
+        if key not in fp:
+            raise SpaceXParameterError(key + " is not a valid parameter for "+ function + "." + subfunction)
         else:
-            if (i + "." + str(type(parameters[i]))) not in ft:
-                raise SpaceXParameterError(str(type(parameters[i])) + " is not valid for " + function + "." + subfunction + "(parameter: "+ i + ")")
+            if (key  + "." + str(type(value))) not in ft:
+                raise SpaceXParameterError("Type '" + str(type(value)).replace("<class '","").replace("'>","") + "' is not valid for " + function + "." + subfunction + "(parameter: "+ key + ")")
     # If every parameter and type combination work out then good to go !
     return True
+
+
+def func_name():
+    # Source: https://stackoverflow.com/questions/5067604/determine-function-name-from-within-that-function-without-using-traceback
+    currentFuncName = lambda n=0: sys._getframe(n + 1).f_code.co_name
+    return currentFuncName(1)
