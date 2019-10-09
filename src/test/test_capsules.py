@@ -57,7 +57,7 @@ def test_capsulesP():
     capsulesP_data=''
     capsulesP_result=alphaOrder(readJSONFile('capsules/capsulesP.json'))
     try:
-        capsulesP_data = alphaOrder(spacexpython.capsules.capsules("{'capsule_serial':'C112','id':'true'}"))
+        capsulesP_data = alphaOrder(spacexpython.capsules.capsules('{"capsule_serial":"C112","id":"true"}'))
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print ("Failure on CapsulesP")

@@ -114,8 +114,24 @@ def validateParameters(inParameters,inFunction,subfunction):
         if key not in fp:
             raise SpaceXParameterError(key + " is not a valid parameter for "+ function + "." + subfunction)
         else:
-            if (key  + "." + str(type(value))) not in ft:
-                raise SpaceXParameterError("Type '" + str(type(value)).replace("<class '","").replace("'>","") + "' is not valid for " + function + "." + subfunction + "(parameter: "+ key + ")")
+            '''
+                Think I have this the wrong way around - i should look at the expected class for the parameter first and check for a boolean
+                THEN do the special prosssing - if not - carry on
+            '''
+            for g in ft:
+                p, t = g.split('.')
+                if (p == key):
+                    break
+            print(g + " " + p + " " + t)
+            if (t == "<class 'boolean'>"):
+                print(value.upper())
+                print(type(value))
+                if (value.upper() not in ['TRUE', 'FALSE']):
+                    raise SpaceXParameterError("Type '" + str(type(value)).replace("<class '", "").replace("'>", "") + "' is not valid for " + function + "." + subfunction + "(parameter: " + key + ")")
+            else:
+                # if the parameter is of the incorrect type then raise an exception
+                if (key  + "." + str(type(value))) not in ft:
+                    raise SpaceXParameterError("Type '" + str(type(value)).replace("<class '","").replace("'>","") + "' is not valid for " + function + "." + subfunction + "(parameter: "+ key + ")")
     # If every parameter and type combination work out then good to go !
     return True
 
