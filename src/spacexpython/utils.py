@@ -96,10 +96,16 @@ def validateParameters(inParameters,inFunction,subfunction):
     discard, function = inFunction.split('.')
 
     # Open the database
-    db = TinyDB('matrix.json')
+    db = TinyDB('matrixDB.json')
     # Get the list of rows for this function/subfunction
     Row = Query()
     subFunctionLine = db.get((Row.function == function) & (Row.subfunction == subfunction))
+
+    # if there are no rows for this function/subfunction, then there are no parameters for this function/subfunction    ***** EXPERIMENTAL *****
+    if (len(subFunctionLine < 1 )):
+        return True
+    # if there are no rows for this function/subfunction, then there are no parameters for this function/subfunction
+
     functionParameters = subFunctionLine.get("parameters")
     fp=[]
     ft=[]

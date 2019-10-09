@@ -1,0 +1,2 @@
+rocket_id	falcon_heavy	string	get one rocket by id
+id	true	boolean	Set as true to show mongo document id's

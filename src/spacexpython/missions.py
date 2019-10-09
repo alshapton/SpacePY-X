@@ -9,6 +9,7 @@ def missions(parameters='', timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     try:
         requestUrl = urldata.Domain.main + urldata.Domain.main_missions
     except utils.SpaceXReadTimeOut as e:
@@ -24,6 +25,7 @@ def one(mission='',parameters='', timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     try:
         requestUrl = urldata.Domain.main + urldata.Domain.main_missions + "/" + mission
     except utils.SpaceXReadTimeOut as e:

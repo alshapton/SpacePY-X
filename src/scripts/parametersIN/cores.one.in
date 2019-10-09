@@ -1,0 +1,2 @@
+core_serial	B1032	string	get one core by serial
+id	true	boolean	Set as true to show mongo document id's

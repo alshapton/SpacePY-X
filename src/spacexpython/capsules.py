@@ -21,6 +21,7 @@ def upcoming(parameters='', timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.upcoming_capsules
     return utils.makeRequest(requestUrl, timeOut, parameters)
 
@@ -32,6 +33,7 @@ def past(parameters='', timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.past_capsules
     return utils.makeRequest(requestUrl, timeOut, parameters)
 

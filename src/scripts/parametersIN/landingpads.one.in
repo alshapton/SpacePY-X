@@ -1,0 +1,2 @@
+id	LZ-4	string	get one launchpad by id
+id	true	boolean	Set as true to show mongo document id's

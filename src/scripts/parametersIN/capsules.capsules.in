@@ -1,0 +1,13 @@
+capsule_serial	C112	string	Filter by capsule serial
+capsule_id	dragon1	string	Filter by capsule id
+status	active	string	Filter by capsule status
+original_launch	2017-02-19T14:39:00.000Z	UTC ISO timestamp	Filter by capsule original launch date
+mission	SpaceX CRS-5	string	Filter by capsule mission
+landings	2	integer	Filter by capsule landings
+type	Dragon 1.1	string	Filter by capsule type
+reuse_count	1	integer	Filter by number of times the capsule was reused
+id	true	boolean	Set as true to show mongo document id's
+limit	3	integer	Limit results returned, defaults to all documents returned
+offset	3	integer	Offset or skip results from the beginning of the query
+sort	capsule_serial	string	Change result sorting by setting value to any parameter in this list
+order	desc	string	Change result ordering by setting values of asc or desc

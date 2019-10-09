@@ -9,6 +9,7 @@ def payloads(parameters='', timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     try:
         requestUrl = urldata.Domain.main + urldata.Domain.main_payloads
     except utils.SpaceXReadTimeOut as e:
@@ -24,6 +25,7 @@ def one(payload='',parameters='', timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     try:
         requestUrl = urldata.Domain.main + urldata.Domain.main_payloads + "/" + payload
     except utils.SpaceXReadTimeOut as e:

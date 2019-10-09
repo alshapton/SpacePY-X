@@ -1,0 +1,3 @@
+id	true	boolean	Set as true to show mongo document id's
+limit	3	integer	Limit results returned, defaults to all documents returned
+offset	3	integer	Offset or skip results from the beginning of the query

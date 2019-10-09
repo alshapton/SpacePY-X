@@ -1,0 +1,2 @@
+id	12	integer	get one historical event by id
+id	true	boolean	Set as true to show mongo document id's
