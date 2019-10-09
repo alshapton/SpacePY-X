@@ -134,7 +134,7 @@ def validateParameters(inParameters,inFunction,subfunction):
                 except ValueError:
                     raise SpaceXParameterError("Type '" + str(type(value)).replace("<class '", "").replace("'>","") + "' is not valid for " + function + "." + subfunction + "(parameter: " + key + ")")
 
-            if (t == "<class 'bool'>")
+            if (t == "<class 'bool'>"):
                 if (value.upper() not in ['TRUE', 'FALSE']):
                     raise SpaceXParameterError("Type '" + str(type(value)).replace("<class '", "").replace("'>", "") + "' is not valid for " + function + "." + subfunction + "(parameter: " + key + ")")
             else:
