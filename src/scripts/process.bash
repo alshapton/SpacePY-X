@@ -29,8 +29,7 @@ for FILENAME in parametersIN/*.in;
 	INSERTEND="]})"
 
   # Parse each record and append to the $OUTPUT file.
-	echo $(echo $INSERTSTART; cat $FILENAME |awk '$0="{\"parameter\":\""$0"\"},"' | sed "s/$(echo '\t')/\",\"example\":\"/"| sed "s/$(echo '\t')/\",\"type\":\"/" | sed "s/$(echo '\t')/\",\"comment\":\"/" | sed "s/\"integer\"/\"int\"/" | sed "s/\"boolean\"/\"bool\"/" | sed "s/\"UTC ISO timestamp\"/\"timestamp\"/" ; echo $INSERTEND) | sed "s/, ]})/]})/" >> $OUTPUT
-
+	echo $(echo $INSERTSTART; cat $FILENAME |awk '$0="{\"parameter\":\""$0"\"},"' | sed "s/$(echo '\t')/\",\"example\":\"/"| sed "s/$(echo '\t')/\",\"type\":\"/" | sed "s/$(echo '\t')/\",\"comment\":\"/" | sed "s/\"integer\"/\"int\"/" | sed "s/\"boolean\"/\"bool\"/"| sed "s/\"string\"/\"str\"/" | sed "s/\"UTC ISO timestamp\"/\"timestamp\"/" ; echo $INSERTEND) | sed "s/, ]})/]})/" >> $OUTPUT
   done
 
 # Now create the matrixDB.json database

@@ -11,20 +11,22 @@ The value should be expressed as a valid JSON payload, such as the following:
 
     {
         "status":"active",
-        "limit":3
+        "limit":"3"
     }
 
 An example of this would be:
 
 .. code-block:: python
 
-    parameters = {"status":"active", "limit":3}    # JSON payload indicating only 3 active
+    parameters = {"status":"active", "limit":"3"}    # JSON payload indicating only 3 active
                                                    # capsules should be returned
     timeOut = 2                                    # wait 2 seaconds before recording a timeout
-    capsules = spacexpython.capsules(parameters,timeOut)
+    capsules = spacexpython.capsules.capsules(parameters,timeOut)
     print(capsule)
 
 .. note::
 
-    As of version 1.0.0.alpha4, no parameter validation takes place, therefore incorrect parameters will produce
+    As of version 1.1.1a2, initial validation has been introduced. This should NOT be considered production ready yet.
+
+    Up to and including version 1.0.0.alpha4, no parameter validation took place, therefore incorrect parameters would produce
     unknown and unpredictable effects. Please check all spelling and validity of parameters prior to use.
