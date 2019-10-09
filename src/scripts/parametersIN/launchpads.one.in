@@ -1,0 +1,2 @@
+site_id	vafb_slc_4e	string	get one launchpad by id
+id	true	boolean	Set as true to show mongo document id's

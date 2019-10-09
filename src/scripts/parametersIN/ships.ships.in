@@ -1,0 +1,27 @@
+ship_id	MRSTEVEN	string	filter results by ship id
+ship_name	MR STEVEN	string	filter results by ship name
+ship_model	Marmac 300	string	filter results by ship model
+ship_type	Tug	string	filter results by ship type
+role	Support Ship	string	filter results by ship role
+active	true	boolean	filter results by active ships
+imo	7434016	integer	filter results by imo id number
+mmsi	367020820	integer	filter results by mmsi id number
+abs	571252	integer	filter results by abs id number
+class	7604342	integer	filter results by class id number
+weight_lbs	588000	integer	filter results by gross weight in lbs
+weight_kg	266712	integer	filter results by gross weight in kg
+year_built	2015	integer	filter results by year built
+home_port	Port of Los Angeles	string	filter results by home port
+status	Stopped	string	filter results by ship status
+speed_kn	9	integer	filter results by current ship speed
+course_deg	57	integer	filter results by current ship course in degrees
+latitude	25.98623	float	filter results by current ship latitude
+longitude	-97.3115	float	filter results by current ship longitude
+successful_landings	2	integer	filter results by successful landings
+attempted_landings	8	integer	filter results by current attempted landings
+mission	CRS-7	string	filter results by mission involved in
+id	true	boolean	Set as true to show mongo document id's
+limit	3	integer	Limit results returned, defaults to all documents returned
+offset	3	integer	Offset or skip results from the beginning of the query
+sort	ship_id	string	Change result sorting by setting value to any parameter in this list
+order	desc	string	Change result ordering by setting values of asc or desc

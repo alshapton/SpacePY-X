@@ -12,12 +12,13 @@ install_requires = [{
     # http://packages.python.org/distribute/setuptools.html#declaring-dependencies
     'requests'
     'beautifulsoup4'
+    'tinydb'
     }
 ]
 
 
 setup(name='SpacePY-X',
-    version="v1.1.1a1",
+    version="v1.1.1a2",
     description="Simple Python wrapper for the SpaceX API",
     long_description=README,
     classifiers=[

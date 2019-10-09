@@ -22,6 +22,7 @@ def cores(parameters='',timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.main_cores
     return utils.makeRequest(requestUrl,timeOut,parameters)
 
@@ -32,6 +33,7 @@ def upcoming(parameters='',timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.upcoming_cores
     return utils.makeRequest(requestUrl,timeOut,parameters)
 
@@ -42,6 +44,7 @@ def past(parameters='',timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.past_cores
     return utils.makeRequest(requestUrl,timeOut,parameters)
 
@@ -53,5 +56,6 @@ def one(core_serial,parameters='',timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.main_cores + "/" + str(core_serial)
     return utils.makeRequest(requestUrl,timeOut,parameters)
