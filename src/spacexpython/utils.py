@@ -121,11 +121,12 @@ def validateParameters(inParameters,inFunction,subfunction):
         if key not in fp:
             raise SpaceXParameterError(key + " is not a valid parameter for "+ function + "." + subfunction)
         else:
+
             for g in ft:
                 p, t = g.split('.')
                 if (p == key):
                     break
-
+                    
             if (t == "<class 'int'>"):
                 try:
                     attempt=int(value)
@@ -133,7 +134,7 @@ def validateParameters(inParameters,inFunction,subfunction):
                 except ValueError:
                     raise SpaceXParameterError("Type '" + str(type(value)).replace("<class '", "").replace("'>","") + "' is not valid for " + function + "." + subfunction + "(parameter: " + key + ")")
 
-            if (t == "<class 'bool'>"):
+            if (t == "<class 'bool'>")
                 if (value.upper() not in ['TRUE', 'FALSE']):
                     raise SpaceXParameterError("Type '" + str(type(value)).replace("<class '", "").replace("'>", "") + "' is not valid for " + function + "." + subfunction + "(parameter: " + key + ")")
             else:
