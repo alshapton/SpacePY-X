@@ -1,0 +1,2 @@
+id	dragon1	string	get one dragon by id
+id	true	boolean	Set as true to show mongo document id's

@@ -1,0 +1,8 @@
+id	4	integer	Filter by historical event id
+start/end	start=2017-06-22&end=2017-06-25	valid JavaScript date format	Include both to filter by date range
+flight_number	41	integer	Filter by historical event flight number
+id	true	boolean	Set as true to show mongo document id's
+limit	3	integer	Limit results returned, defaults to all documents returned
+offset	3	integer	Offset or skip results from the beginning of the query
+sort	flight_number	string	Change result sorting by setting value to any parameter in this list
+order	desc	string	Change result ordering by setting values of asc or desc

@@ -1,0 +1,2 @@
+ship_id	MRSTEVEN	string	get one ship by id
+id	true	boolean	Set as true to show mongo document id's

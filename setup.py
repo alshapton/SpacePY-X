@@ -12,6 +12,7 @@ install_requires = [{
     # http://packages.python.org/distribute/setuptools.html#declaring-dependencies
     'requests'
     'beautifulsoup4'
+    'tinydb'
     }
 ]
 
