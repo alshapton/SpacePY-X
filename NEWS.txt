@@ -8,6 +8,7 @@ Releases
 
 Alpha Releases
 ==============
+1.1.1a2 09-OCT-2019     Added initial parameter validation, and fixed some testing bugs
 1.1.1a1 05-OCT-2019     Added Starship and Crew information
 
 All alpha releases will contain a note here.
@@ -21,4 +22,4 @@ For pre-stable release notes, please see commit history
 
 Known Issues
 ============
-None.
+Parameter validation is NOT complete and production use is ill-advised
