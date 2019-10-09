@@ -26,5 +26,5 @@ def test_one_payload():
         one_data = alphaOrder(spacexpython.payloads.one('Telkom-4', '', 1))
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
-        print("Failure on payloads.one('GTO-2')")
+        print("Failure on payloads.one('Telkom-4')")
     assert one_data == one_result

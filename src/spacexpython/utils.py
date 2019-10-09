@@ -101,37 +101,39 @@ def validateParameters(inParameters,inFunction,subfunction):
     Row = Query()
     subFunctionLine = db.get((Row.function == function) & (Row.subfunction == subfunction))
 
-    # if there are no rows for this function/subfunction, then there are no parameters for this function/subfunction    ***** EXPERIMENTAL *****
-    if (len(subFunctionLine < 1 )):
-        return True
-    # if there are no rows for this function/subfunction, then there are no parameters for this function/subfunction
-
     functionParameters = subFunctionLine.get("parameters")
     fp=[]
     ft=[]
 
+    cfp=0
     # get list of parameters in function/subfunction and populate 2 lists with their names and types
     for i in functionParameters:
+        cfp=cfp+1
         fp.append(i.get("parameter"))
         ft.append(i.get("parameter")+ ".<class '" + i.get("type")+"'>")
+
+    # if there are no parameters applicable for this function, return true
+    if (cfp == 0):
+        return True
 
     # Cycle though list of supplied parameters, testing each for name validity and type validity
     for key, value in parameters.items():
         if key not in fp:
             raise SpaceXParameterError(key + " is not a valid parameter for "+ function + "." + subfunction)
         else:
-            '''
-                Think I have this the wrong way around - i should look at the expected class for the parameter first and check for a boolean
-                THEN do the special prosssing - if not - carry on
-            '''
             for g in ft:
                 p, t = g.split('.')
                 if (p == key):
                     break
-            print(g + " " + p + " " + t)
-            if (t == "<class 'boolean'>"):
-                print(value.upper())
-                print(type(value))
+
+            if (t == "<class 'int'>"):
+                try:
+                    attempt=int(value)
+                    break
+                except ValueError:
+                    raise SpaceXParameterError("Type '" + str(type(value)).replace("<class '", "").replace("'>","") + "' is not valid for " + function + "." + subfunction + "(parameter: " + key + ")")
+
+            if (t == "<class 'bool'>"):
                 if (value.upper() not in ['TRUE', 'FALSE']):
                     raise SpaceXParameterError("Type '" + str(type(value)).replace("<class '", "").replace("'>", "") + "' is not valid for " + function + "." + subfunction + "(parameter: " + key + ")")
             else:

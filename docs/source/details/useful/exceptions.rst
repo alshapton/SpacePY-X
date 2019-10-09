@@ -4,7 +4,7 @@ Exceptions
 Should an error occur anywhere in the call to a function (whether that be in the wrapper or the REST API itself), an
 exception will be raised.
 
-All normal Python exceptions exist that can be trapped, however, the wrapper implements a new exception:
+All normal Python exceptions exist that can be trapped, however, the wrapper implements 2 new exceptions:
 
 .. code-block:: python
 
@@ -22,3 +22,31 @@ performed as appropriate, for example:
         print("Failure on retrieval of capsule information")
 
 
+
+..code-block:: python
+
+    SpaceXParameterError
+
+This exception occurs when the the paramaters for a wrapper call (and ultimately to the API itself) do not meet the type specifications set out in the core API definition:
+
+.. code-block:: python
+
+    try:
+        coresP_data = alphaOrder(spacexpython.cores.cores('{"core_serial":"B1037","block":"true"}'))
+    except spacexpython.utils.SpaceXParameterError:
+        print("Incorrect parameter")
+
+
+This error is due to the ``block`` parameter in this instance showing ``true`` when the parameter is defined as an ``integer``.
+
+A further example :
+
+.. code-block:: python
+
+    try:
+        coresP_data = alphaOrder(spacexpython.cores.cores('{"core_serial":"B1037","desired-block":"4"}'))
+    except spacexpython.utils.SpaceXParameterError:
+        print("Incorrect parameter")
+
+
+This error is due to the ``block`` parameter in this instance not being a valid parameter.
