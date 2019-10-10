@@ -18,7 +18,7 @@ def test_payloads():
         print("Failure on payloads.allpayloads")
     assert payloads_data == payloads_result
 
-
+@pytest.mark.skip(reason="Skip")
 def test_one_payload():
     one_data=''
     one_result = alphaOrder(readJSONFile('payloads/oneTelkom-4.json'))
