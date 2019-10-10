@@ -9,6 +9,7 @@ def landingpads(parameters='', timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     try:
         requestUrl = urldata.Domain.main + urldata.Domain.main_landingpads
     except utils.SpaceXReadTimeOut as e:
@@ -23,6 +24,7 @@ def one(pad='',parameters='', timeOut=1):
     :type timeOut: Optional[int]
 
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     try:
         requestUrl = urldata.Domain.main + urldata.Domain.main_landingpads + "/" + pad
     except utils.SpaceXReadTimeOut as e:

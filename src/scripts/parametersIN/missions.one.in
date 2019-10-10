@@ -1,0 +1,2 @@
+mission_id	SES	string	get one mission by id
+id	true	boolean	Set as true to show mongo document id's

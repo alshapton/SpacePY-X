@@ -1,0 +1,2 @@
+flight_number	64	integer	get one launch by flight number
+id	true	boolean	Set as true to show mongo document id's

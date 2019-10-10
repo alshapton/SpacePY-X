@@ -30,6 +30,8 @@ class Domain(object):
     falcon9 = main_rockets + "/falcon9"
     falconheavy = main_rockets + "/falconheavy"
     bigfalconrocket = main_rockets + "/bfr"
+    bigfalconrocket = main_rockets + "/starship"
+
 
     """ Capsule Information """
     main_capsules = "capsules"
@@ -64,3 +66,6 @@ class Domain(object):
 
     """ Ships Information """
     main_ships = "ships"
+
+    """ Crew Information """
+    main_crew = "crew"

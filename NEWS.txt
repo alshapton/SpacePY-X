@@ -2,11 +2,15 @@
 
 Releases
 ========
+
 1.1.0   03-OCT-2019     Initial preview release for comment
 
 
 Alpha Releases
 ==============
+1.1.1a2 09-OCT-2019     Added initial parameter validation, and fixed some testing bugs
+1.1.1a1 05-OCT-2019     Added Starship and Crew information
+
 All alpha releases will contain a note here.
 Once a release has been moved from Alpha - this section will be blanked and a new section will commence.
 
@@ -18,4 +22,4 @@ For pre-stable release notes, please see commit history
 
 Known Issues
 ============
-Some tests currently fail, however the functionality is correct. New flights have been added since test modules were written.
+Parameter validation is NOT complete and production use is ill-advised

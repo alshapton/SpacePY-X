@@ -44,6 +44,7 @@ def allrockets(parameters='',timeOut=1):
     string
         a JSON document containing a list of rockets
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.main_rockets
     return utils.makeRequest(requestUrl,timeOut,parameters)
 
@@ -73,6 +74,7 @@ def rocket(rocket,parameters='',timeOut=1):
     string
         a JSON document containing a single rocket
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.main_rockets + "/" + rocket
     return utils.makeRequest(requestUrl,timeOut)
 
@@ -100,6 +102,7 @@ def falcon1(parameters='',timeOut=1):
     string
         a JSON document containing details about the Falcon 1 rocket
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.falcon1
     return utils.makeRequest(requestUrl,timeOut,parameters)
 
@@ -126,6 +129,7 @@ def falcon9(parameters='',timeOut=1):
     string
         a JSON document containing details about the Falcon 9 rocket
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.falcon9
     return utils.makeRequest(requestUrl,timeOut,parameters)
 
@@ -152,6 +156,7 @@ def falconheavy(parameters='',timeOut=1):
     string
         a JSON document containing details about the Falcon Heavy rocket
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.falconheavy
     return utils.makeRequest(requestUrl,timeOut,parameters)
 
@@ -178,5 +183,33 @@ def bfr(parameters='',timeOut=1):
     string
         a JSON document containing details about the Big Falcon Rocket
     """
+    utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.bigfalconrocket
+    return utils.makeRequest(requestUrl,timeOut,parameters)
+
+def starship(parameters='',timeOut=1):
+    """ Return a JSON document containing details of a the Starship
+
+    :type parameters: Optional[str]
+    :type timeOut: Optional[int]
+
+    Parameters
+    ----------
+    parameters
+        optional - a JSON document containing valid query modifiers
+    timeOut
+        optional - an integer stating the timeout in seconds of the REST api call
+
+    Exceptions
+    ----------
+        SpaceXReadTimeOut
+            an exception raised when the API call breaches the timeout limit
+
+    Returns
+    -------
+    string
+        a JSON document containing details about the Starship
+    """
+    utils.validateParameters(parameters, __name__, utils.func_name())
+    requestUrl = urldata.Domain.main + urldata.Domain.starship
     return utils.makeRequest(requestUrl,timeOut,parameters)

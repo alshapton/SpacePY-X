@@ -2,6 +2,7 @@
 
 from . import capsules
 from . import cores
+from . import crew
 from . import dragons
 from . import history
 from . import info
