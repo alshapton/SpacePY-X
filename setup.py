@@ -10,8 +10,8 @@ install_requires = [{
     # List your project dependencies here.
     # For more details, see:
     # http://packages.python.org/distribute/setuptools.html#declaring-dependencies
-    'requests'
-    'beautifulsoup4'
+    'requests',
+    'beautifulsoup4',
     'tinydb'
     }
 ]

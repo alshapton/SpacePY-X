@@ -59,6 +59,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "mhaddy",
+      "name": "Ryan Matthews",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9027146?v=4",
+      "profile": "https://www.ryansb.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
