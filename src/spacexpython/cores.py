@@ -15,7 +15,8 @@ functions:
 from . import urldata
 from . import utils
 
-def cores(parameters='',timeOut=1):
+
+def cores(parameters='', timeOut=1):
     """
 
     :type parameters: Optional[str]
@@ -24,9 +25,10 @@ def cores(parameters='',timeOut=1):
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.main_cores
-    return utils.makeRequest(requestUrl,timeOut,parameters)
+    return utils.makeRequest(requestUrl, timeOut, parameters)
 
-def upcoming(parameters='',timeOut=1):
+
+def upcoming(parameters='', timeOut=1):
     """
 
     :type parameters: Optional[str]
@@ -35,9 +37,10 @@ def upcoming(parameters='',timeOut=1):
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.upcoming_cores
-    return utils.makeRequest(requestUrl,timeOut,parameters)
+    return utils.makeRequest(requestUrl, timeOut, parameters)
 
-def past(parameters='',timeOut=1):
+
+def past(parameters='', timeOut=1):
     """
 
     :type parameters: Optional[str]
@@ -46,9 +49,10 @@ def past(parameters='',timeOut=1):
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.past_cores
-    return utils.makeRequest(requestUrl,timeOut,parameters)
+    return utils.makeRequest(requestUrl, timeOut, parameters)
 
-def one(core_serial,parameters='',timeOut=1):
+
+def one(core_serial, parameters='', timeOut=1):
     """
 
     :type core_serial: str
@@ -57,5 +61,6 @@ def one(core_serial,parameters='',timeOut=1):
 
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
-    requestUrl = urldata.Domain.main + urldata.Domain.main_cores + "/" + str(core_serial)
-    return utils.makeRequest(requestUrl,timeOut,parameters)
+    requestUrl = urldata.Domain.main + urldata.Domain.main_cores + \
+        "/" + str(core_serial)
+    return utils.makeRequest(requestUrl, timeOut, parameters)

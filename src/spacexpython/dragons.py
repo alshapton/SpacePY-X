@@ -3,24 +3,26 @@ from . import utils
 
 
 def dragons(parameters='', timeOut=1):
-        """
+    """
 
-        :type parameters: Optional[str]
-        :type timeOut: Optional[int]
+    :type parameters: Optional[str]
+    :type timeOut: Optional[int]
 
-        """
-        utils.validateParameters(parameters, __name__, utils.func_name())
-        requestUrl = urldata.Domain.main + urldata.Domain.main_dragons
-        return utils.makeRequest(requestUrl, timeOut, parameters)
+    """
+    utils.validateParameters(parameters, __name__, utils.func_name())
+    requestUrl = urldata.Domain.main + urldata.Domain.main_dragons
+    return utils.makeRequest(requestUrl, timeOut, parameters)
 
-def one(dragon='',parameters='', timeOut=1):
-        """
 
-        :type dragon: str
-        :type parameters: Optional[str]
-        :type timeOut: Optional[int]
+def one(dragon='', parameters='', timeOut=1):
+    """
 
-        """
-        utils.validateParameters(parameters, __name__, utils.func_name())
-        requestUrl = urldata.Domain.main + urldata.Domain.main_dragons + "/" + dragon
-        return utils.makeRequest(requestUrl, timeOut, parameters)
+    :type dragon: str
+    :type parameters: Optional[str]
+    :type timeOut: Optional[int]
+
+    """
+    utils.validateParameters(parameters, __name__, utils.func_name())
+    requestUrl = urldata.Domain.main + urldata.Domain.main_dragons + \
+        "/" + dragon
+    return utils.makeRequest(requestUrl, timeOut, parameters)
