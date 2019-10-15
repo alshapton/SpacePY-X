@@ -8,11 +8,14 @@ from spacexpython.exceptions import *
 from spacexpython.utils import *
 from .tutils import *
 
+
 def test_landingpads():
-    landingpads_data=''
-    landingpads_result=keyOrder(alphaOrder(readJSONFile('landingpads/all.json')),'id')
+    landingpads_data = ''
+    landingpads_result = keyOrder(alphaOrder(
+        readJSONFile('landingpads/all.json')), 'id')
     try:
-        landingpads_data = keyOrder(alphaOrder(spacexpython.landingpads.landingpads('',1)),'id')
+        landingpads_data = keyOrder(alphaOrder(
+            spacexpython.landingpads.landingpads('', 1)), 'id')
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print("Failure on landingpads.alllandingpads")
@@ -20,10 +23,12 @@ def test_landingpads():
 
 
 def test_one_landingpad():
-    one_data=''
-    one_result=alphaOrder(readJSONFile('landingpads/oneASOG.json'))
+    one_data = ''
+    one_result = alphaOrder(
+        readJSONFile('landingpads/oneASOG.json'))
     try:
-        one_data = alphaOrder(spacexpython.landingpads.one('ASOG','',1))
+        one_data = alphaOrder(
+            spacexpython.landingpads.one('ASOG', '', 1))
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print("Failure on landingpads.one('ASOG")
