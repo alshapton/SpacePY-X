@@ -17,7 +17,8 @@ def payloads(parameters='', timeOut=1):
     else:
         return utils.makeRequest(requestUrl, timeOut, parameters)
 
-def one(payload='',parameters='', timeOut=1):
+
+def one(payload='', parameters='', timeOut=1):
     """
 
     :type payload: str
@@ -27,9 +28,9 @@ def one(payload='',parameters='', timeOut=1):
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
     try:
-        requestUrl = urldata.Domain.main + urldata.Domain.main_payloads + "/" + payload
+        requestUrl = urldata.Domain.main + \
+            urldata.Domain.main_payloads + "/" + payload
     except utils.SpaceXReadTimeOut as e:
         raise e
     else:
         return utils.makeRequest(requestUrl, timeOut, parameters)
-
