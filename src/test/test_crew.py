@@ -1,4 +1,3 @@
-
 import sys
 sys.path.append('../')
 import pytest
@@ -9,8 +8,8 @@ from .tutils import *
 
 
 def test_crew():
-    crew_data=''
-    crew_result='[]'
+    crew_data = ''
+    crew_result = '[]'
     try:
         crew_data = alphaOrder(spacexpython.crew.crew())
     except spacexpython.utils.SpaceXReadTimeOut:

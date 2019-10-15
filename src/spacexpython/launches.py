@@ -1,7 +1,8 @@
 from . import urldata
 from . import utils
 
-def alllaunches(parameters='',timeOut=1):
+
+def alllaunches(parameters='', timeOut=1):
     """
 
     :type parameters: Optional[str]
@@ -14,9 +15,10 @@ def alllaunches(parameters='',timeOut=1):
     except utils.SpaceXReadTimeOut as e:
         raise e
     else:
-        return utils.makeRequest(requestUrl,timeOut,parameters)
+        return utils.makeRequest(requestUrl, timeOut, parameters)
 
-def latest(parameters='',timeOut=1):
+
+def latest(parameters='', timeOut=1):
     """
 
     :type parameters: Optional[str]
@@ -25,9 +27,10 @@ def latest(parameters='',timeOut=1):
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.latest_launches
-    return utils.makeRequest(requestUrl,timeOut,parameters)
+    return utils.makeRequest(requestUrl, timeOut, parameters)
 
-def nextlaunch(parameters='',timeOut=1):
+
+def nextlaunch(parameters='', timeOut=1):
     """
 
     :type parameters: Optional[str]
@@ -36,9 +39,10 @@ def nextlaunch(parameters='',timeOut=1):
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.next_launches
-    return utils.makeRequest(requestUrl,timeOut,parameters)
+    return utils.makeRequest(requestUrl, timeOut, parameters)
 
-def upcoming(parameters='',timeOut=1):
+
+def upcoming(parameters='', timeOut=1):
     """
 
     :type parameters: Optional[str]
@@ -47,9 +51,10 @@ def upcoming(parameters='',timeOut=1):
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.upcoming_launches
-    return utils.makeRequest(requestUrl,timeOut,parameters)
+    return utils.makeRequest(requestUrl, timeOut, parameters)
 
-def past(parameters='',timeOut=1):
+
+def past(parameters='', timeOut=1):
     """
 
     :type parameters: Optional[str]
@@ -58,9 +63,10 @@ def past(parameters='',timeOut=1):
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.past_launches
-    return utils.makeRequest(requestUrl,timeOut,parameters)
+    return utils.makeRequest(requestUrl, timeOut, parameters)
 
-def one(launch='',parameters='',timeOut=1):
+
+def one(launch='', parameters='', timeOut=1):
     """
 
     :type launch: str
@@ -70,4 +76,4 @@ def one(launch='',parameters='',timeOut=1):
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain + "/" + launch
-    return utils.makeRequest(requestUrl,timeOut,parameters)
+    return utils.makeRequest(requestUrl, timeOut, parameters)

@@ -3,6 +3,8 @@
 
 This is a module defines the endpoints for the REST SpaceX API
 """
+
+
 class Domain(object):
     """ Base URL from which to assemble request URLs """
     base = "https://api.spacexdata.com"
@@ -16,7 +18,7 @@ class Domain(object):
         Launches Information """
     main_launches = "launches"
     latest_launches = main_launches + "/latest"
-    next_launches =  main_launches + "/next"
+    next_launches = main_launches + "/next"
     upcoming_launches = main_launches + "/upcoming"
     past_launches = main_launches + "/past"
 
@@ -31,7 +33,6 @@ class Domain(object):
     falconheavy = main_rockets + "/falconheavy"
     bigfalconrocket = main_rockets + "/bfr"
     bigfalconrocket = main_rockets + "/starship"
-
 
     """ Capsule Information """
     main_capsules = "capsules"

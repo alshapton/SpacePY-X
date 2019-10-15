@@ -17,7 +17,8 @@ def missions(parameters='', timeOut=1):
     else:
         return utils.makeRequest(requestUrl, timeOut, parameters)
 
-def one(mission='',parameters='', timeOut=1):
+
+def one(mission='', parameters='', timeOut=1):
     """
 
     :type mission: str
@@ -27,9 +28,9 @@ def one(mission='',parameters='', timeOut=1):
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
     try:
-        requestUrl = urldata.Domain.main + urldata.Domain.main_missions + "/" + mission
+        requestUrl = urldata.Domain.main + \
+            urldata.Domain.main_missions + "/" + mission
     except utils.SpaceXReadTimeOut as e:
         raise e
     else:
         return utils.makeRequest(requestUrl, timeOut, parameters)
-
