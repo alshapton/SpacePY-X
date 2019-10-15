@@ -200,7 +200,8 @@ def bfr(parameters='', timeOut=1):
         a JSON document containing details about the Big Falcon Rocket
     """
     warnings.warn(
-        "spacexpython.rockets.BFR is deprecated use spacexpython.rockets.starship instead",
+        "spacexpython.rockets.BFR is deprecated use "
+        "spacexpython.rockets.starship instead",
         DeprecationWarning
     )
     utils.validateParameters(parameters, __name__, utils.func_name())
