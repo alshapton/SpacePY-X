@@ -61,8 +61,10 @@ def test_rocketF9():
 
 
 def test_rocketBFR():
+    # BFR has been renamed Starship
+    # This function has been marked as deprecated
     bfr_data = ''
-    bfr_result = alphaOrder(readJSONFile('rockets/BFR.json'))
+    bfr_result = alphaOrder(readJSONFile('rockets/starship.json'))
     try:
         bfr_data = alphaOrder(
             spacexpython.rockets.rocket('starship', '', 1))

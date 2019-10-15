@@ -14,9 +14,11 @@ functions:
 
     * falcon1 - returns information about the Falcon 1
     * falcon9 - returns information about the Falcon 9
-    * bfr - returns information about the Big Falcon Rocket
+    * bfr - returns information about the Big Falcon Rocket *DEPRECATED
     * falconheavy - returns information about the Falcon Heavy
+    * starship - returns information about the Starship
 """
+import warnings
 from . import urldata
 from . import utils
 
@@ -197,6 +199,10 @@ def bfr(parameters='', timeOut=1):
     string
         a JSON document containing details about the Big Falcon Rocket
     """
+    warnings.warn(
+        "spacexpython.rockets.BFR is deprecated use spacexpython.rockets.starship instead",
+        DeprecationWarning
+    )
     utils.validateParameters(parameters, __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.bigfalconrocket
     return utils.makeRequest(requestUrl, timeOut, parameters)
