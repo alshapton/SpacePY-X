@@ -256,7 +256,7 @@ def setup_module():
     # Get the data for the Mars Distance
     # information from JPL Horizons API
     fg = makeHTTP(marsDistURL, 1)
-    
+
     # Create a new file with the results of the call
     # to the JPL Horizons API for Mars distance
     writeFile(BASE + 'mars', fg, 'w+')
@@ -281,7 +281,7 @@ def setup_module():
     sb = ['./script_roadster.zsh epoch', 'epoch']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     epoch = float(g.stdout.strip())
 
@@ -292,7 +292,7 @@ def setup_module():
     sb = ['./script_roadster.zsh sma', 'sma']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     sma = float(g.stdout.strip())
     sma = (sma * float(AU_TO_KM)) / float(10000000)
@@ -304,7 +304,7 @@ def setup_module():
     sb = ['./script_roadster.zsh ec', 'ec']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     ec = float(g.stdout.strip())
 
@@ -315,7 +315,7 @@ def setup_module():
     sb = ['./script_roadster.zsh qr', 'qr']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     qr = float(g.stdout.strip())
 
@@ -326,7 +326,7 @@ def setup_module():
     sb = ['./script_roadster.zsh ad', 'ad']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     ad = float(g.stdout.strip())
 
@@ -337,7 +337,7 @@ def setup_module():
     sb = ['./script_roadster.zsh om', 'om']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     om = float(g.stdout.strip())
 
@@ -348,7 +348,7 @@ def setup_module():
     sb = ['./script_roadster.zsh w', 'w']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     w = float(g.stdout.strip())
 
@@ -359,7 +359,7 @@ def setup_module():
     sb = ['./script_roadster.zsh inc', 'inc']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     inc = float(g.stdout.strip())
 
@@ -370,7 +370,7 @@ def setup_module():
     sb = ['./script_roadster.zsh period', 'period']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     period = float(g.stdout.strip())
 
@@ -381,7 +381,7 @@ def setup_module():
     sb = ['./script_roadster.zsh earthDistance', 'earthDistance']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     distanceFromEarthkm = float(g.stdout.strip()) \
         * float(AU_TO_KM)
@@ -401,7 +401,7 @@ def setup_module():
     sb = ['./script_roadster.zsh marsDistance', 'marsDistance']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     distanceFromMarskm = float(g.stdout.strip()) \
         * float(AU_TO_KM)
@@ -421,7 +421,7 @@ def setup_module():
     sb = ['./script_roadster.zsh speed', 'speed']
     g = subprocess.run(sb, stdin=subprocess.PIPE,
                        stdout=subprocess.PIPE,
-                       shell=True,  #noqa B602
+                       shell=True,  # noqa B602
                        universal_newlines=True)
     OrbitalSpeedkph = float(g.stdout.strip()) \
         * (float(60.0) * float(60.0))
