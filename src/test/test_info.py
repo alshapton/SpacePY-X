@@ -3,9 +3,8 @@ import sys
 sys.path.append('../')
 import pytest
 import spacexpython
-from spacexpython.exceptions import *
-from spacexpython.utils import *
 from .tutils import *
+import timeit
 
 
 def test_api():
@@ -28,3 +27,16 @@ def test_company():
         pytest.xfail("Space/X API Read Timed Out")
         print ("Failure on info.company")
     assert company_data == company_result
+
+
+def test_clients():
+    client_data = ''
+    client_result = alphaOrder(readJSONFile('info/clients.json'))
+    try:
+        client_data = alphaOrder(spacexpython.info.clients())
+    except spacexpython.utils.SpaceXReadTimeOut:
+        pytest.xfail("Space/X API Read Timed Out")
+        print ("Failure on info.clients")
+    assert client_data == client_result
+
+

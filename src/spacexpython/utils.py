@@ -9,17 +9,29 @@ functions:
     * jsonParameters - converts a JSON document
                         into a URL parameter string
     * makeRequest - function to call a REST api
+    * getAPISupporting - Get information from API support page
+    * validateParameters - validate parameters to any API functions
+
+    * Internal Functions:
+        -   func_name
+        -   clients
+        -   apps
+
 """
 import ast
 import json
 import sys
 import requests
+import cachepy
+from bs4 import BeautifulSoup
 from tinydb import TinyDB, Query
 
 sys.path.append('../')
 
 from .exceptions import *
 
+
+clientcache = cachepy.Cache()
 
 def jsonParameters(parameters):
     """
@@ -88,6 +100,131 @@ def makeRequest(requestUrl, timeOut=1, parameters=''):
     else:
         response = url_response.json()
     return response
+
+@clientcache
+def buildclients (url_response):
+    """
+    :param url_response: str
+
+    Parameters
+    ----------
+    :param url_response: str
+
+    Returns
+    -------
+    response
+        a string which is a JSON document returned from the
+        APISupport page (clients)
+
+    """
+
+    page = BeautifulSoup(url_response.text, 'html.parser')
+    table = page.find('tbody')
+    response = '['
+
+    for trow in table.find_all('tr')[2:]:
+        tds = trow.find_all('td')
+
+        # Split languages and form JSON Array
+        initLangs=tds[1].text.split("/")
+        languages = "["
+        for lang in initLangs:
+            languages = languages + '"' + lang.strip() + '",'
+        languages = languages[:-1] + "]"
+
+        # Split repo types and form JSON Array
+        initRepos=tds[3].text.split(",")
+        repotypes = "["
+        for repo in initRepos:
+            repotypes = repotypes + '"' + repo.strip() + '",'
+        repotypes = repotypes[:-1] + "]"
+
+        # Split Creators and form JSON Array
+        initcreators=tds[2].text.split(",")
+        creators = "["
+        for creator in initcreators:
+            creators = creators + '"' + creator.strip() + '",'
+        creators = creators[:-1] + "]"
+
+        # Split links and form JSON Array
+        lnks = ''
+        for lnk in tds[3].find_all('a',href=True):
+            lnks = lnks + ',' + '"' + lnk['href'] + '"'
+        lnks = '[' + lnks[1:] + "]"
+        # Compose the JSON document for this API/Wrapper
+        response = response +'{"Name":"'+ tds[0].text + '","Languages":'+ languages + ',"Creators":' + creators + ',"Repos":' + repotypes + ',"Links":' + lnks + '},'
+
+    response = response[:-1] + "]"
+    return response
+
+
+def apps (url_response):
+    """
+    :param url_response: str
+
+    Parameters
+    ----------
+    :param url_response: str
+
+    Returns
+    -------
+    response
+        a string which is a JSON document returned from the
+        APISupport page (apps)
+
+    """
+    page = BeautifulSoup(url_response.text, 'html.parser')
+    name_box = page.find('tbody')
+    print(name_box)
+    for trow in name_box.find_all('tr')[2:]:
+        tds = trow.find_all('td')
+        print("Nome: %s, Language: %s, Author: %s, Repo: %s  " % (tds[0].text, tds[1].text, tds[2].text, tds[3].text))
+
+
+def getAPISupporting(req, parameters, timeOut=1):
+    """
+    :param req: str
+    :param parameters: Optional[str]
+    :param timeOut: Optional[str]
+
+    Parameters
+    ----------
+    req : str
+        whether clients or apps are required
+    parameters : str
+        optional parameters use as query modifiers
+    timeOut : int
+        optional - API call timeout
+
+    Returns
+    -------
+    response
+        a string which is a JSON document returned from the
+        APISupport page
+
+    Exceptions
+    ----------
+    SpaceXReadTimeOut
+        raised when the API call breaches the timeout limit
+    """
+    base = "https://github.com/r-spacex/SpaceX-API/blob/master/docs/"
+    requestUrl = base + req + ".md"
+    try:
+        url_response = requests.get(url=str(requestUrl),
+                                    timeout=timeOut)
+    except requests.exceptions.ReadTimeout:
+        raise SpaceXReadTimeOut('Space/X Timeout Error')
+    else:
+        if (req == 'clients'):
+            # If thhe list of clients hasnt been built, build it
+            try:
+                clientList
+            except NameError:
+                clientList = buildclients(url_response)
+            response = clientList
+        if (req == 'apps'):
+            response = apps(url_response)
+    return json.loads(response)
 
 
 def validateParameters(inParameters, inFunction, subfunction):

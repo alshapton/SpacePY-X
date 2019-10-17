@@ -7,8 +7,9 @@ NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 
 
 install_requires = [{
-    'requests',
     'beautifulsoup4',
+    'cachepy',
+    'requests',
     'tinydb'
     }
 ]

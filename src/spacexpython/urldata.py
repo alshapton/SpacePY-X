@@ -22,7 +22,7 @@ class Domain(object):
     upcoming_launches = main_launches + "/upcoming"
     past_launches = main_launches + "/past"
 
-    """ Company information """
+    """ Company/API information """
     main_info = "info"
     main_api = ""
 
