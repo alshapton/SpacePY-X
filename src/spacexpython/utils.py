@@ -25,6 +25,8 @@ import requests
 import cachepy
 from bs4 import BeautifulSoup
 from tinydb import TinyDB, Query
+from tinydb.storages import MemoryStorage
+
 
 sys.path.append('../')
 
@@ -117,6 +119,8 @@ def buildclients (url_response):
         APISupport page (clients)
 
     """
+    # Storage for clients will be in an in-memory TinyDB
+    clientDB = TinyDB(storage=MemoryStorage)
 
     page = BeautifulSoup(url_response.text, 'html.parser')
     table = page.find('tbody')
@@ -151,11 +155,16 @@ def buildclients (url_response):
         for lnk in tds[3].find_all('a',href=True):
             lnks = lnks + ',' + '"' + lnk['href'] + '"'
         lnks = '[' + lnks[1:] + "]"
+
+        # insert the record into the database
+        record = '{"Name":"' + tds[0].text + '","Languages":' + languages + ',"Creators":' + creators + ',"Repos":' + repotypes + ',"Links":' + lnks + '}'
+        clientDB.insert(json.loads(record))
+
         # Compose the JSON document for this API/Wrapper
         response = response +'{"Name":"'+ tds[0].text + '","Languages":'+ languages + ',"Creators":' + creators + ',"Repos":' + repotypes + ',"Links":' + lnks + '},'
 
     response = response[:-1] + "]"
-    return response
+    return clientDB
 
 
 def apps (url_response):
@@ -216,15 +225,27 @@ def getAPISupporting(req, parameters, timeOut=1):
         raise SpaceXReadTimeOut('Space/X Timeout Error')
     else:
         if (req == 'clients'):
-            # If thhe list of clients hasnt been built, build it
+            # If the list of clients hasnt been built, build it
             try:
-                clientList
+                # noinspection PyUnresolvedReferences
+                clientDB
             except NameError:
-                clientList = buildclients(url_response)
-            response = clientList
+                clientDB = buildclients(url_response)
+            parameters='X'
+            if (parameters == ''):
+                # Make sure that here we read all the records from the database into a JSON string
+                response = clientDB
+                response = "{}"
+            else:
+                # Here are some things that we do when there are parameters
+                # Validate Parameters here
+                Row = Query()
+                line =  clientDB.search(Row.Languages.any(['Node.js']))
+                print(line)
+                response=line
         if (req == 'apps'):
             response = apps(url_response)
-    return json.loads(response)
+    return response
 
 
 def validateParameters(inParameters, inFunction, subfunction):

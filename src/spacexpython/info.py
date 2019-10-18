@@ -1,6 +1,6 @@
 from . import urldata
 from . import utils
-
+import pyjsonq
 
 
 def company(timeOut=1):
@@ -25,14 +25,14 @@ def api(timeOut=1):
     return utils.makeRequest(requestUrl, timeOut)
 
 
-def clients(language='', timeOut=1):
+def clients(parameters='', timeOut=1):
     """
 
-    :type language: Optional[str]
+    :type parameters: Optional[str]
     :type timeOut: Optional[int]
 
     """
 
     #utils.validateParameters('', __name__, utils.func_name())
-    return utils.getAPISupporting("clients",language, timeOut)
+    return utils.getAPISupporting("clients",parameters, timeOut)
 
