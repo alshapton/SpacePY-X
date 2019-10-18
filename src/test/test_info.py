@@ -36,7 +36,5 @@ def test_clients():
         client_data = alphaOrder(spacexpython.info.clients())
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
-        print ("Failure on info.clients")
+        print("Failure on info.clients")
     assert client_data == client_result
-
-

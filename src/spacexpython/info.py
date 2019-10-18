@@ -33,6 +33,5 @@ def clients(parameters='', timeOut=1):
 
     """
 
-    #utils.validateParameters('', __name__, utils.func_name())
-    return utils.getAPISupporting("clients",parameters, timeOut)
-
+    # utils.validateParameters('', __name__, utils.func_name())
+    return utils.getAPISupporting("clients", parameters, timeOut)

@@ -103,8 +103,9 @@ def makeRequest(requestUrl, timeOut=1, parameters=''):
         response = url_response.json()
     return response
 
+
 @clientcache
-def buildclients (url_response):
+def buildclients(url_response):
     """
     :param url_response: str
 
@@ -130,21 +131,21 @@ def buildclients (url_response):
         tds = trow.find_all('td')
 
         # Split languages and form JSON Array
-        initLangs=tds[1].text.split("/")
+        initLangs = tds[1].text.split("/")
         languages = "["
         for lang in initLangs:
             languages = languages + '"' + lang.strip() + '",'
         languages = languages[:-1] + "]"
 
         # Split repo types and form JSON Array
-        initRepos=tds[3].text.split(",")
+        initRepos = tds[3].text.split(",")
         repotypes = "["
         for repo in initRepos:
             repotypes = repotypes + '"' + repo.strip() + '",'
         repotypes = repotypes[:-1] + "]"
 
         # Split Creators and form JSON Array
-        initcreators=tds[2].text.split(",")
+        initcreators = tds[2].text.split(",")
         creators = "["
         for creator in initcreators:
             creators = creators + '"' + creator.strip() + '",'
@@ -157,17 +158,16 @@ def buildclients (url_response):
         lnks = '[' + lnks[1:] + "]"
 
         # insert the record into the database
-        record = '{"Name":"' + tds[0].text + '","Languages":' + languages + ',"Creators":' + creators + ',"Repos":' + repotypes + ',"Links":' + lnks + '}'
+        record = '{"Name":"' + tds[0].text + '","Languages":' \
+                 + languages + ',"Creators":' + creators \
+                 + ',"Repos":' + repotypes \
+                 + ',"Links":' + lnks + '}'
         clientDB.insert(json.loads(record))
 
-        # Compose the JSON document for this API/Wrapper
-        response = response +'{"Name":"'+ tds[0].text + '","Languages":'+ languages + ',"Creators":' + creators + ',"Repos":' + repotypes + ',"Links":' + lnks + '},'
-
-    response = response[:-1] + "]"
     return clientDB
 
 
-def apps (url_response):
+def apps(url_response):
     """
     :param url_response: str
 
@@ -187,7 +187,8 @@ def apps (url_response):
     print(name_box)
     for trow in name_box.find_all('tr')[2:]:
         tds = trow.find_all('td')
-        print("Nome: %s, Language: %s, Author: %s, Repo: %s  " % (tds[0].text, tds[1].text, tds[2].text, tds[3].text))
+        print("Nome: %s, Language: %s, Author: %s, Repo: %s  "
+              % (tds[0].text, tds[1].text, tds[2].text, tds[3].text))
 
 
 def getAPISupporting(req, parameters, timeOut=1):
@@ -231,18 +232,21 @@ def getAPISupporting(req, parameters, timeOut=1):
                 clientDB
             except NameError:
                 clientDB = buildclients(url_response)
-            parameters='X'
+            parameters = 'X'
             if (parameters == ''):
-                # Make sure that here we read all the records from the database into a JSON string
+                # Make sure that here we read all the
+                # records from the database into a JSON string
                 response = clientDB
                 response = "{}"
             else:
-                # Here are some things that we do when there are parameters
+                # Here are some things that we do when
+                # there are parameters
+
                 # Validate Parameters here
                 Row = Query()
-                line =  clientDB.search(Row.Languages.any(['Node.js']))
+                line = clientDB.search(Row.Languages.any(['Node.js']))
                 print(line)
-                response=line
+                response    = line
         if (req == 'apps'):
             response = apps(url_response)
     return response
