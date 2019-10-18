@@ -153,7 +153,7 @@ def buildclients(url_response):
 
         # Split links and form JSON Array
         lnks = ''
-        for lnk in tds[3].find_all('a',href=True):
+        for lnk in tds[3].find_all('a', href=True):
             lnks = lnks + ',' + '"' + lnk['href'] + '"'
         lnks = '[' + lnks[1:] + "]"
 
@@ -246,7 +246,7 @@ def getAPISupporting(req, parameters, timeOut=1):
                 Row = Query()
                 line = clientDB.search(Row.Languages.any(['Node.js']))
                 print(line)
-                response    = line
+                response = line
         if (req == 'apps'):
             response = apps(url_response)
     return response

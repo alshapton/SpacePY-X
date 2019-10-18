@@ -37,5 +37,5 @@ setup(name='SpacePY-X',
       entry_points={
         'console_scripts':
             ['spacex-python=spacexpython']
-        }
-    )
+                    }
+      )
