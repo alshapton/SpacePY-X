@@ -23,5 +23,6 @@ def one(ship='', parameters='', timeOut=1):
 
     """
     utils.validateParameters(parameters, __name__, utils.func_name())
-    requestUrl = urldata.Domain.main + urldata.Domain.main_ships + "/" + ship
+    requestUrl = urldata.Domain.main \
+        + urldata.Domain.main_ships + "/" + ship
     return utils.makeRequest(requestUrl, timeOut, parameters)

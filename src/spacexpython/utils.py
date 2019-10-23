@@ -34,6 +34,9 @@ from .exceptions import *
 
 
 clientcache = cachepy.Cache()
+APIcache = cachepy.Cache()
+appcache = cachepy.Cache()
+
 
 def jsonParameters(parameters):
     """
@@ -167,7 +170,8 @@ def buildclients(url_response):
     return clientDB
 
 
-def apps(url_response):
+@appcache
+def buildapps(url_response):
     """
     :param url_response: str
 
@@ -187,10 +191,90 @@ def apps(url_response):
     print(name_box)
     for trow in name_box.find_all('tr')[2:]:
         tds = trow.find_all('td')
-        print("Nome: %s, Language: %s, Author: %s, Repo: %s  "
-              % (tds[0].text, tds[1].text, tds[2].text, tds[3].text))
 
+        # Get links for app/website etc and form JSON Array
+        lnks = ''
+        for lnk in tds[0].find_all('a', href=True):
+            lnks = lnks + ',' + '"' + lnk['href'] + '"'
+        lnks = '[' + lnks[1:] + "]"
 
+        type = ''
+        platform = ''
+        # Separate Types out and deal with platforms:
+        if ("WEBSITE" in (tds[1].text).upper()):
+            type = type + ',"WEBSITE"'
+            platform = platform + ',"WEB"'
+
+        if ("ANDROID APP" in (tds[1].text).upper()):
+            type = type + ',"APP"'
+            platform = platform + ',"ANDROID"'
+
+        if ("OOS APP" in (tds[1].text).upper()):
+            type = type + ',"APP"'
+            platform = platform + ',"IOS"'
+
+        if ("DISCORD BOT" in (tds[1].text).upper()):
+            type = type + ',"BOT"'
+            platform = platform + ',"DISCORD"'
+
+        if ("API" in (tds[1].text).upper()):
+            type = type + ',"API"'
+            platform = platform + ',"API"'
+
+        if ("APPS" in (tds[1].text).upper()):
+            type = type + ',"APP"'
+            platform = platform + ',"IOS","ANDROID"'
+
+        type = '[' + type[1:] + "]"
+        platform = '[' + platform[1:] + "]"
+
+        # Split Creators and form JSON Array
+        initcreators = tds[2].text.split(",")
+        creators = "["
+        for creator in initcreators:
+            creators = creators + '"' + creator.strip() + '",'
+        creators = creators[:-1] + "]"
+
+        # Split "More" and form JSON Array
+        initmore = tds[4].text.split(",")
+        mores = ''
+        for mores in initmore:
+            mores = mores + '"' + mores.strip() + '",'
+        mores = "[" + mores[:-1] + "]"
+        if (mores == '[""]'):
+            mores='[]'
+
+        # Get links for app/website etc and form JSON Array
+        clnks = ''
+        for lnk in tds[2].find_all('a', href=True):
+            clnks = clnks + ',' + '"' + lnk['href'] + '"'
+        clnks = '[' + clnks[1:] + "]"
+
+        app = tds[0].text
+
+        # Get links for repo and form JSON Array
+        rlnks = ''
+        for lnk in tds[3].find_all('a', href=True):
+            rlnks = rlnks + ',' + '"' + lnk['href'] + '"'
+        rlnks = '[' + rlnks[1:] + "]"
+
+        # Get more links for repo and form JSON Array
+        mlnks = ''
+        for lnk in tds[4].find_all('a', href=True):
+            mlnks = mlnks + ',' + '"' + lnk['href'] + '"'
+        mlnks = '[' + mlnks[1:] + "]"
+
+        record = '{"Name":"' + app + '","Links":' \
+                 + lnks + ',"Types":' + type \
+                 + ',"Platforms":' + platform \
+                 + ',"Creators":' + creators \
+                 + ',"CreatorLinks":' + clnks \
+                 + ',"Repos":' + rlnks \
+                 + ',"More":' + mores \
+                 + ',"MoreLinks":' + mlnks + '}'
+        print (record)
+
+@APIcache
 def getAPISupporting(req, parameters, timeOut=1):
     """
     :param req: str
@@ -217,6 +301,10 @@ def getAPISupporting(req, parameters, timeOut=1):
     SpaceXReadTimeOut
         raised when the API call breaches the timeout limit
     """
+
+    global clientDB
+    global appsDB
+
     base = "https://github.com/r-spacex/SpaceX-API/blob/master/docs/"
     requestUrl = base + req + ".md"
     try:
@@ -230,26 +318,41 @@ def getAPISupporting(req, parameters, timeOut=1):
             try:
                 # noinspection PyUnresolvedReferences
                 clientDB
-            except NameError:
+            except (NameError, UnboundLocalError):
                 clientDB = buildclients(url_response)
-            parameters = 'X'
+
             if (parameters == ''):
                 # Make sure that here we read all the
                 # records from the database into a JSON string
-                response = clientDB
-                response = "{}"
+                responseT = str(clientDB.all())
+                response = responseT.replace("'", "\"")
             else:
-                # Here are some things that we do when
-                # there are parameters
-
-                # Validate Parameters here
+                # When there are parameters:
                 Row = Query()
-                line = clientDB.search(Row.Languages.any(['Node.js']))
-                print(line)
-                response = line
+                query = ''
+                parametersJSON = json.loads(parameters)
+
+                for key, value in parametersJSON.items():
+                    query = query + "(Row." + str(key).capitalize() \
+                        + ".any(" + str(value) + ")) &"
+                query = query[:-1]
+                responseT = clientDB.search(eval(query))
+                response = str(responseT).replace("'", "\"")
+
         if (req == 'apps'):
-            response = apps(url_response)
-    return response
+            # If the list of clients hasnt been built, build it
+            try:
+                # noinspection PyUnresolvedReferences
+                appsDB
+            except (NameError, UnboundLocalError):
+                appsDB = buildapps(url_response)
+
+            response = buildapps(url_response)
+
+        if ((req != 'apps') and (req != "clients") and (req != '')):
+            raise SpaceXParameterError
+
+    return json.loads(response)
 
 
 def validateParameters(inParameters, inFunction, subfunction):

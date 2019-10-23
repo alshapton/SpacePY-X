@@ -32,6 +32,16 @@ def clients(parameters='', timeOut=1):
     :type timeOut: Optional[int]
 
     """
-
-    # utils.validateParameters('', __name__, utils.func_name())
+    utils.validateParameters('', __name__, utils.func_name())
     return utils.getAPISupporting("clients", parameters, timeOut)
+
+
+def apps(parameters='', timeOut=1):
+    """
+
+    :type parameters: Optional[str]
+    :type timeOut: Optional[int]
+
+    """
+    utils.validateParameters('', __name__, utils.func_name())
+    return utils.getAPISupporting("apps", parameters, timeOut)
