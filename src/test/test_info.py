@@ -54,11 +54,13 @@ def test_language():
 def test_apps():
     apps_data = ''
     apps_result=''
-    #apps_result = keyOrder(alphaOrder(readJSONFile('info/apps.json')),"App")
+    #apps_result = keyOrder(alphaOrder(readJSONFile('info/apps.json')),"Name")
     try:
-        apps_data = keyOrder(alphaOrder(spacexpython.info.apps()),"App")
+        # apps_data = keyOrder(alphaOrder(spacexpython.info.apps()),"Name")
+        apps_data = spacexpython.info.apps()
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print("Failure on info.apps")
+    print(str(apps_data))
     #assert apps_data == apps_result
     assert 0 == 1

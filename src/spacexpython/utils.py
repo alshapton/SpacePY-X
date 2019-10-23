@@ -118,9 +118,8 @@ def buildclients(url_response):
 
     Returns
     -------
-    response
-        a string which is a JSON document returned from the
-        APISupport page (clients)
+    clientDB
+        An in-memory TinyDB instance containing clients
 
     """
     # Storage for clients will be in an in-memory TinyDB
@@ -130,7 +129,7 @@ def buildclients(url_response):
     table = page.find('tbody')
     response = '['
 
-    for trow in table.find_all('tr')[2:]:
+    for trow in table.find_all('tr')[0:]:
         tds = trow.find_all('td')
 
         # Split languages and form JSON Array
@@ -181,15 +180,17 @@ def buildapps(url_response):
 
     Returns
     -------
-    response
-        a string which is a JSON document returned from the
-        APISupport page (apps)
+    appsDB
+        An in-memory TinyDB instance containing apps
 
     """
+    # Storage for apps will be in an in-memory TinyDB
+    appsDB = TinyDB(storage=MemoryStorage)
+
     page = BeautifulSoup(url_response.text, 'html.parser')
     name_box = page.find('tbody')
     print(name_box)
-    for trow in name_box.find_all('tr')[2:]:
+    for trow in name_box.find_all('tr')[0:]:
         tds = trow.find_all('td')
 
         # Get links for app/website etc and form JSON Array
@@ -237,12 +238,12 @@ def buildapps(url_response):
 
         # Split "More" and form JSON Array
         initmore = tds[4].text.split(",")
-        mores = ''
-        for mores in initmore:
-            mores = mores + '"' + mores.strip() + '",'
-        mores = "[" + mores[:-1] + "]"
+        mores = '['
+        for more in initmore:
+            mores = mores + '"' + more.strip() + '",'
+        mores = mores[:-1] + "]"
         if (mores == '[""]'):
-            mores='[]'
+            mores = '[]'
 
         # Get links for app/website etc and form JSON Array
         clnks = ''
@@ -272,7 +273,9 @@ def buildapps(url_response):
                  + ',"Repos":' + rlnks \
                  + ',"More":' + mores \
                  + ',"MoreLinks":' + mlnks + '}'
-        print (record)
+        appsDB.insert(json.loads(record))
+    return appsDB
+
 
 @APIcache
 def getAPISupporting(req, parameters, timeOut=1):
@@ -340,14 +343,18 @@ def getAPISupporting(req, parameters, timeOut=1):
                 response = str(responseT).replace("'", "\"")
 
         if (req == 'apps'):
-            # If the list of clients hasnt been built, build it
+            # If the list of apps hasnt been built, build it
             try:
                 # noinspection PyUnresolvedReferences
                 appsDB
             except (NameError, UnboundLocalError):
                 appsDB = buildapps(url_response)
 
-            response = buildapps(url_response)
+            if (parameters == ''):
+                # Make sure that here we read all the
+                # records from the database into a JSON string
+                responseT = str(appsDB.all())
+                response = responseT.replace("'", "\"")
 
         if ((req != 'apps') and (req != "clients") and (req != '')):
             raise SpaceXParameterError
