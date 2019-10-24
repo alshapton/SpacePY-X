@@ -48,6 +48,10 @@ Based on work by [vinayphadnis](https://github.com/vinayphadnis/SpaceX-Python.gi
 
 ### License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falshapton%2FSpacePY-X.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falshapton%2FSpacePY-X?ref=badge_large)
+
+## Contributing
+If you would like to contribute, then first of all - "Thanks !!!" - second of all, please read the ever-evolving and improving guidelines [here](https://github.com/alshapton/SpacePY-X/blob/master/CONTRIBUTING.md)
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
