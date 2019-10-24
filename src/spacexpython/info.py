@@ -1,7 +1,6 @@
 from . import urldata
 from . import utils
 
-
 def company(timeOut=1):
     """
 
@@ -22,3 +21,25 @@ def api(timeOut=1):
     utils.validateParameters('', __name__, utils.func_name())
     requestUrl = urldata.Domain.main + urldata.Domain.main_api
     return utils.makeRequest(requestUrl, timeOut)
+
+
+def clients(parameters='', timeOut=1):
+    """
+
+    :type parameters: Optional[str]
+    :type timeOut: Optional[int]
+
+    """
+    utils.validateParameters('', __name__, utils.func_name())
+    return utils.getAPISupporting("clients", parameters, timeOut)
+
+
+def apps(parameters='', timeOut=1):
+    """
+
+    :type parameters: Optional[str]
+    :type timeOut: Optional[int]
+
+    """
+    utils.validateParameters('', __name__, utils.func_name())
+    return utils.getAPISupporting("apps", parameters, timeOut)

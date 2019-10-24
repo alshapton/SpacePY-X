@@ -7,8 +7,9 @@ NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 
 
 install_requires = [{
-    'requests',
     'beautifulsoup4',
+    'cachepy',
+    'requests',
     'tinydb'
     }
 ]
@@ -29,11 +30,13 @@ setup(name='SpacePY-X',
       url='https://github.com/alshapton/SpacePY-X',
       license='MIT',
       packages=find_packages('src'),
-      package_dir = {'': 'src'},include_package_data=True,
+
+      package_dir={'': 'src'},
+      include_package_data=True,
       zip_safe=False,
       install_requires=install_requires,
       entry_points={
         'console_scripts':
             ['spacex-python=spacexpython']
-      }
-     )
+                }
+      )

@@ -10,6 +10,8 @@ This group of API calls allows the retrieval of information regarding :
 
 * SpaceX corporate information
 * API Information
+* Client Information
+* Application Information
 
 Like all functions in this module, the API parameters must be given as a JSON payload such as can be seen :doc:`here <./useful/jsonpayload>`.
 
@@ -31,7 +33,7 @@ Parameter:
 | timeOut    | Number of seconds to wait until a timeout |      N    |    1    |
 +------------+-------------------------------------------+-----------+---------+
 
-`More Details <hhttps://docs.spacexdata.com/?version=latest#9b8b053e-cb75-400c-9635-5fe1c771d8a3>`_
+`More Details <https://docs.spacexdata.com/?version=latest#9b8b053e-cb75-400c-9635-5fe1c771d8a3>`_
 
 API Details
 ```````````````````````
@@ -52,5 +54,56 @@ Parameter:
 +------------+-------------------------------------------+-----------+---------+
 
 `More Details <https://docs.spacexdata.com/?version=latest#30c2d33b-4943-43ae-a98a-5ede3ece6388>`_
+
+Client Information
+```````````````````
+This function interrogates the known list of clients (wrappers) in many different languages, with many options for filtering.
+
+.. code-block:: python
+
+    clients = spacexpython.info.clients(parameters,timeOut)
+    print(clients)
+
+Parameters:
+
+.. tabularcolumns:: |1|1|C|C|
+
++------------+-------------------------------------------+-----------+---------+
+| Name       | Purpose                                   | Mandatory | Default |
++============+===========================================+===========+=========+
+| parameters | JSON list of filters in the form          |      N    |         |
++            +                                           +           +         +
+|            | {"status":"active","limit":3 ......etc    |           |         |
++------------+-------------------------------------------+-----------+---------+
+| timeOut    | Number of seconds to wait until a timeout |      N    |    1    |
++------------+-------------------------------------------+-----------+---------+
+
+:doc:`More Details <./useful/client-parameters>`
+
+Application Information
+```````````````````````
+This function will return information aout all, or specific applications from the known list of applications (wrappers).
+
+.. code-block:: python
+
+    applications = spacexpython.info.apps(parameters,timeOut)
+    print(applications)
+
+Parameters:
+
+.. tabularcolumns:: |1|1|C|C|
+
++------------+-------------------------------------------+-----------+---------+
+| Name       | Purpose                                   | Mandatory | Default |
++============+===========================================+===========+=========+
+| parameters | JSON list of filters in the form          |      N    |         |
++            +                                           +           +         +
+|            | {"status":"active","limit":3 ......etc    |           |         |
++------------+-------------------------------------------+-----------+---------+
+| timeOut    | Number of seconds to wait until a timeout |      N    |    1    |
++------------+-------------------------------------------+-----------+---------+
+
+:doc:`More Details <./useful/apps-parameters>`
+
 
 .. [Ref5] The company's headquarters, located in Hawthorne, California.
