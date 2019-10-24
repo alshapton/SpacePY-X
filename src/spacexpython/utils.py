@@ -340,15 +340,16 @@ def getAPISupporting(req, parameters, timeOut=1):
                 response = responseT.replace("'", "\"")
             else:
                 # When there are parameters:
-                # Row = Query()
+                Row = Query()  # noqa
                 query = ''
                 parametersJSON = json.loads(parameters)
 
                 for key, value in parametersJSON.items():
                     query = query + "(Row." + str(key).capitalize() \
-                        + ".any(" + str(value) + ")) &"
-                query = query[:-1]
-                responseT = clientDB.search(ast.literal_eval(query))
+                        + ".any(" + str(value) + ")) & "
+                query = query[:-2]
+                print(query)
+                responseT = clientDB.search(eval(query))
                 response = str(responseT).replace("'", "\"")
 
         if (req == 'apps'):
@@ -363,6 +364,19 @@ def getAPISupporting(req, parameters, timeOut=1):
                 # Make sure that here we read all the
                 # records from the database into a JSON string
                 responseT = str(appsDB.all())
+                response = str(responseT).replace("'", "\"")
+            else:
+                # When there are parameters:
+                Row = Query()  # noqa
+                query = ''
+                parametersJSON = json.loads(parameters)
+
+                for key, value in parametersJSON.items():
+                    query = query + "(Row." + str(key).capitalize() \
+                            + ".any(" + str(value) + ")) & "
+                query = query[:-2]
+                print(query)
+                responseT = appsDB.search(eval(query))
                 response = str(responseT).replace("'", "\"")
 
         if ((req != 'apps') and (req != "clients") and (req != '')):

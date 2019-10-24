@@ -40,34 +40,44 @@ def test_clients():
         print("Failure on info.clients")
     assert client_data == client_result
 
+
 def test_language():
     language_data = ''
     language_result = keyOrder(alphaOrder(
         readJSONFile('info/oneclientmine.json')), "Name")
-    # language_result = ""
     try:
         language_data = keyOrder(alphaOrder(
             spacexpython.info.clients(
-                '{"Languages":["Python"],'
-                ' "Creators":["Andrew Shapton"]}')),"Name")
+                '{"Languages":["Python"], '
+                + ' "Creators":["Andrew Shapton"]}')),"Name")
     except spacexpython.utils.SpaceXReadTimeOut:
-        # pytest.xfail("Space/X API Read Timed Out")
+        pytest.xfail("Space/X API Read Timed Out")
         print("Failure on info.clients(Language)")
-    print (language_data)
     assert language_data == language_result
+
 
 def test_apps():
     apps_data = ''
-    apps_result=''
     apps_result = keyOrder(alphaOrder(
         readJSONFile('info/apps.json')), "Name")
     try:
         apps_data = keyOrder(
             alphaOrder(spacexpython.info.apps()), "Name")
-        # apps_data = spacexpython.info.apps()
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print("Failure on info.apps")
     print(apps_data)
     assert apps_data == apps_result
-    # assert 0 == 1
+
+def test_one_app():
+    one_app_data = ''
+    one_app_result = keyOrder(alphaOrder(
+        readJSONFile('info/oneapsxmw.json')), "Name")
+    try:
+        one_app_data = keyOrder(alphaOrder(
+            spacexpython.info.apps(
+                '{"Name":["SpaceX Mission Watch"]}')), "Name")
+    except spacexpython.utils.SpaceXReadTimeOut:
+        pytest.xfail("Space/X API Read Timed Out")
+        print("Failure on info.apps(Name)")
+    assert one_app_data == one_app_result
