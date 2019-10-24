@@ -39,22 +39,23 @@ The JSON-format parameter list consists of one or more of :
 +-----------------+--------------------------------------------+--------+----------------------------------+
 | Types           | Application type e.g. API, Website         | dict   | ["Website", "App", "Bot", "API"] |
 +-----------------+--------------------------------------------+--------+----------------------------------+
-| Platorms        | The platforms on which the application     | dict   | ["iOS", "Android", "Discord",    |
+| Platforms       | The platform(s) on which the application   | dict   | ["iOS", "Android", "Discord",    |
 |                 | resides                                    |        |  "Web", "API"]                   |
 +-----------------+--------------------------------------------+--------+----------------------------------+
-| Creators        |                                            | dict   |                                  |
+| Creators        | The creator(s) of the application          | dict   | ["Noah Zyrgunski"]               |
 +-----------------+--------------------------------------------+--------+----------------------------------+
-| CreatorsLinks   |                                            |             NOT FILTERABLE                |
+| CreatorsLinks   | Link(s) to creators detailed above         |             NOT FILTERABLE                |
 +-----------------+--------------------------------------------+--------+----------------------------------+
-| Repos           |                                            | dict   |                                  |
+| Repos           | Nature(s) of Repo(s)                       | dict   | ["Github", "N/A", <other text>]  |
 +-----------------+--------------------------------------------+--------+----------------------------------+
-| ReposLinks      |                                            |             NOT FILTERABLE                |
+| ReposLinks      | Link(s) to repos detailed above            |             NOT FILTERABLE                |
 +-----------------+--------------------------------------------+--------+----------------------------------+
-| More            |                                            | dict   |                                  |
+| More            | Additional details                         |             NOT FILTERABLE                |
 +-----------------+--------------------------------------------+--------+----------------------------------+
-| MoreLinks       |                                            |             NOT FILTERABLE                |
+| MoreLinks       | Link(s) to additional details as above     |             NOT FILTERABLE                |
 +-----------------+--------------------------------------------+--------+----------------------------------+
-The following is also valid syntax, and will return a complete list of clients:
+
+The following is also valid syntax, and will return a complete list of applications:
 
 .. code-block:: python
 
