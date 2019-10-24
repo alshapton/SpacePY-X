@@ -30,6 +30,7 @@ setup(name='SpacePY-X',
       url='https://github.com/alshapton/SpacePY-X',
       license='MIT',
       packages=find_packages('src'),
+
       package_dir={'': 'src'},
       include_package_data=True,
       zip_safe=False,
