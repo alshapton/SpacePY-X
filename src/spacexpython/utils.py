@@ -127,7 +127,6 @@ def buildclients(url_response):
 
     page = BeautifulSoup(url_response.text, 'html.parser')
     table = page.find('tbody')
-    response = '['
 
     for trow in table.find_all('tr')[0:]:
         tds = trow.find_all('td')
@@ -163,7 +162,7 @@ def buildclients(url_response):
         record = '{"Name":"' + tds[0].text + '","Languages":' \
                  + languages + ',"Creators":' + creators \
                  + ',"Repos":' + repotypes \
-                 + ',"Links":' + lnks + '}'
+                 + ',"ReposLinks":' + lnks + '}'
         clientDB.insert(json.loads(record))
 
     return clientDB
@@ -253,6 +252,15 @@ def buildapps(url_response):
 
         app = tds[0].text
 
+        # Split "More" and form JSON Array
+        initrepo = tds[3].text.split(",")
+        repos = '['
+        for repo in initrepo:
+            repos = repos + '"' + repos.strip() + '",'
+        repos = repos[:-1] + "]"
+        if (repos == '[""]'):
+            repos = '[]'
+
         # Get links for repo and form JSON Array
         rlnks = ''
         for lnk in tds[3].find_all('a', href=True):
@@ -269,8 +277,9 @@ def buildapps(url_response):
                  + lnks + ',"Types":' + type \
                  + ',"Platforms":' + platform \
                  + ',"Creators":' + creators \
-                 + ',"CreatorLinks":' + clnks \
+                 + ',"CreatorsLinks":' + clnks \
                  + ',"Repos":' + rlnks \
+                 + ',"ReposLinks":' + rlnks \
                  + ',"More":' + mores \
                  + ',"MoreLinks":' + mlnks + '}'
         appsDB.insert(json.loads(record))
@@ -331,7 +340,7 @@ def getAPISupporting(req, parameters, timeOut=1):
                 response = responseT.replace("'", "\"")
             else:
                 # When there are parameters:
-                Row = Query()
+                # Row = Query()
                 query = ''
                 parametersJSON = json.loads(parameters)
 
@@ -339,7 +348,7 @@ def getAPISupporting(req, parameters, timeOut=1):
                     query = query + "(Row." + str(key).capitalize() \
                         + ".any(" + str(value) + ")) &"
                 query = query[:-1]
-                responseT = clientDB.search(eval(query))
+                responseT = clientDB.search(ast.literal_eval(query))
                 response = str(responseT).replace("'", "\"")
 
         if (req == 'apps'):
@@ -354,7 +363,7 @@ def getAPISupporting(req, parameters, timeOut=1):
                 # Make sure that here we read all the
                 # records from the database into a JSON string
                 responseT = str(appsDB.all())
-                response = responseT.replace("'", "\"")
+                response = str(responseT).replace("'", "\"")
 
         if ((req != 'apps') and (req != "clients") and (req != '')):
             raise SpaceXParameterError

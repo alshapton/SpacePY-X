@@ -9,5 +9,4 @@ db.purge()                        # If one already exists - purge it.
 
 
 # Parameters for the info function
-db.insert({"function":"info","subfunction":"clients","parameters":[ {"parameter":"languages","example":"Python","type":"str","comment":"Filter by language(s)"}, {"parameter":"name","example":"spacex-graphql-rust","type":"str","comment":"Filter by Wrapper name"}, {"parameter":"creators","example": "Or Hiltch", "type": "str","comment": "Filter by the creator(s) name(s)"}, {"parameter":"repos","example":"GitHub","type":"str","comment":"Filter by repo type"}]})
-
+db.insert({"function": "info", "subfunction": "clients", "parameters": [{"parameter": "languages", "example": "Python", "type": "str", "comment": "Filter by language(s)"}, {"parameter": "name", "example": "spacex-graphql-rust", "type": "str", "comment": "Filter by Wrapper name"}, {"parameter": "creators", "example": "Or Hiltch", "type": "str", "comment": "Filter by the creator(s) name(s)"}, {"parameter": "repos", "example": "GitHub", "type": "str", "comment": "Filter by repo type"}]}) #  noqa

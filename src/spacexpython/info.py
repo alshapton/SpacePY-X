@@ -1,7 +1,5 @@
 from . import urldata
 from . import utils
-import pyjsonq
-
 
 def company(timeOut=1):
     """

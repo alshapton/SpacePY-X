@@ -4,7 +4,6 @@ sys.path.append('../')
 import pytest
 import spacexpython
 from .tutils import *
-import timeit
 
 
 def test_api():
@@ -31,36 +30,44 @@ def test_company():
 
 def test_clients():
     client_data = ''
-    client_result = keyOrder(alphaOrder(readJSONFile('info/clients.json')),"Name")
+    client_result = keyOrder(alphaOrder(
+        readJSONFile('info/clients.json')), "Name")
     try:
-        client_data = keyOrder(alphaOrder(spacexpython.info.clients()),"Name")
+        client_data = keyOrder(
+            alphaOrder(spacexpython.info.clients()), "Name")
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print("Failure on info.clients")
     assert client_data == client_result
 
-@pytest.mark.skip(reason="Skip - temporary skip")
 def test_language():
     language_data = ''
-    #language_result = keyOrder(alphaOrder(readJSONFile('info/clients.json')),"Name")
-    language_result = ""
+    language_result = keyOrder(alphaOrder(
+        readJSONFile('info/oneclientmine.json')), "Name")
+    # language_result = ""
     try:
-        language_data = keyOrder(alphaOrder(spacexpython.info.clients('{"languages":["Python"],"creators":["Andrew Shapton"]}')),"Name")
+        language_data = keyOrder(alphaOrder(
+            spacexpython.info.clients(
+                '{"Languages":["Python"],'
+                ' "Creators":["Andrew Shapton"]}')),"Name")
     except spacexpython.utils.SpaceXReadTimeOut:
-        pytest.xfail("Space/X API Read Timed Out")
+        # pytest.xfail("Space/X API Read Timed Out")
         print("Failure on info.clients(Language)")
+    print (language_data)
     assert language_data == language_result
 
 def test_apps():
     apps_data = ''
     apps_result=''
-    #apps_result = keyOrder(alphaOrder(readJSONFile('info/apps.json')),"Name")
+    apps_result = keyOrder(alphaOrder(
+        readJSONFile('info/apps.json')), "Name")
     try:
-        # apps_data = keyOrder(alphaOrder(spacexpython.info.apps()),"Name")
-        apps_data = spacexpython.info.apps()
+        apps_data = keyOrder(
+            alphaOrder(spacexpython.info.apps()), "Name")
+        # apps_data = spacexpython.info.apps()
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print("Failure on info.apps")
-    print(str(apps_data))
-    #assert apps_data == apps_result
-    assert 0 == 1
+    print(apps_data)
+    assert apps_data == apps_result
+    # assert 0 == 1
