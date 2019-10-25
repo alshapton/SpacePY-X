@@ -10,7 +10,7 @@
 
 5.  Add new tests if necessary.
 
-6.  Run the existing and new tests (test.zsh is a runner script that will do this)
+6.  Run the existing and any new tests (test.zsh is a runner script that will do this)
 
 Many thanks for contributing !
 
