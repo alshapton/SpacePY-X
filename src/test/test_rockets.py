@@ -9,20 +9,27 @@ from .tutils import *
 
 
 def test_rockets():
-    rockets_data=''
-    rockets_result=keyOrder(alphaOrder(readJSONFile('rockets/all.json')),'rocket_id')
+    rockets_data = ''
+    rockets_result = keyOrder(alphaOrder(
+        readJSONFile('rockets/all.json')), 'rocket_id')
     try:
-        rockets_data = keyOrder(alphaOrder(spacexpython.rockets.allrockets('',1)),'rocket_id')
+        rockets_data = keyOrder(
+            alphaOrder(spacexpython.rockets.allrockets('', 1)),
+            'rocket_id')
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print ("Failure on all rockets")
     assert rockets_data == rockets_result
 
+
 def test_rocketsP():
-    rockets_data=''
-    rockets_result=keyOrder(alphaOrder(readJSONFile('rockets/all_limit1.json')),'rocket_id')
+    rockets_data = ''
+    rockets_result = keyOrder(alphaOrder(
+        readJSONFile('rockets/all_limit1.json')), 'rocket_id')
     try:
-        rockets_data = keyOrder(alphaOrder(spacexpython.rockets.allrockets('{"limit":"1"}',1)),'rocket_id')
+        rockets_data = keyOrder(alphaOrder(
+            spacexpython.rockets.allrockets('{"limit":"1"}', 1)),
+            'rocket_id')
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print ("Failure on all rockets")
@@ -30,10 +37,11 @@ def test_rocketsP():
 
 
 def test_rocketF1():
-    f1_data=''
-    f1_result=alphaOrder(readJSONFile('rockets/falcon1.json'))
+    f1_data = ''
+    f1_result = alphaOrder(readJSONFile('rockets/falcon1.json'))
     try:
-        f1_data = alphaOrder(spacexpython.rockets.rocket('falcon1','',1))
+        f1_data = alphaOrder(
+            spacexpython.rockets.rocket('falcon1', '', 1))
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print ("Failure on Falcon1")
@@ -41,9 +49,11 @@ def test_rocketF1():
 
 
 def test_rocketF9():
-    f9_data=f9_result=alphaOrder(readJSONFile('rockets/falcon9.json'))
+    f9_data = ''
+    f9_result = alphaOrder(readJSONFile('rockets/falcon9.json'))
     try:
-        f9_data = alphaOrder(spacexpython.rockets.rocket('falcon9','',1))
+        f9_data = alphaOrder(
+            spacexpython.rockets.rocket('falcon9', '', 1))
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print ("Failure on Falcon9")
@@ -51,20 +61,25 @@ def test_rocketF9():
 
 
 def test_rocketBFR():
-    bfr_data=''
-    bfr_result=alphaOrder(readJSONFile('rockets/BFR.json'))
+    # BFR has been renamed Starship
+    # This function has been marked as deprecated
+    bfr_data = ''
+    bfr_result = alphaOrder(readJSONFile('rockets/starship.json'))
     try:
-        bfr_data = alphaOrder(spacexpython.rockets.rocket('starship','',1))
+        bfr_data = alphaOrder(
+            spacexpython.rockets.rocket('starship', '', 1))
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print("Failure on BFR(now starship)")
     assert bfr_data == bfr_result
 
+
 def test_rocketstarship():
-    starship_data=''
-    starship_result=alphaOrder(readJSONFile('rockets/starship.json'))
+    starship_data = ''
+    starship_result = alphaOrder(readJSONFile('rockets/starship.json'))
     try:
-        starship_data = alphaOrder(spacexpython.rockets.rocket('starship','',1))
+        starship_data = alphaOrder(
+            spacexpython.rockets.rocket('starship', '', 1))
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print("Failure on Starship (was BFR)")
@@ -72,10 +87,11 @@ def test_rocketstarship():
 
 
 def test_rocketFH():
-    fh_data=''
-    fh_result=alphaOrder(readJSONFile('rockets/falconheavy.json'))
+    fh_data = ''
+    fh_result = alphaOrder(readJSONFile('rockets/falconheavy.json'))
     try:
-        fh_data = alphaOrder(spacexpython.rockets.rocket('falconheavy','',1))
+        fh_data = alphaOrder(
+            spacexpython.rockets.rocket('falconheavy', '', 1))
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print ("Failure on Falcon Heavy")

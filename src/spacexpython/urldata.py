@@ -2,7 +2,10 @@
 """urldata module
 
 This is a module defines the endpoints for the REST SpaceX API
+as well as some global data
 """
+
+
 class Domain(object):
     """ Base URL from which to assemble request URLs """
     base = "https://api.spacexdata.com"
@@ -16,11 +19,11 @@ class Domain(object):
         Launches Information """
     main_launches = "launches"
     latest_launches = main_launches + "/latest"
-    next_launches =  main_launches + "/next"
+    next_launches = main_launches + "/next"
     upcoming_launches = main_launches + "/upcoming"
     past_launches = main_launches + "/past"
 
-    """ Company information """
+    """ Company/API information """
     main_info = "info"
     main_api = ""
 
@@ -32,16 +35,15 @@ class Domain(object):
     bigfalconrocket = main_rockets + "/bfr"
     bigfalconrocket = main_rockets + "/starship"
 
-
     """ Capsule Information """
     main_capsules = "capsules"
-    upcoming_capsules = main_capsules+"/upcoming"
-    past_capsules = main_capsules+"/past"
+    upcoming_capsules = main_capsules + "/upcoming"
+    past_capsules = main_capsules + "/past"
 
     """ Cores Information """
     main_cores = "cores"
-    upcoming_cores = main_cores+"/upcoming"
-    past_cores = main_cores+"/past"
+    upcoming_cores = main_cores + "/upcoming"
+    past_cores = main_cores + "/past"
 
     """ Dragons Information """
     main_dragons = "dragons"

@@ -3,15 +3,14 @@
 Releases
 ========
 
-1.1.0   03-OCT-2019     Initial preview release for comment
 1.1.1   10-OCT-2019     Added initial parameter validation, Starship and Crew support, and fixed some testing bugs
-
+1.1.0   03-OCT-2019     Initial preview release for comment
 
 Alpha Releases
 ==============
 
-All alpha releases will contain a note here.
-Once a release has been moved from Alpha - this section will be blanked and a new section will commence.
+1.1.2a1-extra   25-OCT-2019   Additional code documentation, cleaned up code
+1.1.2a1         24-OCT-2019   Deprecate BFR, new info.clients/info.apps functions
 
 Pre-stable Releases
 ===================

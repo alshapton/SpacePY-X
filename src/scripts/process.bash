@@ -35,3 +35,9 @@ for FILENAME in parametersIN/*.in;
 # Now create the matrixDB.json database
 
 python matrix.py
+
+
+# Copy the database to the correct locations:
+
+cp matrixDB.json ../spacexpython
+cp matrixDB.json ../test

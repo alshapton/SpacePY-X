@@ -81,11 +81,11 @@ An additional method of acquiring information about a specific rocket would be t
 
 .. code-block:: python
 
-    falcon1     = spacexpython.rockets.falcon1(parameters,timeOut)
-    falcon9     = spacexpython.rockets.falcon9(parameters,timeOut)
-    falconheavy = spacexpython.rockets.falconheavy(parameters,timeOut)
-    bfr         = spacexpython.rockets.bfr(parameters,timeOut)
-    starship    = spacexpython.rockets.starship(parameters,timeOut)
+    falcon1     = spacexpython.rockets.falcon1(parameters, timeOut)
+    falcon9     = spacexpython.rockets.falcon9(parameters, timeOut)
+    falconheavy = spacexpython.rockets.falconheavy(parameters, timeOut)
+    bfr         = spacexpython.rockets.bfr(parameters, timeOut)
+    starship    = spacexpython.rockets.starship(parameters, timeOut)
 
 
 `Valid parameters <https://docs.spacexdata.com/?version=latest#eda45a06-9f05-40f1-a333-028f647ba797>`_
@@ -94,7 +94,7 @@ An additional method of acquiring information about a specific rocket would be t
 
     Beginning with version 1.1.1.a1, any references to "bfr" will cause the information from the "starship" function to be returned. This is because Elon Musk, on the 20th November 2018 renamed Big Falcon Rocket to Starship. [RefBFR]_
 
-    Additionally, as of version 1.1.2, any reference to 'bfr' will be removed. Thus, at this time, those references are considered to be deprecated.
+    Additionally, as of version 1.1.2, the function and references to "bfr" are considered to be deprecated.
 
 .. [Ref10]  Launch of Falcon 9 for mission CRS-12 14th August 2017
 
