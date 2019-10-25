@@ -49,7 +49,7 @@ def test_language():
         language_data = keyOrder(alphaOrder(
             spacexpython.info.clients(
                 '{"Languages":["Python"], '
-                + ' "Creators":["Andrew Shapton"]}')),"Name")
+                + ' "Creators":["Andrew Shapton"]}')), "Name")
     except spacexpython.utils.SpaceXReadTimeOut:
         pytest.xfail("Space/X API Read Timed Out")
         print("Failure on info.clients(Language)")
@@ -68,6 +68,7 @@ def test_apps():
         print("Failure on info.apps")
     print(apps_data)
     assert apps_data == apps_result
+
 
 def test_one_app():
     one_app_data = ''

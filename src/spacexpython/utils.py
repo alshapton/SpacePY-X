@@ -373,7 +373,7 @@ def getAPISupporting(req, parameters, timeOut=1):
 
                 for key, value in parametersJSON.items():
                     query = query + "(Row." + str(key).capitalize() \
-                            + ".any(" + str(value) + ")) & "
+                        + ".any(" + str(value) + ")) & "
                 query = query[:-2]
                 print(query)
                 responseT = appsDB.search(eval(query))
