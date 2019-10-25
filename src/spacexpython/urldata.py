@@ -2,6 +2,7 @@
 """urldata module
 
 This is a module defines the endpoints for the REST SpaceX API
+as well as some global data
 """
 
 
