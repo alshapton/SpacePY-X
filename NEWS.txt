@@ -3,6 +3,7 @@
 Releases
 ========
 
+1.1.3   28-OCT-2019     Additional code cleaning, upgraded tinydb and setuptools, added new drone ship functions
 1.1.2   25-OCT-2019     Additional code documentation, cleaned up code
 1.1.1   10-OCT-2019     Added initial parameter validation, Starship and Crew support, and fixed some testing bugs
 1.1.0   03-OCT-2019     Initial preview release for comment
@@ -16,7 +17,6 @@ Pre-stable Releases
 For pre-stable release notes, please see commit history
 ---
 
-
 Known Issues
 ============
-Parameter validation is NOT complete and production use is ill-advised
+N/A
