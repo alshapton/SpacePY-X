@@ -60,6 +60,15 @@ Parameters:
 | timeOut       | Number of seconds to wait until a timeout |      N    |    1    |
 +---------------+-------------------------------------------+-----------+---------+
 
+An additional method of acquiring information about a specific ship would be to use the ship-specific functions:
+
+.. code-block:: python
+
+    Of Course I still Love You      = spacexpython.ships.ocisly(parameters, timeOut)
+    Just Read The Instructions (1)  = spacexpython.ships.jrti1(parameters, timeOut)
+    Just Read The Instructions (2)  = spacexpython.ships.jrti2(parameters, timeOut)
+    A Shortfall Of Gravitas         = spacexpython.ships.asog(parameters, timeOut)
+
 `Valid parameters <https://docs.spacexdata.com/?version=latest#d5b89576-eb1d-4a2f-91eb-3eab2b454aa2>`_
 
 .. [Ref12] "Of Course I Still Love You" (Marmac 304) drone ship moving into position for the Sunday, June 28, 2015, SpaceX CRS-7 rocket launch and landing attempt.
