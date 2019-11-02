@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+import click
+import spacexpython
+import json
+
+class cvt(dict):
+    def __str__(self):
+        return json.dumps(self)
+
+def output(result,fmt):
+    if (fmt == 'json'):
+        print(result)
+    if (fmt == 'pretty'):
+        print(json.dumps(cvt(result), indent=2, sort_keys=True))
+
+
+@click.group()
+def main():
+    pass
+
+
+@main.command()
+@click.option('-fmt',
+            type=click.Choice(['json', 'pretty'], case_sensitive=False ),
+            help='Format for output (json, pretty) - default: json',
+            default='json')
+def company(fmt):
+    """
+    Provides information about the SpaceX Company
+
+    """
+    company_data = spacexpython.info.company()
+    output(company_data,fmt)
+
+
+@main.command()
+@click.option('-fmt',
+            type=click.Choice(['json', 'pretty'], case_sensitive=False),
+            help='Format for output (json, pretty) - default: json',
+            default='json')
+@click.option('--all/--some','all_', default=True,
+              help='add "--all" for all rockets - default: None')
+
+def rocket(fmt,all_):
+    """
+    Provides information about SpaceX's rockets
+
+    """
+    if all_:
+        rocket_data = spacexpython.rockets.allrockets()
+        output(rocket_data, fmt)
+
+
+@main.command()
+def roadster(roadster):
+    """
+    Information about Elon Musk's Tesla roadster payload
+
+    """
+    print("I'm a roadster")
+
+if __name__ == "__main__":
+    main()

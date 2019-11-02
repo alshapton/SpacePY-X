@@ -55,7 +55,9 @@ def jsonParameters(parameters):
     -------
     parms
         a string which can be appended to the URL
+
     """
+
     if (parameters == ''):
         return ''
     else:
@@ -94,6 +96,7 @@ def makeRequest(requestUrl, timeOut=1, parameters=''):
     ----------
     SpaceXReadTimeOut
         raised when the API call breaches the timeout limit
+
     """
 
     try:
@@ -122,6 +125,7 @@ def buildclients(url_response):
         An in-memory TinyDB instance containing clients
 
     """
+
     # Storage for clients will be in an in-memory TinyDB
     clientDB = TinyDB(storage=MemoryStorage)
 
