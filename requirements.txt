@@ -2,5 +2,5 @@ cachepy==1.1
 beautifulsoup4==4.8.1
 tinydb==3.15.1
 requests==2.22.0
-setuptools==42.0.0
+setuptools==42.0.2
 sphinx_rtd_theme==0.4.3
