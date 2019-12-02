@@ -29,7 +29,7 @@ def getShipPosition(ship_url):
                + extracted_text[0] + '}'
     return position
 
-
+@pytest.mark.skip("Skip one ship position - variable data (time sensitive)")
 def test_one_ship_position():
     one_data = ''
     one_result = alphaOrder(
