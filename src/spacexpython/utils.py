@@ -209,7 +209,7 @@ def buildapps(url_response):
             type = type + ',"ALEXA"'
             platform = platform + ',"ALEXA"'
         
-      if ("ANDROID APP" in (tds[1].text).upper()):
+        if ("ANDROID APP" in (tds[1].text).upper()):
             type = type + ',"APP"'
             platform = platform + ',"ANDROID"'
 
