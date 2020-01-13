@@ -239,7 +239,7 @@ def buildapps(url_response):
         initmore = tds[4].text.split(",")
         mores = '['
         for more in initmore:
-            mores = mores + '"' + more.strip() + '",'
+            mores = mores + '"' + more.strip().replace("\""," ") + '",'
         mores = mores[:-1] + "]"
         if (mores == '[""]'):
             mores = '[]'
@@ -252,7 +252,7 @@ def buildapps(url_response):
 
         app = tds[0].text
 
-        # Split "More" and form JSON Array
+        # Split "Repos" and form JSON Array
         initrepo = tds[3].text.split(",")
         repos = '['
         for repo in initrepo:
