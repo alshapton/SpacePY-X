@@ -204,12 +204,16 @@ def buildapps(url_response):
         if ("WEBSITE" in (tds[1].text).upper()):
             type = type + ',"WEBSITE"'
             platform = platform + ',"WEB"'
-
+            
+        if ("ALEXA SKILL" in (tds[1].text).upper()):
+            type = type + ',"ALEXA"'
+            platform = platform + ',"ALEXA"'
+        
         if ("ANDROID APP" in (tds[1].text).upper()):
             type = type + ',"APP"'
             platform = platform + ',"ANDROID"'
 
-        if ("OOS APP" in (tds[1].text).upper()):
+        if ("IOS APP" in (tds[1].text).upper()):
             type = type + ',"APP"'
             platform = platform + ',"IOS"'
 
