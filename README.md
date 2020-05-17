@@ -27,7 +27,7 @@ This API Wrapper aims to provide a simple and easy way to use the [SpaceX-API](h
 See the [Documentation](https://spacepy-x.readthedocs.io/en/master/) for full wrapper documentation.
 
 ### Installation
-Note that this supports Python 3 *ONLY*
+Note that this supports Python 3.x *ONLY* 
 
 To install via `pip` use:
 `pip install spacexPython`

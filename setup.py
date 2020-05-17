@@ -16,7 +16,7 @@ install_requires = [{
 
 
 setup(name='SpacePY-X',
-      version="v1.1.3.4",
+      version="v1.1.4.1",
       description="Simple Python wrapper for the SpaceX API",
       long_description=README,
       classifiers=[
