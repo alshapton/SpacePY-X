@@ -11,7 +11,7 @@ python:
 - '3.9-dev'
 install:
 - pip install -r requirements.txt --upgrade-strategy=eager
-- pip install pytest pytest-cov
+- pip install 'pytest>=4.6' pytest-cov
 - pip install codecov
 script:
 - cd src/test
