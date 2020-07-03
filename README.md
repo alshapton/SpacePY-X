@@ -19,6 +19,8 @@
 
 <br>
 
+Note that this client wrapper is for use with the SpaceX-API V3. It does not support the new functionality built into V4. For that, you will need to use the [V4 library[(https://github.com/alshapton/SpacePY-X4)
+<br>
 </div>
 
 ### Documentation
